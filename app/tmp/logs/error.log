@@ -1,0 +1,83 @@
+2018-03-29 09:22:46 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /transport_app_ver2_1/app/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /var/www/html/transport_app_ver2_1/app/index.php(19): require('/var/www/html/t...')
+#4 {main}
+2018-03-29 09:22:53 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /transport_app_ver2_1/app/webroot/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-30 17:05:32 Error: [MissingControllerException] Controller class RequestDetailsController could not be found.
+Exception Attributes: array (
+  'class' => 'RequestDetailsController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/request_details/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-30 17:06:14 Error: [MissingTableException] Table requestdetails for model Requestdetail was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'requestdetails',
+  'class' => 'Requestdetail',
+  'ds' => 'default',
+)
+Request URL: /transport_app_ver2_1/request_details/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3498): Model->setSource('requestdetails')
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1447): Model->schema()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1434): Model->hasField('title', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(880): Model->hasField(Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Scaffold.php(131): Model->__get('displayField')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(535): Scaffold->__construct(Object(RequestdetailsController), Object(CakeRequest))
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestdetailsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2018-03-30 17:06:50 Error: [MissingTableException] Table requestdetails for model Requestdetail was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'requestdetails',
+  'class' => 'Requestdetail',
+  'ds' => 'default',
+)
+Request URL: /transport_app_ver2_1/request_details/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3498): Model->setSource('requestdetails')
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1355): Model->getDataSource()
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1447): Model->schema()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1434): Model->hasField('title', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(880): Model->hasField(Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Scaffold.php(131): Model->__get('displayField')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(535): Scaffold->__construct(Object(RequestdetailsController), Object(CakeRequest))
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestdetailsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2018-03-30 17:41:37 Error: [MissingActionException] Action UsersController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'index',
+)
+Request URL: /transport_app_ver2_1/users/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

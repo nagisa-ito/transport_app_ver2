@@ -1,0 +1,10 @@
+div.center {
+	margin : 0 auto;
+	width: 50%;
+	background-color: skyblue;
+	text-align: center;
+}
+
+div.center > button {
+	width: 20%;
+}
