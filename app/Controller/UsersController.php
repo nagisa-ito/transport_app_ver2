@@ -3,7 +3,8 @@
 	class UsersController extends AppController {
 		public $helpers = array('Html', 'Form');
 
-		public function index() {
+		public function index() 
+		{
 			//findにパラメータを与えることもできる。
 			$params = array(
 				'order' => 'modified desc',
@@ -14,10 +15,13 @@
 			$this->set('users', $this->User->find('all'));
 			$this->set('title_for_layout', 'ユーザー一覧');
 
-			$this->set('users1', $this->User->find('list', array(
+			$this->set('select_users', $this->User->find('list', array(
 				'fields' => array('id', 'yourname')
 			)));
 		}
+
+		
+
 	}
 
 ?>
