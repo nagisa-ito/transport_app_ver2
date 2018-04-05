@@ -8,12 +8,14 @@
 			$select_user_id = $_POST['data']['Requestdetail']['user_id'];
 			$this->set('select_user_id', $select_user_id);
 
-			$params = array(
-				'order' => 'id desc'
-			);
-						//↓変数
-			$requestdetails = $this->RequestDetail->find('all');
-			$this->set('requestdetails', $requestdetails);
+			//Transportation Model を使う
+			$this->loadModel('Transportation');
+			$params = 'RequestDetail.user_id =' . $select_user_id;
+			$each_user_request_details = $this->Transportation->find('all', array(
+																					'contain' => $params,
+																					//'order' => array('RequestDetail.id' => 'asc')
+																				));
+			$this->set('each_user_request_details', $each_user_request_details);
 
 			$column_names = array(
 				'申請id',
@@ -29,10 +31,9 @@
 			);
 			$this->set('column_names', $column_names);
 
-			$search_str = '{n}.RequestDetail[user_id=' . $select_user_id . ']';
-			$extracted_request_details = Hash::extract($requestdetails, $search_str);
-			$this->set('extracted_request_details', $extracted_request_details);
-
+			$test = $this->Requestdetail->find('all');
+			$this->set('test', $test);
+			
 		}
 
 		public function add()

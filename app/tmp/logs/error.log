@@ -273,3 +273,1407 @@ Stack Trace:
 #3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2018-04-05 10:33:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.transportations_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 10:34:50 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.transportations_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 10:35:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.transportations_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 10:39:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:39:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:40:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:40:42 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:41:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:48:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:48:10 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:48:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:49:11 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(AppModel), 'hasMany', 'Transportations', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 10:52:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 10:53:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 11:15:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportations.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 11:18:22 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 11:39:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 11:49:08 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'field list'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(RequestDetail), 'SELECT `Transpo...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(RequestDetail), Object(Transportation), 'hasMany', 'Transportation', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 11:49:50 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 11:54:23 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 11:54:23 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 11:55:22 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 11:55:22 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 11:55:48 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 11:55:48 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 11:59:52 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 11:59:52 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:00:05 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:00:05 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:00:22 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:00:22 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:01:11 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:01:11 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:04:25 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:04:25 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:04:48 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:04:48 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:07:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:12:03 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/html/transport_app_ver2_1/app/Model/RequestDetail.php, line 12]
+2018-04-05 12:12:03 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:17:15 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/html/transport_app_ver2_1/app/Model/RequestDetail.php, line 12]
+2018-04-05 12:17:15 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:17:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:18:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:27:22 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:27:54 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 18]
+2018-04-05 12:27:54 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 18, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:30:17 Error: Fatal Error (64): Multiple access type modifiers are not allowed in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 8]
+2018-04-05 12:30:17 Error: [FatalErrorException] Multiple access type modifiers are not allowed
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Multiple access...', '/var/www/html/t...', 8)
+#1 [internal function]: ErrorHandler::handleError(64, 'Multiple access...', '/var/www/html/t...', 8, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Multiple access...', '/var/www/html/t...', 8, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:32:23 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 16]
+2018-04-05 12:32:23 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 16)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 16, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 16, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 12:33:47 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(20): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:35:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(20): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 12:40:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(20): Model->find('all')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 14:31:08 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 12]
+2018-04-05 14:31:08 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 12, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 14:58:54 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 16]
+2018-04-05 14:58:54 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 16, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 16, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 14:59:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 14:59:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Requestdetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 15:01:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.Requestdetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 15:29:00 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 15:29:00 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:29:54 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 15:29:54 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:32:24 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 15:32:24 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:41:51 Error: Fatal Error (4): syntax error, unexpected 'array' (T_ARRAY) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 14]
+2018-04-05 15:41:51 Error: [FatalErrorException] syntax error, unexpected 'array' (T_ARRAY)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:42:11 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 35]
+2018-04-05 15:42:11 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:43:12 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 14]
+2018-04-05 15:43:12 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:43:20 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 35]
+2018-04-05 15:43:20 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:43:51 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 35]
+2018-04-05 15:43:51 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:44:48 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 35]
+2018-04-05 15:44:48 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:45:08 Error: Fatal Error (4): syntax error, unexpected '$extracted_request_details' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 35]
+2018-04-05 15:45:08 Error: [FatalErrorException] syntax error, unexpected '$extracted_request_details' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 35, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:51:27 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 14]
+2018-04-05 15:51:27 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 15:51:45 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 14]
+2018-04-05 15:51:45 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 16:10:02 Error: Fatal Error (4): syntax error, unexpected '$request_with_transport' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 16]
+2018-04-05 16:10:02 Error: [FatalErrorException] syntax error, unexpected '$request_with_transport' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 16, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 16, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 16:10:22 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(15): Transportation->contain('Transportation....')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:13:26 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Requestdetail.i...')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:14:08 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Requestdetail.i...')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:14:28 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Transportation....')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:15:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Requestdetail.i...')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:17:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Requestdetail.i...')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:19:02 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain()
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:19:29 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain()
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:22:01 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain('Requestdetail.i...')
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:24:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain()
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:25:54 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'contain' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('contain', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('contain', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('contain', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('contain', Array, Object(Transportation))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->__call('contain', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Transportation->contain()
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:28:45 Error: Fatal Error (1): Call to a member function contain() on array in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 17]
+2018-04-05 16:28:45 Error: [FatalErrorException] Call to a member function contain() on array
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 17)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 17, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 17, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 16:29:33 Error: Fatal Error (1): Call to a member function contain() on array in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 17]
+2018-04-05 16:29:33 Error: [FatalErrorException] Call to a member function contain() on array
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 17)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 17, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 17, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 16:34:59 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Requestdetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:35:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:36:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:40:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.to_statiom' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:40:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.to_station' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:42:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 16:43:05 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 17:17:39 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column '$select_user_id' in 'where clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1339): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1201): DboSource->fetchAssociated(Object(Transportation), 'SELECT `Request...', Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1112): DboSource->queryAssociation(Object(Transportation), Object(RequestDetail), 'hasMany', 'RequestDetail', Array, Array, true, Array, 0, Array)
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(13): Model->find('all', Array)
+#9 [internal function]: RequestDetailsController->index()
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-05 17:20:41 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 14]
+2018-04-05 17:20:41 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 14, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 17:22:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'order clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(14): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 17:24:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'order clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 17:24:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'order clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(16): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 17:28:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RequestDetail.id' in 'order clause'
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(17): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-05 17:52:42 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/html/transport_app_ver2_1/app/Model/Requestdetail.php, line 15]
+2018-04-05 17:52:42 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /transport_app_ver2_1/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 15, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 15, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 17:53:17 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 17:53:17 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 17:58:57 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 17:58:57 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:02:57 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:02:57 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:03:08 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:03:08 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:05:43 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:05:43 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:06:57 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:06:57 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:30:09 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:30:09 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:33:42 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:33:42 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:33:50 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:33:50 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:34:00 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:34:00 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:38:11 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:38:11 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:39:29 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:39:29 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:39:40 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:39:40 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:39:49 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:39:49 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:40:08 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:40:08 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:42:00 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:42:00 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:42:34 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:42:34 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:42:45 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:42:45 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:42:59 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:42:59 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:48:40 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:48:40 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:54:18 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:54:18 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-05 18:56:24 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-05 18:56:24 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
