@@ -1677,3 +1677,713 @@ Stack Trace:
 #3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2018-04-06 10:30:57 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [/var/www/html/transport_app_ver2_1/app/Model/Requestdetail.php, line 23]
+2018-04-06 10:30:57 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /transport_app_ver2_1/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:31:53 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 34]
+2018-04-06 10:31:53 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 34, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:39:04 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 10:39:04 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:42:55 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 10:42:55 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:51:53 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 10:51:53 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:58:00 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 10:58:00 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 10:58:20 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 10:58:20 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:01:58 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 41]
+2018-04-06 11:01:58 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:04:25 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:04:25 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:04:45 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:04:45 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:07:11 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:07:11 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:09:19 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:09:19 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:11:10 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:11:10 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:12:20 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:12:20 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:14:10 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:14:10 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:14:32 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:14:32 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:14:54 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 42]
+2018-04-06 11:14:54 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 42, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 11:33:26 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'transportations Transportation `RequestDetail` . `transportation_id` = `Transpor' at line 1
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT *, `Requ...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT *, `Requ...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT *, `Requ...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php(43): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->index()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-06 12:23:46 Error: Fatal Error (4): syntax error, unexpected '$test' (T_VARIABLE) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 44]
+2018-04-06 12:23:46 Error: [FatalErrorException] syntax error, unexpected '$test' (T_VARIABLE)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 44, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 44, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:03 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:03 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:03 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:03 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:03 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:03 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:03 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:03 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:03 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:03 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:04 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:04 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:10 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:10 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:53:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:53:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:04 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:04 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:04 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:04 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:04 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:04 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:04 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:05 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:05 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:05 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:05 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:05 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:10 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:10 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:10 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:10 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:10 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:10 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 13:54:11 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 13:54:11 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:13:01 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 14:13:01 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:13:01 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 14:13:01 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:13:01 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 14:13:01 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:13:02 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 14:13:02 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:13:07 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 23]
+2018-04-06 14:13:07 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 23)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 23, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:45 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:45 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:45 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:45 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:45 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:45 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:46 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:46 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:48 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:48 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 14:19:54 Error: Fatal Error (64): Cannot use [] for reading in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 25]
+2018-04-06 14:19:54 Error: [FatalErrorException] Cannot use [] for reading
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/var/www/html/t...', 25)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/var/www/html/t...', 25, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 15:44:33 Error: Fatal Error (4): syntax error, unexpected end of file, expecting function (T_FUNCTION) in [/var/www/html/transport_app_ver2_1/app/Controller/RequestDetailsController.php, line 58]
+2018-04-06 15:44:33 Error: [FatalErrorException] syntax error, unexpected end of file, expecting function (T_FUNCTION)
+Request URL: /transport_app_ver2_1/request_details
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 58)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 58, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 58, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 16:02:29 Error: Fatal Error (1): Call to a member function save() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 48]
+2018-04-06 16:02:29 Error: [FatalErrorException] Call to a member function save() on null
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 48)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 48, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 48, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 16:03:54 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/add.ctp, line 10]
+2018-04-06 16:03:54 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /transport_app_ver2_1/requestdetails/add/3
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 10, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 10, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 16:04:49 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'user_id' doesn't have a default value
+Request URL: /transport_app_ver2_1/requestdetails/add/3
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `tr...')
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1832): DboSource->create(Object(RequestDetail), Array, Array)
+#4 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(48): Model->save(Array)
+#5 [internal function]: RequestDetailsController->add('3')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2018-04-06 16:07:37 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'user_id' doesn't have a default value
+Request URL: /transport_app_ver2_1/requestdetails/add/3
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `tr...')
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1832): DboSource->create(Object(RequestDetail), Array, Array)
+#4 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(48): Model->save(Array)
+#5 [internal function]: RequestDetailsController->add('3')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2018-04-06 16:11:58 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'date' doesn't have a default value
+Request URL: /transport_app_ver2_1/requestdetails/add/3
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `tr...')
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1832): DboSource->create(Object(RequestDetail), Array, Array)
+#4 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(48): Model->save(Array)
+#5 [internal function]: RequestDetailsController->add('3')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2018-04-06 16:34:09 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'user_id' doesn't have a default value
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `tr...')
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1832): DboSource->create(Object(RequestDetail), Array, Array)
+#4 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(48): Model->save(Array)
+#5 [internal function]: RequestDetailsController->add('1')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2018-04-06 17:20:04 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'transportation_id' doesn't have a default value
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1004): DboSource->execute('INSERT INTO `tr...')
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(1832): DboSource->create(Object(RequestDetail), Array, Array)
+#4 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(49): Model->save(Array)
+#5 [internal function]: RequestDetailsController->add('1')
+#6 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#7 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2018-04-06 17:37:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Request...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Request...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Request...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(46): Model->find('all', Array)
+#7 [internal function]: RequestDetailsController->add('1')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-06 17:42:04 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unbindModelAll' at line 1
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('unbindModelAll', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('unbindModelAll', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('unbindModelAll', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('unbindModelAll', Array, Object(RequestDetail))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(47): Model->__call('unbindModelAll', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(47): RequestDetail->unbindModelAll()
+#7 [internal function]: RequestDetailsController->add('1')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-06 17:43:17 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unbindModelAll' at line 1
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('unbindModelAll', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('unbindModelAll', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('unbindModelAll', Array, Array)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(800): DboSource->query('unbindModelAll', Array, Object(RequestDetail))
+#5 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(47): Model->__call('unbindModelAll', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(47): RequestDetail->unbindModelAll()
+#7 [internal function]: RequestDetailsController->add('1')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-06 17:43:28 Error: Fatal Error (1): Call to a member function find() on null in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 47]
+2018-04-06 17:43:28 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/t...', 47)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/t...', 47, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/t...', 47, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-06 17:44:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.transportation_id' in 'field list'
+Request URL: /transport_app_ver2_1/requestdetails/add/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Transpo...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT `Transpo...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `Transpo...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(Transportation), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('list', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(48): Model->find('list', Array)
+#7 [internal function]: RequestDetailsController->add('1')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
