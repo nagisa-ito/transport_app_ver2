@@ -34,6 +34,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
 <body>
 	<div id="container">
@@ -56,5 +58,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+
+	<!-- ドットインストールで追加 -->
+	<script>
+		$(function(){
+			setTimeout(function(){
+				$('#flashMessage').fadeOut('slow');
+			}, 800);
+		});
+	</script>
+
 </body>
 </html>
