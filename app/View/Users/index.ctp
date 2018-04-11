@@ -1,3 +1,4 @@
+<?php pr($login_user); ?>
 <div>
 <h2>交通費管理システム</h2>
 <span>
@@ -6,6 +7,7 @@
 </span>
 
 <h3>申請一覧</h3>
+<button onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button>
 <ul>
 	<?php foreach($group_by_month as $each_month_request) : ?>
 		<li><?php

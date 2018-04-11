@@ -2940,3 +2940,13 @@ Request URL: /transport_app_ver2_1/RequestDetail/index/$login_user_id/$year_name
 Stack Trace:
 #0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2018-04-11 10:47:44 Error: Fatal Error (1): Call to undefined method RequestDetailsController::ser() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 16]
+2018-04-11 10:47:44 Error: [FatalErrorException] Call to undefined method RequestDetailsController::ser()
+Request URL: /transport_app_ver2_1/requestdetails/index/1/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 16)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 16, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 16, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

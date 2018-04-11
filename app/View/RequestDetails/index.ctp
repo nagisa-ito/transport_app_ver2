@@ -1,7 +1,8 @@
 <h2>申請一覧</h2>
 
-<button onClick = "location.href='<?php echo $this->html->url('/requestdetails/add/'.$select_user_id);?>';">Add</button>
-<button type="button" onclick="history.back()">Back</button>
+<button onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user_id/$year_month");?>';">Add</button>
+<button type="button" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id");?>';">Back</button>
+
 <table border="1">
 	<tr>
 		<?php foreach ($column_names as $key => $column_name) : ?>
@@ -31,8 +32,8 @@
 				<td>
 					<?php
 						//編集・削除を実行
-						echo $this->Html->link('編集 ', array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'], $select_user_id));
-						echo $this->Form->postlink('削除', array('action' => 'delete', $each_user_request_detail['RequestDetail']['id']), array('confirm' => '削除しますか？'));
+						echo $this->Html->link('編集 ', array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month));
+						echo $this->Form->postlink('削除', array('action' => 'delete', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month), array('confirm' => '削除しますか？'));
 						//echo $this->Html->link('削除', '#', array('class' => 'delete', 'data-post-id' => $each_user_request_detail['RequestDetail']['id']));
 					?>
 					 </td>

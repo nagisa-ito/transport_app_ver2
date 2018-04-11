@@ -4,7 +4,7 @@
 
 		public $helpers = array('Html', 'Form');
 
-		public function index()
+		public function index($login_user_id = null)
 		{
 			//ログインしたユーザーを変数に格納
 			$login_user_id = $this->Auth->user('id');

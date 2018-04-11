@@ -10,10 +10,10 @@
 			parent::beforeFilter();
 		}
 
-		public function index($select_user_id, $year_month)
+		public function index($login_user_id = null, $year_month = null)
 		{
-			//$select_user_id = $_POST['data']['Requestdetail']['user_id'];
-			$this->set('select_user_id', $select_user_id);
+			$this->set('year_month', $year_month);
+			$this->set('login_user_id', $login_user_id);
 
 			/*** transportation.idでjoinする ******/
 			$params = array();
@@ -26,7 +26,7 @@
 			);
 			$params['fields'] = array('*');
 			$params['order'] = array('RequestDetail.id' => 'ASC');
-			$params['conditions'] = array('RequestDetail.user_id' => $select_user_id, "DATE_FORMAT(RequestDetail.date, '%Y-%m')" => $year_month);
+			$params['conditions'] = array('RequestDetail.user_id' => $login_user_id, "DATE_FORMAT(RequestDetail.date, '%Y-%m')" => $year_month);
 			$each_user_request_details = $this->RequestDetail->find('all', $params);
 			$this->set('each_user_request_details', $each_user_request_details);
 			/************************************/
@@ -47,10 +47,10 @@
 
 		}
 
-		public function add($select_user_id)
+		public function add($login_user_id = null, $year_month = null)
 		{
 			$this->set('oneway_or_round', $this->oneway_or_round);
-			$this->set('select_user_id', $select_user_id);
+			$this->set('login_user_id', $login_user_id);
 
 			$this->loadModel('Transportation');
 			$this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
@@ -58,31 +58,31 @@
 			if($this->request->is('post')){
 				if($this->RequestDetail->save($this->request->data)){
 					$this->Session->setFlash('Success!');
-					$this->redirect(array('action' => 'index'));
+					$this->redirect(array('action' => "index/$login_user_id/$year_month"));
 				} else {
 					$this->Session->setFlash('failed!');
 				}
 			}
 		}
 
-		public function delete($delete_request_id)
+		public function delete($delete_request_id = null, $login_user_id = null, $year_month = null)
 		{
 			if ($this->request->is('get')) {
             	throw new MethodNotAllowedException();
         	}
         	if ($this->RequestDetail->delete($delete_request_id)) {
             	$this->Session->setFlash('Deleted!');
-            	$this->redirect(array('action'=>'index'));
+            	$this->redirect(array('action'=>"index/$login_user_id/$year_month"));
         	}
 		}
 
-		public function edit($edit_request_id, $select_user_id)
+		public function edit($edit_request_id = null, $login_user_id = null, $year_month = null)
 		{
 			//色々と変数をセット
 			$this->set('oneway_or_round', $this->oneway_or_round);
 			$this->loadModel('Transportation');
 			$this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
-			$this->set('select_user_id', $select_user_id);
+			$this->set('login_user_id', $login_user_id);
 
 			//Transportationモデルとの連携を一時的に解除
 			$this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
@@ -93,7 +93,7 @@
 			} else {
 				if($this->RequestDetail->save($this->request->data)){
 					$this->Session->setFlash('Success!');
-					$this->redirect(array('action' => 'index'));
+					$this->redirect(array('action' => "index/$login_user_id/$year_month"));
 				} else {
 					$this->Session->setFlash('Failed!');
 				}

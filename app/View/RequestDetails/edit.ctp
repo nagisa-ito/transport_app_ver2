@@ -2,7 +2,7 @@
 
 <?php
      echo $this->Form->create('RequestDetail');
-     echo $this->Form->hidden('RequestDetail.user_id', array('default' => $select_user_id));
+     echo $this->Form->hidden('RequestDetail.user_id', array('default' => $login_user_id));
      echo $this->Form->input('RequestDetail.date');
      echo $this->Form->input('RequestDetail.client');
      echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list));
@@ -16,3 +16,5 @@
      echo $this->Form->input('RequestDetail.overview');
      echo $this->Form->end('Save');
  ?>
+
+ <button type="button" onclick="history.back()">キャンセル</button>

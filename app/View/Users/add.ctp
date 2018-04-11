@@ -8,3 +8,5 @@
     echo $this->Form->input('department_id', array('options' => $department_id_list));
     echo $this->Form->end('save');
 ?>
+
+<button type="button" onclick="history.back()">キャンセル</button>
