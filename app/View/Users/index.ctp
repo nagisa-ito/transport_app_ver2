@@ -1,4 +1,3 @@
-<?php pr($login_user); ?>
 <div>
 <h2>交通費管理システム</h2>
 <span>

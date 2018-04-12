@@ -22,30 +22,33 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+   <title>
+	   <?php echo $cakeDescription ?>:
+	   <?php echo $title_for_layout; ?>
+   </title>
+   <?php
 
-		echo $this->Html->css('cake.generic');
+	   echo $this->Html->meta('icon');
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+	   // jQuery CDN
+	   echo $this->Html->script('//code.jquery.com/jquery-1.10.2.min.js');
+
+	   // Twitter Bootstrap 3.0 CDN
+	   echo $this->Html->css('//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css');
+	   echo $this->Html->script('//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js');
+
+	   echo $this->fetch('meta');
+	   echo $this->fetch('css');
+	   echo $this->fetch('script');
+   ?>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
 		</div>
 		<div id="content">
-
 			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">

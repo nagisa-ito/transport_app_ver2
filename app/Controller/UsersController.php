@@ -4,6 +4,14 @@
 
 		public $helpers = array('Html', 'Form');
 
+		public function beforeFilter()
+		{
+			parent::beforeFilter();
+				$this->Auth->allow('login', 'add');
+				$this->Layout = 'bootstrap';
+				$this->response->disableCache();
+		}
+
 		public function index($login_user_id = null)
 		{
 			//ログインしたユーザーを変数に格納
@@ -25,12 +33,6 @@
 
 			$this->set('group_by_month', $group_by_month);
 			$this->set('login_user',$this->Auth->user());
-		}
-
-		public function beforeFilter()
-		{
-			parent::beforeFilter();
-				$this->Auth->allow('login', 'add');
 		}
 
 		public function login()

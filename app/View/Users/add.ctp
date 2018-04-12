@@ -6,6 +6,8 @@
     echo $this->Form->input('password');
     echo $this->Form->input('yourname');
     echo $this->Form->input('department_id', array('options' => $department_id_list));
+    echo $this->Form->input('pass_from_station');
+    echo $this->Form->input('pass_to_station');
     echo $this->Form->end('save');
 ?>
 

@@ -34,11 +34,21 @@ class AppController extends Controller {
 
     public $components = array(
         'Session',
-        'Auth' => array(
-            //ログイン後とログアウト後のリダイレクト先を指定
+		'Auth' => array(
             'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
-        )
-    );
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
+			'flash' => array(
+				'element' => 'alert',
+				'key' => 'auth',
+				'params' => array(
+					'plugin' => 'BoostCake',
+					'class' => 'alert-error',
+				)
+			)
+		)
+	);
+
+
+
 
 }

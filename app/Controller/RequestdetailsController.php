@@ -57,8 +57,9 @@
 
 			if($this->request->is('post')){
 				if($this->RequestDetail->save($this->request->data)){
-					$this->Session->setFlash('Success!');
-					$this->redirect(array('action' => "index/$login_user_id/$year_month"));
+						$year_month = $this->request->data['RequestDetail']['date']['year'].'-'.$this->request->data['RequestDetail']['date']['month'];
+						$this->Session->setFlash('Success!');
+						$this->redirect(array('action' => "index/$login_user_id/$year_month"));
 				} else {
 					$this->Session->setFlash('failed!');
 				}
