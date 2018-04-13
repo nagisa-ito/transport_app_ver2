@@ -31,6 +31,10 @@
 			));
 			$group_by_month = Hash::extract($group_by_month, '{n}.{n}');
 
+			$this->loadModel('Department');
+			$departments = $this->Department->find('list', array('fields' => 'department_name'));
+
+			$this->set('departments', $departments);
 			$this->set('group_by_month', $group_by_month);
 			$this->set('login_user',$this->Auth->user());
 		}

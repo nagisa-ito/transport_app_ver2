@@ -1,25 +1,90 @@
 body {
-	background-color: #fff;
+	background-color: #ede4cd;
+	font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serifs;
 }
 
 header {
 	background-color: #c9171e;
-	padding: 10px 20px;
+	min-height: 50px;
+	padding: 20px;
 }
 
-footer {
+.footer {
 	background-color: #c9171e;
-	padding: 10px 20px;
+	min-height: 50px;
 }
 
-div {
-	/*background-color: pink;*/
+.content { min-height: calc(100vh - 70px); }
+
+.gold { color: #e6b422; }
+
+.white { color: #fff; }
+
+.fa-user { color: gray; }
+
+.circle{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: silver;
+  text-align:center;
+  line-height: 80px;
+  vertical-align: middle;
+}
+
+.margin10 {
+	margin: 10px;
+}
+
+.box11{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box11 li {
+    margin: 0;
+    padding: 0;
+}
+
+#login_contents {
+	margin-top: 40px;
+	padding: 40px;
+	background-color: #fff;
+}
+
+#login_title {
+	padding-top: 20px;
 }
 
 #login_form {
-	background-color: skyblue;
+	padding: 20px;
+	color: gray;
 }
 
-#pink_back {
+#login_button {
+	margin-top: 30px;
+}
+
+#profile-area {
+	background-color: #fff;
+	color: gray;
+	margin: 30px 0px 0px 30px;
+	padding: 25px;
+}
+
+#requests-area {
+	background-color: #fff;
+	margin: 30px 30px 0px 0px;
+	padding: 25px;
+}
+.test {
 	background-color: pink;
+}
+
+.test2 {
+	background-color: #c1e4e9;
 }

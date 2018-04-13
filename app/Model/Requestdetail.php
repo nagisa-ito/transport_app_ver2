@@ -9,9 +9,6 @@
 			'date' => array(
 				'rule' => 'date'
 			),
-			'client' => array(
-				'rule' => 'notEmpty'
-			),
 			'transportation_id' => array(
 				'rule' => 'notEmpty'
 			),
