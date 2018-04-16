@@ -1,15 +1,20 @@
 body {
-	background-color: #ede4cd;
+	background: #dcd3b2;
 	font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serifs;
 }
 
 header {
 	background-color: #c9171e;
 	min-height: 50px;
-	padding: 20px;
+	padding: 10px;
+	color: white;
 }
 
-.footer {
+label {
+	padding-right: 15px;
+}
+
+footer {
 	background-color: #c9171e;
 	min-height: 50px;
 }
@@ -20,40 +25,14 @@ header {
 
 .white { color: #fff; }
 
-.fa-user { color: gray; }
-
-.circle{
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: silver;
-  text-align:center;
-  line-height: 80px;
-  vertical-align: middle;
-}
-
-.margin10 {
-	margin: 10px;
-}
-
-.box11{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #5d627b;
-    background: white;
-    border-top: solid 5px #5d627b;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-}
-.box11 li {
-    margin: 0;
-    padding: 0;
+div.input.text, div.input.password, div.input.select, div.input.date, div.input.number, div.input.textarea {
+	padding-bottom: 10px;
 }
 
 #login_contents {
 	margin-top: 40px;
 	padding: 40px;
-	background-color: #fff;
+	background: rgba(255,255,255,0.5);
 }
 
 #login_title {
@@ -81,10 +60,25 @@ header {
 	margin: 30px 30px 0px 0px;
 	padding: 25px;
 }
-.test {
-	background-color: pink;
+
+#request-details-area {
+	margin: 30px 30px 0px 0px;
+	padding: 25px;
+	background-color: #fff;
 }
 
-.test2 {
-	background-color: #c1e4e9;
+#add_account_contents {
+	background-color: #fff;
+	margin: 20px;
+	padding: 40px;
+}
+
+#add_account_form {
+	margin-bottom: 20px;
+}
+
+#add-request-form {
+	background-color: #fff;
+	padding: 25px;
+	margin: 20px;
 }

@@ -8,7 +8,7 @@
 		{
 			parent::beforeFilter();
 				$this->Auth->allow('login', 'add');
-				$this->Layout = 'bootstrap';
+				$this->Layout = '';
 				$this->response->disableCache();
 		}
 
@@ -39,20 +39,41 @@
 			$this->set('login_user',$this->Auth->user());
 		}
 
+		public function admin_index()
+		{
+
+		}
+
 		public function login()
 		{
+			//フォームにデータがあった場合のみログイン処理を行い、指定のページへリダイレクトする。
 			if($this->request->is('post')) {
+					debug($this->request->data);
 				if($this->Auth->login()) {
-					$this->redirect($this->Auth->redirect());
+					if($this->Auth->user('is_admin')){
+						$this->redirect(['admin' => true, 'controller' => 'users', 'action' => 'index']);
+					} else {
+						$this->redirect($this->Auth->redirect());
+					}
 				} else {
 					$this->Session->setFlash(__('Invalid username or password, try again'));
 				}
 			}
 		}
 
+		public function admin_login()
+		{
+			$this->login();
+		}
+
 		public function logout()
 		{
 			$this->redirect($this->Auth->logout());
+		}
+
+		public function admin_logout()
+		{
+			$this->logout();
 		}
 
 		public function add()

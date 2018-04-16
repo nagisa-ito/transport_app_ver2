@@ -3168,3 +3168,341 @@ Request URL: /transport_app_ver2_1/~
 Stack Trace:
 #0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2018-04-13 16:26:07 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/transport_app_ver2_1/app/View/RequestDetails/index.ctp, line 57]
+2018-04-13 16:26:07 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /transport_app_ver2_1/requestdetails/index/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 57, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 57, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-13 18:21:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/css/login_page_background.jpg
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-13 18:21:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/css/login_page_background.jpg
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-13 18:44:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/css/login_page_background.jpg
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-13 18:44:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/css/login_page_background.jpg
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-16 12:46:05 Error: Fatal Error (4): syntax error, unexpected 'CakePlugin' (T_STRING) in [/var/www/html/transport_app_ver2_1/app/Config/routes.php, line 41]
+2018-04-16 12:46:05 Error: [FatalErrorException] syntax error, unexpected 'CakePlugin' (T_STRING)
+Request URL: /transport_app_ver2_1/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/t...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/t...', 41, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/t...', 41, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-16 14:11:33 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-16 14:13:17 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-16 14:13:56 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-16 14:14:03 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:15:00 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_login',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:18:38 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:18:55 Error: [MissingActionException] Action UsersController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_index',
+)
+Request URL: /transport_app_ver2_1/users/admin_index
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:19:04 Error: [MissingActionException] Action UsersController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_index',
+)
+Request URL: /transport_app_ver2_1/users/admin_index
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:21:49 Error: [MissingActionException] Action UsersController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_index',
+)
+Request URL: /transport_app_ver2_1/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:22:08 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:23:26 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:23:30 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:25:02 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:25:26 Error: [MissingActionException] Action UsersController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin',
+)
+Request URL: /transport_app_ver2_1/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:29:22 Error: [MissingActionException] Action UsersController::1() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => '1',
+)
+Request URL: /transport_app_ver2_1/users/1
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:34:30 Error: [MissingActionException] Action UsersController::admin_admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_admin',
+)
+Request URL: /transport_app_ver2_1/admin/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 14:34:40 Error: [MissingActionException] Action UsersController::admin_admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_admin',
+)
+Request URL: /transport_app_ver2_1/admin/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 16:09:05 Error: [MissingActionException] Action UsersController::admin_admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_admin',
+)
+Request URL: /transport_app_ver2_1/admin/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 16:09:16 Error: [MissingActionException] Action UsersController::admin_admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_admin',
+)
+Request URL: /transport_app_ver2_1/admin/users/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-16 16:09:52 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-16 16:13:18 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-16 16:15:54 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-16 16:17:26 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-16 16:19:02 Error: Fatal Error (1): Call to undefined method UsersController::redirectUrl() in [/var/www/html/transport_app_ver2_1/app/Controller/UsersController.php, line 54]
+2018-04-16 16:19:02 Error: [FatalErrorException] Call to undefined method UsersController::redirectUrl()
+Request URL: /transport_app_ver2_1/
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 54, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 54, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-16 16:20:04 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/Users/admin_login.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/users/login
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-16 16:30:24 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/admin
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

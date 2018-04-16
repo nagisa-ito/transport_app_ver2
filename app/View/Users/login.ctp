@@ -10,8 +10,8 @@
                 <div id="login_form">
                     <?php
                         echo $this->Form->create('User', ['class' => 'form-group']);
-                        echo $this->Form->input('username', ['label' => ['text' => ''], 'placeholder' => 'username', 'class' => 'form-control pad-bottom']);
-                        echo $this->Form->input('password', ['label' => ['text' => ''], 'placeholder' => 'password', 'class' => 'form-control pad-bottom']);
+                        echo $this->Form->input('username', ['label' => ['text' => ''], 'placeholder' => 'id', 'class' => 'form-control']);
+                        echo $this->Form->input('password', ['label' => ['text' => ''], 'placeholder' => 'password', 'class' => 'form-control']);
                         echo $this->Form->button(__('Sign In'), ['class' => 'btn btn-danger btn-block mar-top', 'id' => 'login_button']);
                         echo $this->Form->end();
                     ?>

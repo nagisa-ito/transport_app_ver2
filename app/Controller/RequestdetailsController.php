@@ -8,6 +8,10 @@
 		public function beforeFilter()
 		{
 			parent::beforeFilter();
+			$this->set('login_user',$this->Auth->user());
+			$this->loadModel('Department');
+			$departments = $this->Department->find('list', array('fields' => 'department_name'));
+			$this->set('departments', $departments);
 		}
 
 		public function index($login_user_id = null, $year_month = null)
@@ -44,7 +48,6 @@
 				'modified',
 			);
 			$this->set('column_names', $column_names);
-
 		}
 
 		public function add($login_user_id = null, $year_month = null)

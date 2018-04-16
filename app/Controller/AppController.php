@@ -32,6 +32,26 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+    public function beforeFilter()
+    {
+        if(isset($this->request->params['admin'])){
+            $this->Auth->authenticate = array(
+                'Form' => array(
+                    'userModel' => 'Admin',
+                    'fields' => array('username' => 'username', 'password' => 'password')
+                )
+            );
+
+            $this->Auth->loginAction = array('controller' => 'users', 'action' => 'index', 'admin' => true);
+            $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index', 'admin' => true);
+            $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login', 'admin' => true);
+
+            AuthComponent::$sessionKey = 'Auth.Admin';
+        } else {
+            AuthComponent::$sessionKey = 'Auth.User';
+        }
+    }
+
     public $components = array(
         'Session',
 		'Auth' => array(
