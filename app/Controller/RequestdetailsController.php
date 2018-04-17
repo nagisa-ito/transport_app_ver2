@@ -35,6 +35,9 @@
 			$this->set('each_user_request_details', $each_user_request_details);
 			/************************************/
 
+			$total_cost = array_column($each_user_request_details, "RequestDetail");
+			$total_cost = array_sum(array_column($total_cost, 'cost'));
+
 			$column_names = array(
 				'申請id',
 				'日付',
@@ -48,6 +51,7 @@
 				'modified',
 			);
 			$this->set('column_names', $column_names);
+			$this->set('total_cost', $total_cost);
 		}
 
 		public function add($login_user_id = null, $year_month = null)
@@ -59,6 +63,8 @@
 			$this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
 
 			if($this->request->is('post')){
+				//added this line 認証
+				$this->request->data['RequestDetail']['user_id'] = $this->Auth->user('id');
 				if($this->RequestDetail->save($this->request->data)){
 						$year_month = $this->request->data['RequestDetail']['date']['year'].'-'.$this->request->data['RequestDetail']['date']['month'];
 						$this->Session->setFlash('Success!');
@@ -103,4 +109,6 @@
 				}
 			}
 		}
+
+		
 	}

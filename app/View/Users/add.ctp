@@ -1,11 +1,9 @@
 <html>
 <body>
-
-    <header><h3>Add accounts</h3></header>
-
+    <header><h3>新規登録</h3></header>
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
-            <div id="add_account_contents">
+            <div class="form_contents">
                 <?php
                     echo $this->Form->create('User', ['class' => 'form_inline']);
                     echo $this->Form->input('username', ['label' => ['text' => 'id'], 'placeholder' => '(firstname)_(lastname)', 'class' => 'form-control']);
@@ -15,17 +13,18 @@
                     echo $this->Form->input('pass_from_station', ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                     echo $this->Form->input('pass_to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
                 ?>
-          <div class="text-right"><?php
-                    echo $this->Form->button(__('Add Account'), ['class' => 'btn btn-danger']);
-                    echo $this->Form->end();
-                ?>
-                <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Cancel</button>
-          </div>
-         </div>
+                <div class="text-right">
+                    <?php
+                        echo $this->Form->button(__('Add Account'), ['class' => 'btn btn-danger']);
+                        echo $this->Form->end();
+                        ?>
+                    <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
     <?php echo $this->Html->css('mystyle'); ?>
 
-    <footer class="footer"></footer>
+    <footer></footer>
 </body>
 </html>

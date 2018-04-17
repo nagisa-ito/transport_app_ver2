@@ -34,27 +34,41 @@ class AppController extends Controller {
 
     public function beforeFilter()
     {
-        if(isset($this->request->params['admin'])){
-            $this->Auth->authenticate = array(
-                'Form' => array(
-                    'userModel' => 'Admin',
-                    'fields' => array('username' => 'username', 'password' => 'password')
-                )
-            );
-
-            $this->Auth->loginAction = array('controller' => 'users', 'action' => 'index', 'admin' => true);
-            $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index', 'admin' => true);
-            $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login', 'admin' => true);
-
-            AuthComponent::$sessionKey = 'Auth.Admin';
-        } else {
-            AuthComponent::$sessionKey = 'Auth.User';
+        $this->Auth->allow('login', 'logout');
+        if(isset($this->params['prefix']) && $this->params['prefix'] === 'admin') {
+            $this->_setAdminParameter();
         }
+        AuthComponent::$sessionKey = 'Auth.User';
+        parent::beforeFilter();
+    }
+
+    private function _setAdminParameter()
+    {
+        $this->Auth->loginAction = [
+            'controller' => 'users',
+            'action' => 'login',
+            'admin' => true
+        ];
+
+        $this->Auth->loginRedirect = [
+            'controller' => 'users',
+            'action' => 'index',
+            'admin' => true
+        ];
+
+        $this->Auth->logoutRedirect = [
+            'controller' => 'users',
+            'action' => 'login',
+            'admin' => true
+        ];
+
+        AuthComponent::$sessionKey = 'Auth.Admin';
     }
 
     public $components = array(
         'Session',
 		'Auth' => array(
+            'loginAction' => array(),
             'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
 			'flash' => array(
@@ -64,11 +78,19 @@ class AppController extends Controller {
 					'plugin' => 'BoostCake',
 					'class' => 'alert-error',
 				)
-			)
+			),
+            'authorize' => array('Controller') //認証
 		)
 	);
 
-
-
+    //誰かが他の人の申請を編集したり削除したりするのを防ぐように、アプリケーションをセキュアにする。
+    public function isAuthorized($user) {
+    // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+        return true;
+        }
+        // デフォルトは拒否
+        return false;
+    }
 
 }

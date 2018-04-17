@@ -1,9 +1,8 @@
 <html>
 <body>
-
 	<header>
 		<div class="row">
-			<div class="col-sm-11"><h3>申請一覧</h3></div>
+			<div class="col-sm-11"><h3><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?></h3></div>
 			<div class="col-sm-1"><button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">Back</button></div>
 	</header>
 
@@ -25,6 +24,12 @@
 			</div>
 		</div>
 		<div class="col-sm-9">
+			<div id="total_cost_area">
+				合計金額
+				<div class="text-right">
+					<h3>¥ <?php echo number_format($total_cost); ?></h3>
+				</div>
+			</div>
 			<div id="request-details-area">
 			<table class="table table-hover">
 				<tr>

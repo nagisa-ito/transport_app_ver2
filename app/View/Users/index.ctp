@@ -3,7 +3,7 @@
 
 	<header>
 		<div class="row">
-		<div class="col-sm-11 white"><h3>交通費精算</h3></div>
+		<div class="col-sm-11 white"><h3>交通費精算表</h3></div>
 		<div class="cpl-sm-1 white">
 			<button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
 		</div>
@@ -33,15 +33,19 @@
 					<?php foreach($group_by_month as $each_month_request) : ?>
 						<li class="list-group-item d-flex justify-content-between align-items-center">
 							<?php
-								$print_str = $each_month_request['date'];
+								$print_date = $each_month_request['date'];
+								$print_date = date('Y年m月', strtotime($print_date));
 								$login_user_id = $login_user['id'];
 								$year_name = $each_month_request['date'];
-								echo $this->Html->link($print_str, array(
+								echo $this->Html->link($print_date, array(
 																			'controller' => 'requestdetails',
 																			'action' => "/index/$login_user_id/$year_name/",
 																		), ['class' => 'gold']);
 							?>
-							<span class="badge badge-danger badge-pill"><?php echo h($each_month_request['count']); ?></span>
+							<div class="pull-right">
+								¥<?php echo number_format($each_month_request['sum(cost)']); ?>
+								<span class="badge badge-danger badge-pill"><?php echo h($each_month_request['count']); ?></span>
+							</div>
 						</li>
 					<?php endforeach; ?>
 				</ul>

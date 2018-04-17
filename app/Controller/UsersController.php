@@ -7,7 +7,6 @@
 		public function beforeFilter()
 		{
 			parent::beforeFilter();
-				$this->Auth->allow('login', 'add');
 				$this->Layout = '';
 				$this->response->disableCache();
 		}
@@ -24,7 +23,7 @@
 			$param = 'user_id =' . $login_user_id;
 			//申請を月ごとに分けてカウントする
 			$group_by_month = $this->RequestDetail->find('all', array(
-				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'COUNT(*) as count'),
+				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'COUNT(*) as count', 'sum(cost)'),
 				'conditions' => $param,
 				'group' => array("DATE_FORMAT(date, '%Y%m')"),
 				'order' => array('date' => 'DESC')
@@ -33,7 +32,6 @@
 
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
-
 			$this->set('departments', $departments);
 			$this->set('group_by_month', $group_by_month);
 			$this->set('login_user',$this->Auth->user());
@@ -41,22 +39,29 @@
 
 		public function admin_index()
 		{
+			$users = $this->User->find('all');
+			$users = Hash::extract($users, '{n}.{s}');
+			$this->set('users', $users);
 
+			$this->loadModel('Department');
+			$departments = $this->Department->find('list', array('fields' => 'department_name'));
+			$this->set('departments', $departments);
+			debug($departments);
 		}
 
 		public function login()
 		{
 			//フォームにデータがあった場合のみログイン処理を行い、指定のページへリダイレクトする。
 			if($this->request->is('post')) {
-					debug($this->request->data);
 				if($this->Auth->login()) {
-					if($this->Auth->user('is_admin')){
+					$role = $this->Auth->user('role');
+					if(isset($role) && $role === 'admin'){
 						$this->redirect(['admin' => true, 'controller' => 'users', 'action' => 'index']);
 					} else {
 						$this->redirect($this->Auth->redirect());
 					}
 				} else {
-					$this->Session->setFlash(__('Invalid username or password, try again'));
+					$this->Session->setFlash('Invalid username or password, try again', 'default', ['class' => 'alert alert-warning']);
 				}
 			}
 		}

@@ -5,7 +5,7 @@
 
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
-            <div id="add-request-form">
+            <div class="form_contents">
                 <?php
                      echo $this->Form->create('RequestDetail', ['class' => 'form_inline']);
                      echo $this->Form->hidden('RequestDetail.user_id', array('default' => $login_user_id));
@@ -14,7 +14,7 @@
                      echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list, 'label' => '交通手段'));
                      echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
-                     echo $this->Form->input('RequestDetail.cost', ['label' => ['text' => '費用'], 'class' => 'form-control']);
+                     echo $this->Form->input('RequestDetail.cost', ['label' => ['text' => '費用'], 'class' => 'form-control', 'placeholder' => '定期代を考慮した金額を入力']);
                      echo $this->Form->input('RequestDetail.oneway_or_round', array(
                          'type' => 'select',
                          'options' => $oneway_or_round,

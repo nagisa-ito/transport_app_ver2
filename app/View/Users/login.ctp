@@ -3,9 +3,14 @@
 
     <header></header>
 
+    <div id="content" class="text-center box24">
+        <?php echo $this->Session->flash(); ?>
+        <?php echo $this->fetch('content'); ?>
+    </div>
+
     <div class="content row">
         <div class="container">
-            <div class="col-sm-6 offset-sm-3 text-center" id="login_contents">
+            <div class="col-sm-6 offset-sm-3 text-center form_contents">
                 <div id="login_title"><h2><?php echo h('Sign In'); ?></h2></div>
                 <div id="login_form">
                     <?php
@@ -21,7 +26,7 @@
         </div>
     </div>
 
-    <footer class="footer"></footer>
+    <footer></footer>
 
 </body>
 <?php echo $this->Html->css('mystyle'); ?>
