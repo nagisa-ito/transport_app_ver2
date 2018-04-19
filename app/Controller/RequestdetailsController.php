@@ -8,7 +8,6 @@
 		public function beforeFilter()
 		{
 			parent::beforeFilter();
-			$this->set('login_user',$this->Auth->user());
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
 			$this->set('departments', $departments);
@@ -16,6 +15,17 @@
 
 		public function index($login_user_id = null, $year_month = null)
 		{
+			if(!isset($login_user_id)){
+				//ログインしたユーザーを変数に格納
+				$login_user_id = $this->Auth->user('id');
+				$this->set('login_user',$this->Auth->user());
+			} else {
+				$this->loadModel('User');
+				$login_user = $this->User->find('all', array('conditions' => array('id' => $login_user_id)));
+				$login_user = Hash::extract($login_user, '{n}.{s}');
+				$this->set('login_user', $login_user[0]);
+			}
+
 			$this->set('year_month', $year_month);
 			$this->set('login_user_id', $login_user_id);
 
@@ -56,6 +66,7 @@
 
 		public function add($login_user_id = null, $year_month = null)
 		{
+			$this->set('login_user',$this->Auth->user());
 			$this->set('oneway_or_round', $this->oneway_or_round);
 			$this->set('login_user_id', $login_user_id);
 
@@ -68,7 +79,7 @@
 				if($this->RequestDetail->save($this->request->data)){
 						$year_month = $this->request->data['RequestDetail']['date']['year'].'-'.$this->request->data['RequestDetail']['date']['month'];
 						$this->Session->setFlash('Success!');
-						$this->redirect(array('action' => "index/$login_user_id/$year_month"));
+						$this->redirect(array('controller' => 'users', 'action' => "index/$login_user_id"));
 				} else {
 					$this->Session->setFlash('failed!');
 				}
@@ -77,17 +88,19 @@
 
 		public function delete($delete_request_id = null, $login_user_id = null, $year_month = null)
 		{
+			$this->set('login_user',$this->Auth->user());
 			if ($this->request->is('get')) {
             	throw new MethodNotAllowedException();
         	}
         	if ($this->RequestDetail->delete($delete_request_id)) {
             	$this->Session->setFlash('Deleted!');
-            	$this->redirect(array('action'=>"index/$login_user_id/$year_month"));
+            	$this->redirect(array('controller' => 'users', 'action'=>"/index/$login_user_id"));
         	}
 		}
 
 		public function edit($edit_request_id = null, $login_user_id = null, $year_month = null)
 		{
+			$this->set('login_user',$this->Auth->user());
 			//色々と変数をセット
 			$this->set('oneway_or_round', $this->oneway_or_round);
 			$this->loadModel('Transportation');
@@ -110,5 +123,15 @@
 			}
 		}
 
-		
+		public function admin_index($login_user_id, $year_month)
+		{
+			$this->index($login_user_id, $year_month);
+		}
+
+		public function admin_edit($edit_request_id = null, $login_user_id = null, $year_month = null)
+		{
+			$this->edit($edit_request_id, $login_user_id, $year_month);
+		}
+
+
 	}

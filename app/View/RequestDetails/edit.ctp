@@ -1,7 +1,9 @@
-<html>
-<body>
-
     <header><h2>Edit Request</h2></header>
+
+    <div id="content" class="text-center box24">
+        <?php echo $this->Session->flash(); ?>
+        <?php echo $this->fetch('content'); ?>
+    </div>
 
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
@@ -32,8 +34,6 @@
         </div>
     </div>
 
-    <footer class="footer"></footer>
+    <footer></footer>
 
-</body>
     <?php echo $this->Html->css('mystyle'); ?>
-</html>

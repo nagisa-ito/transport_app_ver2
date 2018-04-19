@@ -3824,3 +3824,58 @@ Stack Trace:
 #1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2018-04-19 16:10:13 Error: [MissingActionException] Action RequestDetailsController::admin_edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'RequestDetailsController',
+  'action' => 'admin_edit',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/edit/27/1/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-19 16:11:09 Error: [MissingActionException] Action RequestDetailsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'RequestDetailsController',
+  'action' => 'admin_index',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/1/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-19 16:11:19 Error: [MissingActionException] Action RequestDetailsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'RequestDetailsController',
+  'action' => 'admin_index',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/1/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-19 16:21:10 Error: [MissingActionException] Action RequestDetailsController::admin_edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'RequestDetailsController',
+  'action' => 'admin_edit',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/edit/27/1/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-19 16:52:51 Error: [MissingActionException] Action UsersController::users() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'users',
+)
+Request URL: /transport_app_ver2_1/users/users/index/13
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

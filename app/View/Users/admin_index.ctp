@@ -3,9 +3,10 @@
 
     <header>
         <div class="row">
-            <div class="col-sm-11"><h3><?php echo h('管理者用ページ'); ?></h3></div>
-            <div class="col-sm-1">
+            <div class="col-sm-10"><h3><?php echo h('TOP'); ?></h3></div>
+            <div class="col-sm-2">
                 <button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+                <button type="button" class="btn btn-primary btn-sm">管理者</button>
             </div>
         </div>
     </header>

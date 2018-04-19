@@ -3,6 +3,11 @@
 
     <header><h3>Add Request</h3></header>
 
+    <div id="content" class="text-center box24">
+        <?php echo $this->Session->flash(); ?>
+        <?php echo $this->fetch('content'); ?>
+    </div>
+
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
             <div class="form_contents">

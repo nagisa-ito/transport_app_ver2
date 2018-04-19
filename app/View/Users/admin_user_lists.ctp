@@ -2,13 +2,19 @@
 <body>
     <header>
         <div class="row">
-            <div class="col-sm-10"><h2>admin_user_lists</h2></div>
-            <div class="col-sm-2">
+            <div class="col-sm-9"><h2>ユーザー一覧</h2></div>
+            <div class="col-sm-3 text-right">
                 <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
                 <button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+                <button type="button" class="btn btn-primary btn-sm">管理者</button>
             </div>
         </div>
     </header>
+
+    <div id="content" class="text-center box24">
+        <?php echo $this->Session->flash(); ?>
+        <?php echo $this->fetch('content'); ?>
+    </div>
 
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
