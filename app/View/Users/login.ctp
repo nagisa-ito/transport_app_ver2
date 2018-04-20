@@ -1,11 +1,7 @@
-<html>
-<body>
-
     <header></header>
 
-    <div id="content" class="text-center box24">
+    <div class="text-center">
         <?php echo $this->Session->flash(); ?>
-        <?php echo $this->fetch('content'); ?>
     </div>
 
     <div class="content row">
@@ -27,7 +23,3 @@
     </div>
 
     <footer></footer>
-
-</body>
-<?php echo $this->Html->css('mystyle'); ?>
-</html>

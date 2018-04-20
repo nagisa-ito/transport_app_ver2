@@ -3879,3 +3879,57 @@ Stack Trace:
 #1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2018-04-20 10:26:59 Error: [MissingControllerException] Controller class AdminooController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminooController',
+  'plugin' => NULL,
+)
+Request URL: /transport_app_ver2_1/adminoo
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 11:08:47 Error: [MissingActionException] Action UsersController::admin_add() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_add',
+)
+Request URL: /transport_app_ver2_1/admin/users/add/13
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-20 11:09:19 Error: [MissingActionException] Action UsersController::admin_add() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_add',
+)
+Request URL: /transport_app_ver2_1/admin/users/add/13
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-20 11:38:58 Error: [MissingActionException] Action RequestDetailsController::admin_delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'RequestDetailsController',
+  'action' => 'admin_delete',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/delete/62/13/2018-06
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-20 11:50:43 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/admin_delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/admin_delete.ctp',
+)
+Request URL: /transport_app_ver2_1/admin/requestdetails/delete/68/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

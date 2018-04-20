@@ -2,9 +2,18 @@
 <body>
 	<header>
 		<div class="row">
-			<div class="col-sm-11"><h3><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?></h3></div>
+			<div class="col-sm-11"><h3><?php
+											if(!empty($each_user_request_details)){
+												echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));
+											}
+										?>
+									</h3></div>
 			<div class="col-sm-1"><button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">Back</button></div>
 	</header>
+
+	<div class="text-center">
+        <?php echo $this->Session->flash(); ?>
+    </div>
 
 	<div class="content row">
 		<div class="col-sm-3 text-center">

@@ -26,7 +26,10 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div class="margin10"><button class="btn btn-danger pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div><?php echo $this->Html->link('<button class="btn btn-danger pull-right">Add</button>',
+                                                  array('controller' => 'requestdetails', 'action' => 'add', $login_user['id']),
+                                                  array('escape' => false));
+                ?></div>
 			</div>
 		</div>
         <div class="col-sm-9">

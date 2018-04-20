@@ -1,6 +1,12 @@
 <header>
     <div class="row">
-    <div class="col-sm-10"><h3><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?></h3></div>
+    <div class="col-sm-10"><h3><?php
+                                    if(!empty($each_user_request_details)){
+                                        echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));
+                                    }
+                                ?>
+                           </h3>
+    </div>
     <div class="col-sm-2 text-right">
         <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
         <button type="button" class="btn btn-primary btn-sm">管理者</button>
@@ -26,7 +32,10 @@
                     <th><?php echo h($login_user['pass_to_station']); ?></th>
                 </table>
             </div>
-            <div class="margin10"><button class="btn btn-danger pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+            <div><?php echo $this->Html->link('<button class="btn btn-danger pull-right">Add</button>',
+                                              array( 'action' => 'add', $login_user['id']),
+                                              array('escape' => false));
+            ?></div>
         </div>
     </div>
     <div class="col-sm-9">
@@ -81,5 +90,3 @@
 </div>
 
 <footer></footer>
-
-<?php echo $this->Html->css('mystyle'); ?>

@@ -75,13 +75,17 @@
 
 			if($this->request->is('post')){
 				//added this line 認証
-				$this->request->data['RequestDetail']['user_id'] = $this->Auth->user('id');
+				$this->request->data['RequestDetail']['user_id'] = $login_user_id;
 				if($this->RequestDetail->save($this->request->data)){
 						$year_month = $this->request->data['RequestDetail']['date']['year'].'-'.$this->request->data['RequestDetail']['date']['month'];
-						$this->Session->setFlash('Success!');
-						$this->redirect(array('controller' => 'users', 'action' => "index/$login_user_id"));
+						$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
+						if($this->params['admin']){
+							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month"));
+						} else {
+							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month"));
+						}
 				} else {
-					$this->Session->setFlash('failed!');
+					$this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
 				}
 			}
 		}
@@ -93,8 +97,12 @@
             	throw new MethodNotAllowedException();
         	}
         	if ($this->RequestDetail->delete($delete_request_id)) {
-            	$this->Session->setFlash('Deleted!');
-            	$this->redirect(array('controller' => 'users', 'action'=>"/index/$login_user_id"));
+            	$this->Session->setFlash('Deleted!', 'default', ['class' => 'alert alert-warning']);
+				if($this->params['admin']){
+					$this->redirect(array('controller' => 'requestdetails', 'action' => "/index/$login_user_id/$year_month"));
+				} else {
+					$this->redirect(array('controller' => 'requestdetails', 'action' => "/index/$login_user_id/$year_month"));
+				}
         	}
 		}
 
@@ -115,10 +123,10 @@
 				$this->request->data = $this->RequestDetail->read();
 			} else {
 				if($this->RequestDetail->save($this->request->data)){
-					$this->Session->setFlash('Success!');
+					$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
 					$this->redirect(array('action' => "index/$login_user_id/$year_month"));
 				} else {
-					$this->Session->setFlash('Failed!');
+					$this->Session->setFlash('Failed!', 'default', ['class' => 'alert alert-warning']);
 				}
 			}
 		}
@@ -133,5 +141,13 @@
 			$this->edit($edit_request_id, $login_user_id, $year_month);
 		}
 
+		public function admin_add($login_user_id = null, $year_month = null)
+		{
+			$this->add($login_user_id, $year_month);
+		}
+
+		public function admin_delete($delete_request_id = null, $login_user_id = null, $year_month = null){
+			$this->delete($delete_request_id, $login_user_id, $year_month);
+		}
 
 	}

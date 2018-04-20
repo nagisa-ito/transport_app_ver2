@@ -49,7 +49,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="header">
 		</div>
 		<div id="content">
-			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
 
@@ -64,6 +63,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			}, 800);
 		});
 	</script>
-
+<?php echo $this->Html->css('mystyle'); ?>
 </body>
 </html>

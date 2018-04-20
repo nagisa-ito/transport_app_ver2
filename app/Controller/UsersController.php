@@ -73,10 +73,10 @@
 
 			if($this->request->is('post')){
 				if($this->User->save($this->request->data)){
-					$this->Session->setFlash('Success!');
+					$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
 					$this->redirect(array('action' => 'login'));
 				} else {
-					$this->Session->setFlash('failed!');
+					$this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
 				}
 			}
 		}

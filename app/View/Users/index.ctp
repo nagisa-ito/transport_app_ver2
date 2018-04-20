@@ -9,6 +9,10 @@
 		</div>
 	</header>
 
+	<div class="text-center">
+        <?php echo $this->Session->flash(); ?>
+    </div>
+
 	<div class="content row">
 		<div class="col-sm-3 text-center">
 			<div id="profile-area">
