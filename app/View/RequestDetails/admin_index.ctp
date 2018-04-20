@@ -1,14 +1,18 @@
 <header>
     <div class="row">
-    <div class="col-sm-10"><h3><?php
+    <div class="col-sm-9"><h3><?php
                                     if(!empty($each_user_request_details)){
                                         echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));
                                     }
                                 ?>
                            </h3>
     </div>
-    <div class="col-sm-2 text-right">
+    <div class="col-sm-3 text-right">
         <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
+        <?php echo $this->Html->link('<button class="btn page-link text-dark d-inline-block">TOPへ</button>',
+                                          array('controller' => 'users', 'action' => 'index'),
+                                          array('escape' => false));
+        ?>
         <button type="button" class="btn btn-primary btn-sm">管理者</button>
     </div>
 </header>
