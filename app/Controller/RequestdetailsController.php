@@ -92,10 +92,24 @@
 
 		public function delete($delete_request_id = null, $login_user_id = null, $year_month = null)
 		{
+			$this->log('delete開始');
 			$this->set('login_user',$this->Auth->user());
 			if ($this->request->is('get')) {
             	throw new MethodNotAllowedException();
         	}
+
+			//ajax処理
+			if($this->request->is('ajax')) {
+				if($this->RequestDetail->delete($delete_request_id)) {
+					$this->autoRender = false;
+					$this->autoLayout = false;
+					$response = array('id' => $delete_request_id);
+					$this->header('Content-Type: application/json');
+					echo json_encode($response);
+					exit();
+				}
+			}
+
         	if ($this->RequestDetail->delete($delete_request_id)) {
             	$this->Session->setFlash('Deleted!', 'default', ['class' => 'alert alert-warning']);
 				if($this->params['admin']){

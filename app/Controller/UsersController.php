@@ -107,6 +107,15 @@
 		{
 			$this->set('department_id', $department_id);
 			$this->set('users', $this->User->find('all', array('conditions' => array('department_id' => $department_id))));
+
+			$sql = 'Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, "%Y-%m") as date, sum(request_details.cost) as total_cost
+			From request_details
+			left join users on request_details.user_id = users.id
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, "%Y-%m")';
+
+			$this->loadModel('RequestDetail');
+			$test = $this->RequestDetail->query($sql);
+			debug($test);
 		}
 
 		public function admin_user_requests($user_id){

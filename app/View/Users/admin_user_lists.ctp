@@ -1,5 +1,3 @@
-<html>
-<body>
     <header>
         <div class="row">
             <div class="col-sm-9"><h2>ユーザー一覧</h2></div>
@@ -11,9 +9,8 @@
         </div>
     </header>
 
-    <div id="content" class="text-center box24">
+    <div class="text-center">
         <?php echo $this->Session->flash(); ?>
-        <?php echo $this->fetch('content'); ?>
     </div>
 
     <div class="content row">
@@ -32,8 +29,5 @@
         </div>
     </div>
 
-    <footer class="footer"></footer>
 
-</body>
-    <?php echo $this->Html->css('mystyle'); ?>
-</html>
+    <footer class="footer"></footer>

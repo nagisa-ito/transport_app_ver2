@@ -71,8 +71,8 @@
 									//編集・削除を実行
 									echo $this->Html->link('<i class="fas fa-edit"></i>', array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month),
 																						  array('escape' => false));
-									echo $this->Form->postlink('<i class="fas fa-trash-alt"></i>', array('action' => 'delete', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month),
-																	   array('confirm' => '削除しますか？','escape' => false));
+									echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#',
+															array('class' => 'delete', 'data-request-id' => $each_user_request_detail['RequestDetail']['id'], 'escape' => false));
 
 								?>
 							</td>
@@ -85,19 +85,6 @@
 </table>
 
 	<footer class="footer"></footer>
-
-	<script>
-		$(function() {
-			$('a.delete').click(function(e) {
-				if (confirm('sure?')) {
-					$.post('/blog/requestdetails/delete/'+$(this).data('post-id'), {}, function(res) {
-						$('#request_'+res.id).fadeOut();
-					}, "json");
-				}
-				return false;
-			});
-		});
-	</script>
 
 	<?php echo $this->Html->css('mystyle'); ?>
 

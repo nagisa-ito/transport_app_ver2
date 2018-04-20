@@ -55,14 +55,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 
-	<!-- ドットインストールで追加 -->
-	<script>
-		$(function(){
-			setTimeout(function(){
-				$('#flashMessage').fadeOut('slow');
-			}, 800);
-		});
-	</script>
 <?php echo $this->Html->css('mystyle'); ?>
+<?php echo $this->Html->script('myscript'); ?>
 </body>
 </html>
