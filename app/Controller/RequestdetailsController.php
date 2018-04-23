@@ -77,12 +77,15 @@
 				//added this line 認証
 				$this->request->data['RequestDetail']['user_id'] = $login_user_id;
 				if($this->RequestDetail->save($this->request->data)){
-						$year_month = $this->request->data['RequestDetail']['date']['year'].'-'.$this->request->data['RequestDetail']['date']['month'];
+					debug($this->request->data);
+						$ymd = Hash::get($this->request->data, 'RequestDetail.date');
+						preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
+						debug($year_month);
 						$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
 						if($this->params['admin']){
-							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month"));
+							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
 						} else {
-							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month"));
+							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
 						}
 				} else {
 					$this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);

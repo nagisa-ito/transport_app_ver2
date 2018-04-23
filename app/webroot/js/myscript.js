@@ -17,7 +17,7 @@ $(function() {
 
 $(function() {
     $('#datepicker').datepicker({
-        //dateFormat: 'yy-mm-dd',
+        dateFormat: 'yy-mm-dd',
     });
 });
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
         animationStep: 12,
         percent: 100,
         foregroundColor: '#1bab9e',
-        text: total_cost,
+        //text: total_cost,
         noPercentageSign: true,
     });
 });
