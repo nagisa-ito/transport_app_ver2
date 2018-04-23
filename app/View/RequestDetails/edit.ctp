@@ -11,7 +11,7 @@
                 <?php
                      echo $this->Form->create('RequestDetail', ['class' => 'form_inline']);
                      echo $this->Form->hidden('RequestDetail.user_id', array('default' => $login_user_id));
-                     echo $this->Form->input('RequestDetail.date',  ['label' => ['text' => '日付']]);
+                     echo $this->Form->input('RequestDetail.date',  ['type' => 'text', 'label' => ['text' => '日付'], 'id' => 'datepicker']);
                      echo $this->Form->input('RequestDetail.client', ['label' => ['text' => 'クライアント名'], 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.transportation_id', ['options' => $transportation_id_list, 'label' => ['text' => '交通手段']]);
                      echo $this->Form->input('RequestDetail.from_station', ['class' => 'form-control', 'label' => '区間', 'placeholder' => '乗車駅']);
@@ -25,7 +25,7 @@
                      echo $this->Form->input('RequestDetail.overview', ['class' => 'form-control', 'label' => '備考']);
                 ?>
                 <div class="text-right">
-                <?php echo $this->Form->button(__('Edit Request'), ['class' => 'btn btn-danger']);
+                <?php echo $this->Form->button(__('Edit'), ['class' => 'btn btn-myset']);
                       echo $this->Form->end();
                 ?>
                 <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>
@@ -35,5 +35,3 @@
     </div>
 
     <footer></footer>
-
-    <?php echo $this->Html->css('mystyle'); ?>

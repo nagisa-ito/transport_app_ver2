@@ -1,4 +1,4 @@
-    <header><h3>Add Request</h3></header>
+    <header><h4>申請を追加</h4></header>
 
     <div class="text-center box24">
         <?php echo $this->Session->flash(); ?>
@@ -10,7 +10,7 @@
                 <?php
                      echo $this->Form->create('RequestDetail', ['class' => 'form_inline']);
                      echo $this->Form->hidden('RequestDetail.user_id', array('default' => $login_user_id));
-                     echo $this->Form->input('RequestDetail.date', ['label' => ['text' => '日付']]);
+                     echo $this->Form->input('RequestDetail.date', ['type' => 'text', 'label' => ['text' => '日付'], 'id' => 'datepicker']);
                      echo $this->Form->input('RequestDetail.client',['label' => ['text' => 'クライアント名'], 'placeholder' => '訪問先が無い場合は空欄', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list, 'label' => '交通手段'));
                      echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
@@ -24,7 +24,7 @@
                      echo $this->Form->input('RequestDetail.overview', ['label' => ['text' => '備考'], 'class' => 'form-control']);
                 ?>
                 <div class="text-right">
-               <?php echo $this->Form->button(__('Add Request'), ['class' => 'btn btn-danger']);
+               <?php echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset']);
                      echo $this->Form->end();
                 ?>
                  <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>

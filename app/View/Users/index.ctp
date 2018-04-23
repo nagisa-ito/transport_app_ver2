@@ -21,13 +21,13 @@
 					<br>
 					<li><?php echo h($departments[$login_user['department_id']]); ?></li>
 					<br>
-					<table class="table table-striped">
+					<table class="table table-bordered">
     					<th>定期区間</th>
 						<th><?php echo h($login_user['pass_from_station']); ?></th>
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div class="margin10"><button class="btn btn-myset pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div><button class="btn btn-myset pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
 			</div>
 		</div>
 		<div class="col-sm-9">
