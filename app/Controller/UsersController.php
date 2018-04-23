@@ -115,7 +115,7 @@
 
 			$this->loadModel('RequestDetail');
 			$test = $this->RequestDetail->query($sql);
-			debug($test);
+
 		}
 
 		public function admin_user_requests($user_id){

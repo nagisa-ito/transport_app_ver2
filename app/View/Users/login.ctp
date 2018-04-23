@@ -1,4 +1,6 @@
-    <header></header>
+    <header>
+        <h4>交通費管理アプリ</h4>
+    </header>
 
     <div class="text-center">
         <?php echo $this->Session->flash(); ?>
@@ -13,11 +15,11 @@
                         echo $this->Form->create('User', ['class' => 'form-group']);
                         echo $this->Form->input('username', ['label' => ['text' => ''], 'placeholder' => 'id', 'class' => 'form-control']);
                         echo $this->Form->input('password', ['label' => ['text' => ''], 'placeholder' => 'password', 'class' => 'form-control']);
-                        echo $this->Form->button(__('Sign In'), ['class' => 'btn btn-danger btn-block mar-top', 'id' => 'login_button']);
+                        echo $this->Form->button(__('Sign In'), ['class' => 'btn btn-block mar-top', 'id' => 'login_button']);
                         echo $this->Form->end();
                     ?>
                 </div>
-                <?php echo $this->Html->link('Create an account', array('action' => 'add'), ['class' => 'small gold']); ?>
+                <?php echo $this->Html->link('Create an account', array('action' => 'add'), ['class' => 'small str']); ?>
             </div>
         </div>
     </div>
