@@ -103,19 +103,33 @@
 
 		}
 
-		public function admin_user_lists($department_id)
+		public function admin_user_lists($department_id, $search_year_month = null)
 		{
 			$this->set('department_id', $department_id);
-			$this->set('users', $this->User->find('all', array('conditions' => array('department_id' => $department_id))));
+			$users = $this->User->find('all', array('conditions' => array('department_id' => $department_id)));
+			$users = Hash::extract($users, '{n}.User');
+			$this->set('users', $users);
 
-			$sql = 'Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, "%Y-%m") as date, sum(request_details.cost) as total_cost
+			//その部署の人たちのid一覧を抽出して結合する
+			$user_id_list = implode(',', array_column($users, 'id'));
+
+			//各月、各ユーザごとの合計費用を抽出するためのsql文
+			$sql = "Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
 			From request_details
 			left join users on request_details.user_id = users.id
-			Group by request_details.user_id, DATE_FORMAT(request_details.date, "%Y-%m")';
+			where users.id in ($user_id_list)
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
 
+			//クエリを実行して格納
 			$this->loadModel('RequestDetail');
-			$test = $this->RequestDetail->query($sql);
+			$each_user_month_costs = $this->RequestDetail->query($sql);
+			$this->set('each_user_month_costs', $each_user_month_costs);
 
+			//何も指定がなければ今月、あれば指定の月のデータを格納
+			if(!$search_year_month) {
+				$search_year_month = date('Y-m');
+			}
+			$this->set('search_year_month', $search_year_month);
 		}
 
 		public function admin_user_requests($user_id){

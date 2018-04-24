@@ -64,6 +64,11 @@
 			$this->set('total_cost', $total_cost);
 		}
 
+		public function monthly_summary($params)
+		{
+			//$this->RequestDetails->
+		}
+
 		public function add($login_user_id = null, $year_month = null)
 		{
 			$this->set('login_user',$this->Auth->user());

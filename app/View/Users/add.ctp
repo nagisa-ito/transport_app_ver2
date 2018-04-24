@@ -1,6 +1,6 @@
 <html>
 <body>
-    <header><h3>新規登録</h3></header>
+    <header><h4>新規登録</h4></header>
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
             <div class="form_contents">
@@ -15,7 +15,7 @@
                 ?>
                 <div class="text-right">
                     <?php
-                        echo $this->Form->button(__('Add Account'), ['class' => 'btn btn-danger']);
+                        echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset']);
                         echo $this->Form->end();
                         ?>
                     <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Cancel</button>

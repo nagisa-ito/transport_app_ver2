@@ -18,14 +18,26 @@
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
             <div class="admin_contents list-group">
-                <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">ユーザーを選択:</li>
+                <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                    ユーザーを選択:
+                    <div class="text-right">
+                        <input type="text" id="year_month" placeholder=<?php echo h($search_year_month); ?>>
+                    </div>
+                </li>
                 <?php foreach($users as $user) : ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                     <?php
-                        if(isset($user['User']['role'])) continue;
-                        $user_id = $user['User']['id'];
-                        echo $this->Html->link($user['User']['yourname'], array('controller' => 'users', 'action' => "admin_user_requests/$user_id"),
-                                                                          array('class' => 'list-group-item d-flex justify-content-between align-items-center myset'));
+                        if(isset($user['role'])) continue;
+                        $user_id = $user['id'];
+                        echo $this->Html->link($user['yourname'], array('controller' => 'users', 'action' => "admin_user_requests/$user_id"),
+                                                                          array('class' => 'myset'));
+                        foreach($each_user_month_costs as $month_cost) {
+                            if($month_cost['request_details']['user_id'] == $user_id && $month_cost[0]['date'] == $search_year_month) {
+                                echo '¥' . number_format($month_cost[0]['total_cost']);
+                            }
+                        }
                     ?>
+                </li>
                 <?php endforeach; ?>
             </div>
         </div>

@@ -13,7 +13,7 @@
             <?php
                  echo $this->Form->create('RequestDetail', ['class' => 'form_inline']);
                  echo $this->Form->hidden('RequestDetail.user_id', array('default' => $login_user_id));
-                 echo $this->Form->input('RequestDetail.date', ['label' => ['text' => '日付']]);
+                 echo $this->Form->input('RequestDetail.date', ['type' => 'text', 'label' => ['text' => '日付'], 'id' => 'datepicker']);
                  echo $this->Form->input('RequestDetail.client',['label' => ['text' => 'クライアント名'], 'placeholder' => '訪問先が無い場合は空欄', 'class' => 'form-control']);
                  echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list, 'label' => '交通手段'));
                  echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);

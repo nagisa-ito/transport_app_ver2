@@ -98,3 +98,5 @@
 <script>
 	var total_cost = '<?php echo $total_cost; ?>';
 </script>
+
+<?php echo $this->Html->script('detailsscript'); ?>
