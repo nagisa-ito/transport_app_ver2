@@ -1,4 +1,4 @@
-    <header><h2>Edit Request</h2></header>
+    <header><h4>申請を編集</h4></header>
 
     <div id="content" class="text-center box24">
         <?php echo $this->Session->flash(); ?>

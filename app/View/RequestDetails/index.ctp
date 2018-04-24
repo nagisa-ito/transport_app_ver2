@@ -27,13 +27,12 @@
 		</div>
 		<div class="col-sm-9">
 			<div id="total_cost_area" class="row">
-				<div class="col-sm-6 all-center">
+				<div class="col-sm-6">
 					<div><h4><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</h4></div>
 					<br>
 					<div><h5>合計金額</h5></div>
 				</div>
 				<div class="col-sm-6">
-					<!--h3>¥ <?php echo number_format($total_cost); ?></h3-->
 					<div id="myStat"></div>
 				</div>
 			</div>
@@ -87,7 +86,7 @@
 	</div>
 </table>
 
-<footer class="footer"></footer>
+<footer></footer>
 
 <?php $total_cost = '¥' . number_format($total_cost);?>
 <script>

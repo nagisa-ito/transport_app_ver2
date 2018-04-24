@@ -1,4 +1,7 @@
-<header><h2>Edit Request</h2></header>
+<header>
+    <span class="badge badge-success">管理者</span>
+    <h4 style="display: inline">申請を編集</h4>
+</header>
 
 <div id="content" class="text-center box24">
     <?php echo $this->Session->flash(); ?>
@@ -25,7 +28,7 @@
                  echo $this->Form->input('RequestDetail.overview', ['class' => 'form-control', 'label' => '備考']);
             ?>
             <div class="text-right">
-            <?php echo $this->Form->button(__('Edit Request'), ['class' => 'btn btn-danger']);
+            <?php echo $this->Form->button(__('Edit'), ['class' => 'btn btn-myset']);
                   echo $this->Form->end();
             ?>
             <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>

@@ -1,6 +1,9 @@
-<header><h3>Add Request</h3></header>
+<header>
+    <span class="badge badge-success">管理者</span>
+    <h4 style="display: inline">申請を追加</h4>
+</header>
 
-<div class="text-center box24">
+<div class="text-center">
     <?php echo $this->Session->flash(); ?>
 </div>
 
@@ -24,7 +27,7 @@
                  echo $this->Form->input('RequestDetail.overview', ['label' => ['text' => '備考'], 'class' => 'form-control']);
             ?>
             <div class="text-right">
-           <?php echo $this->Form->button(__('Add Request'), ['class' => 'btn btn-danger']);
+           <?php echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset']);
                  echo $this->Form->end();
             ?>
              <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>

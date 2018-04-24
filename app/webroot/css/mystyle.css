@@ -34,7 +34,7 @@ thead { border-top: hidden; }
 .white { color: #fff; }
 
 .btn-gold {
-	background: #d7003a;
+	background: #e6b422;
 	color: white;
  }
 
@@ -64,6 +64,10 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 .btn-myset {
 	background: #1bba8a;
 	color: white;
+}
+
+.myset {
+	color: #1bba8a;
 }
 
 #login_title {

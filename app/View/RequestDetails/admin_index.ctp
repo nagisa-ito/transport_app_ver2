@@ -1,19 +1,15 @@
 <header>
     <div class="row">
-    <div class="col-sm-9"><h3><?php
-                                    if(!empty($each_user_request_details)){
-                                        echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));
-                                    }
-                                ?>
-                           </h3>
+    <div class="col-sm-9">
+        <span class="badge badge-success">管理者</span>
+        <h4 style="display: inline">交通費精算表</h4>
     </div>
     <div class="col-sm-3 text-right">
         <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
-        <?php echo $this->Html->link('<button class="btn page-link text-dark d-inline-block">TOPへ</button>',
+        <?php echo $this->Html->link('<button class="btn btn-gold">ユーザー一覧</button>',
                                           array('controller' => 'users', 'action' => 'index'),
                                           array('escape' => false));
         ?>
-        <button type="button" class="btn btn-primary btn-sm">管理者</button>
     </div>
 </header>
 
@@ -30,23 +26,27 @@
                 <br>
                 <li><?php echo h($departments[$login_user['department_id']]); ?></li>
                 <br>
-                <table class="table table-striped">
+                <table class="table">
                     <th>定期区間</th>
                     <th><?php echo h($login_user['pass_from_station']); ?></th>
                     <th><?php echo h($login_user['pass_to_station']); ?></th>
                 </table>
             </div>
-            <div><?php echo $this->Html->link('<button class="btn btn-danger pull-right">Add</button>',
+            <div><?php echo $this->Html->link('<button class="btn btn-myset">Add</button>',
                                               array( 'action' => 'add', $login_user['id']),
                                               array('escape' => false));
             ?></div>
         </div>
     </div>
     <div class="col-sm-9">
-        <div id="total_cost_area">
-            合計金額
-            <div class="text-right">
-                <h3>¥ <?php echo number_format($total_cost); ?></h3>
+        <div id="total_cost_area" class="row">
+            <div class="col-sm-6">
+                <div><h4><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</h4></div>
+                <br>
+                <div><h5>合計金額</h5></div>
+            </div>
+            <div class="col-sm-6 pull-right">
+                <div id="myStat"></div>
             </div>
         </div>
         <div id="request-details-area">
@@ -93,3 +93,8 @@
 </div>
 
 <footer></footer>
+
+<?php $total_cost = '¥' . number_format($total_cost);?>
+<script>
+	var total_cost = '<?php echo $total_cost; ?>';
+</script>

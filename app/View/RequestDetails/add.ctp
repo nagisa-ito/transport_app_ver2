@@ -1,6 +1,6 @@
     <header><h4>申請を追加</h4></header>
 
-    <div class="text-center box24">
+    <div class="text-center">
         <?php echo $this->Session->flash(); ?>
     </div>
 

@@ -3,9 +3,11 @@
 
 	<header>
 		<div class="row">
-		<div class="col-sm-11 white"><h4>交通費精算表</h4></div>
+		<div class="col-sm-11 white">
+			<h4>交通費精算表</h4>
+		</div>
 		<div class="cpl-sm-1 white">
-			<button class="btn btn-gold d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+			<button class="btn btn-danger d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
 		</div>
 	</header>
 
@@ -21,13 +23,13 @@
 					<br>
 					<li><?php echo h($departments[$login_user['department_id']]); ?></li>
 					<br>
-					<table class="table table-bordered">
+					<table class="table">
     					<th>定期区間</th>
 						<th><?php echo h($login_user['pass_from_station']); ?></th>
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div><button class="btn btn-myset pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div><button class="btn btn-myset" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
 			</div>
 		</div>
 		<div class="col-sm-9">
@@ -44,7 +46,7 @@
 								echo $this->Html->link($print_date, array(
 																			'controller' => 'requestdetails',
 																			'action' => "/index/$login_user_id/$year_name/",
-																		), ['class' => 'str']);
+																		), ['class' => 'myset']);
 							?>
 							<div class="pull-right">
 								¥<?php echo number_format($each_month_request['sum(cost)']); ?>
