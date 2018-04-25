@@ -25,7 +25,7 @@
 				$login_user = Hash::extract($login_user, '{n}.{s}');
 				$this->set('login_user', $login_user[0]);
 			}
-			
+
 			$this->set('year_month', $year_month);
 			$this->set('login_user_id', $login_user_id);
 
@@ -107,7 +107,7 @@
 					$this->autoRender = false;
 					$this->autoLayout = false;
 					$total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
-					$response = array('request_id' => $delete_request_id, 'user_id' => $login_user_id, 'year_month' => $year_month);
+					$response = array('request_id' => $delete_request_id, 'user_id' => $login_user_id, 'total_cost' => $total_cost);
 					$this->header('Content-Type: application/json');
 					echo json_encode($response);
 					exit();
@@ -138,7 +138,7 @@
 				),
 			));
 			$total_cost = Hash::extract($total_cost, '{n}.{n}');
-			return $total_cost[0]['sum(cost)'];
+			return number_format($total_cost[0]['sum(cost)']);
 		}
 
 		public function edit($edit_request_id = null, $login_user_id = null, $year_month = null)

@@ -4546,3 +4546,16 @@ Stack Trace:
 #12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
 #13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
+2018-04-25 15:46:14 Error: delete開始
+2018-04-25 15:46:57 Error: delete開始
+2018-04-25 15:56:24 Error: delete開始
+2018-04-25 15:57:40 Error: delete開始
+2018-04-25 15:59:24 Error: delete開始
+2018-04-25 15:59:52 Error: delete開始
+2018-04-25 16:00:35 Error: delete開始
+2018-04-25 16:02:45 Error: delete開始
+2018-04-25 16:08:16 Error: delete開始
+2018-04-25 16:08:58 Error: delete開始
+2018-04-25 16:09:32 Error: delete開始
+2018-04-25 16:13:23 Error: delete開始
+2018-04-25 16:13:29 Error: delete開始
