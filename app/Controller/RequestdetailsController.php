@@ -25,7 +25,7 @@
 				$login_user = Hash::extract($login_user, '{n}.{s}');
 				$this->set('login_user', $login_user[0]);
 			}
-
+			
 			$this->set('year_month', $year_month);
 			$this->set('login_user_id', $login_user_id);
 
@@ -62,11 +62,6 @@
 			);
 			$this->set('column_names', $column_names);
 			$this->set('total_cost', $total_cost);
-		}
-
-		public function monthly_summary($params)
-		{
-			//$this->RequestDetails->
 		}
 
 		public function add($login_user_id = null, $year_month = null)
@@ -111,7 +106,8 @@
 				if($this->RequestDetail->delete($delete_request_id)) {
 					$this->autoRender = false;
 					$this->autoLayout = false;
-					$response = array('id' => $delete_request_id);
+					$total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
+					$response = array('request_id' => $delete_request_id, 'user_id' => $login_user_id, 'year_month' => $year_month);
 					$this->header('Content-Type: application/json');
 					echo json_encode($response);
 					exit();
@@ -126,6 +122,23 @@
 					$this->redirect(array('controller' => 'requestdetails', 'action' => "/index/$login_user_id/$year_month"));
 				}
         	}
+		}
+
+		//deleteした時のtotal_cost再計算用関数
+		private function ReCalcTotalCost($login_user_id = null, $year_month = null) {
+			//指定のuser_idとyear_monthのパラメータ指定
+			$param = 'user_id =' . $login_user_id . "and DATE_FORMAT(date, '%Y-%m') = " . $year_month;
+			$this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
+
+			$total_cost = $this->RequestDetail->find('all', array(
+				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'sum(cost)'),
+				'conditions' => array(
+					'user_id' => $login_user_id,
+					"DATE_FORMAT(date, '%Y-%m')" => $year_month
+				),
+			));
+			$total_cost = Hash::extract($total_cost, '{n}.{n}');
+			return $total_cost[0]['sum(cost)'];
 		}
 
 		public function edit($edit_request_id = null, $login_user_id = null, $year_month = null)

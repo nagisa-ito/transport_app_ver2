@@ -4177,3 +4177,372 @@ Stack Trace:
 #10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2018-04-25 11:37:24 Error: delete開始
+2018-04-25 12:20:59 Error: delete開始
+2018-04-25 12:23:01 Error: delete開始
+2018-04-25 12:23:51 Error: delete開始
+2018-04-25 12:51:51 Error: delete開始
+2018-04-25 12:51:51 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/12513
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 12:53:40 Error: delete開始
+2018-04-25 12:53:40 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/12513
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 12:54:45 Error: delete開始
+2018-04-25 12:57:01 Error: delete開始
+2018-04-25 12:57:30 Error: delete開始
+2018-04-25 14:06:33 Error: delete開始
+2018-04-25 14:14:39 Error: delete開始
+2018-04-25 14:15:37 Error: delete開始
+2018-04-25 14:16:39 Error: delete開始
+2018-04-25 14:42:31 Error: delete開始
+2018-04-25 14:42:31 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 14:42:31 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/133/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 14:44:14 Error: delete開始
+2018-04-25 14:44:14 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 14:44:14 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/134/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 14:44:45 Error: delete開始
+2018-04-25 14:44:45 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 14:44:45 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/132/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 14:49:40 Error: delete開始
+2018-04-25 14:49:40 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/132/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 14:51:16 Error: delete開始
+2018-04-25 14:51:23 Error: delete開始
+2018-04-25 14:51:23 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/135/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 14:53:40 Error: delete開始
+2018-04-25 14:54:16 Error: delete開始
+2018-04-25 14:54:16 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/136/13
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 14:55:21 Error: delete開始
+2018-04-25 14:57:36 Error: delete開始
+2018-04-25 15:00:01 Error: delete開始
+2018-04-25 15:01:27 Error: delete開始
+2018-04-25 15:01:32 Error: delete開始
+2018-04-25 15:01:32 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/140/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 15:02:02 Error: delete開始
+2018-04-25 15:02:02 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/140/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 15:02:11 Error: delete開始
+2018-04-25 15:02:11 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/140/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 15:02:50 Error: delete開始
+2018-04-25 15:03:21 Error: delete開始
+2018-04-25 15:04:53 Error: delete開始
+2018-04-25 15:04:53 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 15:04:53 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/143/13/2018-05
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 15:05:36 Error: delete開始
+2018-04-25 15:05:36 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 15:05:36 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/144/13/2018-05
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 15:06:46 Error: delete開始
+2018-04-25 15:06:46 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/144/13/2018-05
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 15:08:56 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 28]
+2018-04-25 15:08:56 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-05
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 28, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 28, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 15:09:10 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-05' at line 1
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-05
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(136): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(28): RequestDetailsController->ReCalcTotalCost('13', '2018-05')
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(168): RequestDetailsController->index('13', '2018-05')
+#9 [internal function]: RequestDetailsController->admin_index('13', '2018-05')
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-25 15:09:41 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-04' at line 1
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(136): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(28): RequestDetailsController->ReCalcTotalCost('13', '2018-04')
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(168): RequestDetailsController->index('13', '2018-04')
+#9 [internal function]: RequestDetailsController->admin_index('13', '2018-04')
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-25 15:14:20 Error: delete開始
+2018-04-25 15:14:20 Error: Fatal Error (1): Call to undefined function ReCalcTotalCost() in [/var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php, line 109]
+2018-04-25 15:14:20 Error: [FatalErrorException] Call to undefined function ReCalcTotalCost()
+Request URL: /transport_app_ver2_1/requestdetails/delete/145/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/t...', 109)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/t...', 109, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2018-04-25 15:16:00 Error: delete開始
+2018-04-25 15:16:00 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-03' at line 1
+Request URL: /transport_app_ver2_1/requestdetails/delete/146/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(135): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(109): RequestDetailsController->ReCalcTotalCost('13', '2018-03')
+#8 [internal function]: RequestDetailsController->delete('146', '13', '2018-03')
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2018-04-25 15:18:54 Error: delete開始
+2018-04-25 15:18:54 Error: [MissingViewException] View file "/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/html/transport_app_ver2_1/app/View/RequestDetails/delete.ctp',
+)
+Request URL: /transport_app_ver2_1/requestdetails/delete/146/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/View/View.php(457): View->_getViewFileName(NULL)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2018-04-25 15:19:24 Error: delete開始
+2018-04-25 15:19:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-03' at line 1
+Request URL: /transport_app_ver2_1/requestdetails/delete/147/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(135): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(109): RequestDetailsController->ReCalcTotalCost('13', '2018-03')
+#8 [internal function]: RequestDetailsController->delete('147', '13', '2018-03')
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2018-04-25 15:19:56 Error: delete開始
+2018-04-25 15:24:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Transportation.request_detail_id' in 'on clause'
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-03
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(32): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(172): RequestDetailsController->index('13', '2018-03')
+#8 [internal function]: RequestDetailsController->admin_index('13', '2018-03')
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2018-04-25 15:30:03 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-04' at line 1
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(139): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(29): RequestDetailsController->ReCalcTotalCost('13', '2018-04')
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(170): RequestDetailsController->index('13', '2018-04')
+#9 [internal function]: RequestDetailsController->admin_index('13', '2018-04')
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-25 15:30:20 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-04' at line 1
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(139): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(29): RequestDetailsController->ReCalcTotalCost('13', '2018-04')
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(170): RequestDetailsController->index('13', '2018-04')
+#9 [internal function]: RequestDetailsController->admin_index('13', '2018-04')
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2018-04-25 15:33:20 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATE_FORMAT(date, '%Y-%m') = 2018-04' at line 1
+Request URL: /transport_app_ver2_1/admin/requestdetails/index/13/2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT DATE_FOR...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('SELECT DATE_FOR...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT DATE_FOR...', false)
+#4 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2902): DboSource->read(Object(RequestDetail), Array)
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(2874): Model->_readDataSource('all', Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(139): Model->find('all', Array)
+#7 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(29): RequestDetailsController->ReCalcTotalCost('13', '2018-04')
+#8 /var/www/html/transport_app_ver2_1/app/Controller/RequestdetailsController.php(170): RequestDetailsController->index('13', '2018-04')
+#9 [internal function]: RequestDetailsController->admin_index('13', '2018-04')
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(RequestDetailsController), Array)
+#11 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(RequestDetailsController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
