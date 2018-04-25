@@ -4559,3 +4559,127 @@ Stack Trace:
 2018-04-25 16:09:32 Error: delete開始
 2018-04-25 16:13:23 Error: delete開始
 2018-04-25 16:13:29 Error: delete開始
+2018-04-25 16:39:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(125): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists('user_lists')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-25 16:39:19 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(125): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists('user_lists')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-25 16:39:45 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(125): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists('user_lists')
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-25 16:54:49 Error: [MissingActionException] Action UsersController::admin_user_list() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_user_list',
+)
+Request URL: /transport_app_ver2_1/admin/users/user_list?department_id=2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-25 16:55:10 Error: [MissingActionException] Action UsersController::admin_user_list() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_user_list',
+)
+Request URL: /transport_app_ver2_1/admin/users/user_list?department_id=2018-04
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-04-25 16:55:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(128): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-25 16:57:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(128): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2018-04-25 16:57:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m'' at line 4
+Request URL: /transport_app_ver2_1/admin/users/user_lists
+Stack Trace:
+#0 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('Select request_...', Array)
+#2 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(665): DboSource->execute('Select request_...', Array, Array)
+#3 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Datasource/DboSource.php(537): DboSource->fetchAll('Select request_...')
+#4 [internal function]: DboSource->query('Select request_...')
+#5 /var/www/html/transport_app_ver2_1/lib/Cake/Model/Model.php(3306): call_user_func_array(Array, Array)
+#6 /var/www/html/transport_app_ver2_1/app/Controller/UsersController.php(128): Model->query('Select request_...')
+#7 [internal function]: UsersController->admin_user_lists()
+#8 /var/www/html/transport_app_ver2_1/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/transport_app_ver2_1/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/transport_app_ver2_1/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

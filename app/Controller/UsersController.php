@@ -103,9 +103,11 @@
 
 		}
 
-		public function admin_user_lists($department_id, $search_year_month = null)
+		public function admin_user_lists($department_id = null, $search_year_month = null)
 		{
 			$this->set('department_id', $department_id);
+
+			//指定の部署のユーザーを抽出
 			$users = $this->User->find('all', array('conditions' => array('department_id' => $department_id)));
 			$users = Hash::extract($users, '{n}.User');
 			$this->set('users', $users);
@@ -120,13 +122,15 @@
 			where users.id in ($user_id_list)
 			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
 
-			//クエリを実行して格納
+			//上記のクエリを実行して格納
 			$this->loadModel('RequestDetail');
 			$each_user_month_costs = $this->RequestDetail->query($sql);
 			$this->set('each_user_month_costs', $each_user_month_costs);
 
-			//何も指定がなければ今月、あれば指定の月のデータを格納
-			if(!$search_year_month) {
+			//adminユーザから年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
+			if($this->request->is('post')) {
+				$search_year_month = $this->request->data['User']['date'];
+			} else {
 				$search_year_month = date('Y-m');
 			}
 			$this->set('search_year_month', $search_year_month);

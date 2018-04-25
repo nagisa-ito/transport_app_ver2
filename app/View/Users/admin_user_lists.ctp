@@ -18,11 +18,18 @@
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
             <div class="admin_contents list-group">
+                <div>
+                    <?php
+                        echo $this->Form->create('User', ['url' => ['action' => "user_lists/$department_id"], 'type' => 'post', 'class' => "form-group"]);
+                        echo $this->Form->hidden('department_id', ['default' => $department_id, 'class' => 'form-control']);
+                        echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'year_month', 'placeholder' => $search_year_month, 'class' => 'form-control']);
+                        echo $this->Form->button(__('選択'), ['class' => 'btn btn-myset float-right']);
+                        echo $this->Form->end();
+                    ?>
+                </div>
+                <br>
                 <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
                     ユーザーを選択:
-                    <div class="text-right">
-                        <input type="text" id="year_month" placeholder=<?php echo h($search_year_month); ?>>
-                    </div>
                 </li>
                 <?php foreach($users as $user) : ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
