@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-10">
                 <span class="badge badge-success">管理者</span>
-                <h3 style="display: inline"><?php echo h('部署一覧'); ?></h3>
+                <h4 style="display: inline"><?php echo h('部署一覧'); ?></h4>
             </div>
             <div class="col-sm-2 text-right">
                 <button class="btn btn-danger" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>

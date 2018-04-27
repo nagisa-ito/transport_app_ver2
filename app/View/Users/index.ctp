@@ -3,10 +3,10 @@
 
 	<header>
 		<div class="row">
-		<div class="col-sm-11 white">
+		<div class="col-sm-11">
 			<h4>交通費精算表</h4>
 		</div>
-		<div class="cpl-sm-1 white">
+		<div class="cpl-sm-1">
 			<button class="btn btn-danger d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
 		</div>
 	</header>
@@ -23,7 +23,7 @@
 					<br>
 					<li><?php echo h($departments[$login_user['department_id']]); ?></li>
 					<br>
-					<table class="table">
+					<table class="table table-bordered">
     					<th>定期区間</th>
 						<th><?php echo h($login_user['pass_from_station']); ?></th>
 						<th><?php echo h($login_user['pass_to_station']); ?></th>

@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-3 text-right">
         <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
-        <?php echo $this->Html->link('<button class="btn btn-gold">ユーザー一覧</button>',
+        <?php echo $this->Html->link('<button class="btn btn-gold">部署一覧</button>',
                                           array('controller' => 'users', 'action' => 'index'),
                                           array('escape' => false));
         ?>

@@ -2,10 +2,13 @@
         <div class="row">
             <div class="col-sm-9">
                 <span class="badge badge-success">管理者</span>
-                <h3 style="display: inline">ユーザー一覧</h3>
+                <h4 style="display: inline">ユーザー一覧</h4>
             </div>
             <div class="col-sm-3 text-right">
-                <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
+                <?php echo $this->Html->link('<button class="btn">部署一覧</button>',
+                                                  array('controller' => 'users', 'action' => 'index'),
+                                                  array('escape' => false));
+                ?>
                 <button class="btn btn-danger" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
             </div>
         </div>
