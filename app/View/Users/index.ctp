@@ -50,7 +50,10 @@
 							?>
 							<div class="pull-right">
 								¥<?php echo number_format($each_month_request['sum(cost)']); ?>
-								<div class="badge btn-myset badge-pill align-text-top"><?php echo h($each_month_request['count']); ?></div>
+								<?php echo $this->Html->link($each_month_request['count']. '件', array(
+																										'controller' => 'requestdetails',
+																										'action' => "/index/$login_user_id/$year_name/",
+																										), ['class' => 'myset']); ?>
 							</div>
 						</li>
 					<?php endforeach; ?>
