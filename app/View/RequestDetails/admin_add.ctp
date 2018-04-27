@@ -27,7 +27,8 @@
                  echo $this->Form->input('RequestDetail.overview', ['label' => ['text' => '備考'], 'class' => 'form-control']);
             ?>
             <div class="text-right">
-           <?php echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset']);
+            <?php echo $this->Form->button(__('続けて登録'), ['class' => 'btn btn-myset', 'name' => 'add_repeat'] ); ?>
+            <?php echo $this->Form->button(__('登録'), ['class' => 'btn btn-myset', 'name' => 'add']);
                  echo $this->Form->end();
             ?>
              <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>

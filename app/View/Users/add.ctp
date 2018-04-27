@@ -13,12 +13,13 @@
                     echo $this->Form->input('pass_from_station', ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                     echo $this->Form->input('pass_to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
                 ?>
-                <div class="text-right">
-                    <?php
-                        echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset']);
-                        echo $this->Form->end();
-                        ?>
-                    <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Cancel</button>
+                <div class="row">
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-3">
+                        <?php echo $this->Form->button(__('Add'), ['class' => 'btn btn-myset btn-block']); ?>
+                        <?php echo $this->Form->end(); ?>
+                    </div>
+                    <div class="col-sm-2"><button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Cancel</button></div>
                 </div>
             </div>
         </div>

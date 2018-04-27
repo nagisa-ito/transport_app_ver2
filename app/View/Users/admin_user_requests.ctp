@@ -1,15 +1,18 @@
 <header>
     <div class="row">
-    <div class="col-sm-9">
-        <span class="badge badge-success">管理者</span>
-        <h3 style="display: inline">交通費精算表</h3>
-    </div>
-    <div class="col-sm-3 text-right">
-        <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
-        <?php echo $this->Html->link('<button class="btn btn-gold">部署一覧</button>',
-                                          array('controller' => 'users', 'action' => 'index'),
-                                          array('escape' => false));
-        ?>
+        <div class="col-sm-9">
+            <span class="badge badge-success">管理者</span>
+            <h3 style="display: inline">交通費精算表</h3>
+        </div>
+        <div class="col-sm-1">
+            <button type="button" class="btn page-link text-dark d-inline-block btn-block" onclick="history.back()" >Back</button>
+        </div>
+        <div class="col-sm-2">
+            <?php echo $this->Html->link('<button class="btn btn-gold btn-block">部署一覧</button>',
+                                              array('controller' => 'users', 'action' => 'index'),
+                                              array('escape' => false));
+            ?>
+        </div>
     </div>
 </header>
 
@@ -32,10 +35,12 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div><?php echo $this->Html->link('<button class="btn btn-myset">Add</button>',
-                                                  array('controller' => 'requestdetails', 'action' => 'add', $login_user['id']),
-                                                  array('escape' => false));
-                ?></div>
+                <div class="row">
+    				<div class="col-sm-6 offset-sm-3"><?php echo $this->Html->link('<button class="btn btn-myset btn-block">Add</button>',
+                                                      array('controller' => 'requestdetails', 'action' => 'add', $login_user['id']),
+                                                      array('escape' => false));
+                    ?></div>
+                </div>
 			</div>
 		</div>
         <div class="col-sm-9">

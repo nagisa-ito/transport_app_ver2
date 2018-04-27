@@ -1,7 +1,7 @@
 	<header>
 		<div class="row">
 			<div class="col-sm-11"><h4>交通費精算表</h4></div>
-			<div class="col-sm-1"><button class="btn page-link text-dark d-inline-block" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">Back</button></div>
+			<div class="col-sm-1"><button class="btn page-link text-dark d-inline-block btn-block" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">Back</button></div>
 	</header>
 
 	<div class="text-center">
@@ -22,7 +22,9 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div class="margin10"><button class="btn btn-myset pull-right" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div class="row">
+				<div class="col-sm-6 offset-sm-3"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-9">

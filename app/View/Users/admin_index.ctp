@@ -7,8 +7,8 @@
                 <span class="badge badge-success">管理者</span>
                 <h4 style="display: inline"><?php echo h('部署一覧'); ?></h4>
             </div>
-            <div class="col-sm-2 text-right">
-                <button class="btn btn-danger" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+            <div class="col-sm-2">
+                <button class="btn btn-danger btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
             </div>
         </div>
     </header>

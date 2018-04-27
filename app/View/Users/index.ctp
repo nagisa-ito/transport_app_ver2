@@ -3,11 +3,11 @@
 
 	<header>
 		<div class="row">
-		<div class="col-sm-11">
+		<div class="col-sm-10">
 			<h4>交通費精算表</h4>
 		</div>
-		<div class="cpl-sm-1">
-			<button class="btn btn-danger d-inline-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+		<div class="col-sm-2">
+			<button class="btn btn-danger d-inline-block btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
 		</div>
 	</header>
 
@@ -29,7 +29,9 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div><button class="btn btn-myset" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div class="row">
+					<div class="col-sm-6 offset-sm-3"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-9">

@@ -24,12 +24,16 @@
                      ));
                      echo $this->Form->input('RequestDetail.overview', ['class' => 'form-control', 'label' => '備考']);
                 ?>
-                <div class="text-right">
-                <?php echo $this->Form->button(__('Edit'), ['class' => 'btn btn-myset']);
-                      echo $this->Form->end();
-                ?>
-                <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>
-
+                <div class="row">
+                    <div class="col-sm-7"></div>
+                    <div class="col-sm-3">
+                    <?php echo $this->Form->button(__('Edit'), ['class' => 'btn btn-myset btn-block']);
+                          echo $this->Form->end();
+                    ?></div>
+                    <div class="col-sm-2">
+                        <button type="button" onclick="history.back()" class="btn page-link text-dark d-inline-block">Cancel</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

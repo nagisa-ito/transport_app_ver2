@@ -32,10 +32,12 @@
                     <th><?php echo h($login_user['pass_to_station']); ?></th>
                 </table>
             </div>
-            <div><?php echo $this->Html->link('<button class="btn btn-myset">Add</button>',
-                                              array( 'action' => 'add', $login_user['id']),
-                                              array('escape' => false));
-            ?></div>
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3"><?php echo $this->Html->link('<button class="btn btn-myset btn-block">Add</button>',
+                                                  array( 'action' => 'add', $login_user['id']),
+                                                  array('escape' => false));
+                ?></div>
+            </div>
         </div>
     </div>
     <div class="col-sm-9">
@@ -85,7 +87,7 @@
                                                                                       array('class' => 'delete',
                                                                                             'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
                                                                                             'data-user_id' => $login_user_id,
-                                                                                            'data-year_month' => $year_month, 
+                                                                                            'data-year_month' => $year_month,
                                                                                             'escape' => false));
                             ?>
                         </td>

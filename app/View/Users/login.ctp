@@ -25,4 +25,3 @@
     </div>
 
     <footer></footer>
-<?php //echo $this->Html->script('ripple'); ?>

@@ -4,12 +4,14 @@
                 <span class="badge badge-success">管理者</span>
                 <h4 style="display: inline">ユーザー一覧</h4>
             </div>
-            <div class="col-sm-3 text-right">
+            <div class="col-sm-1">
                 <?php echo $this->Html->link('<button class="btn">部署一覧</button>',
                                                   array('controller' => 'users', 'action' => 'index'),
                                                   array('escape' => false));
                 ?>
-                <button class="btn btn-danger" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-danger btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
             </div>
         </div>
     </header>

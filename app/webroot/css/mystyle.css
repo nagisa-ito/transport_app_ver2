@@ -12,9 +12,7 @@ header {
 	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-h4 {
-	color: #3a5b52
-}
+h4 { color: #3a5b52; }
 
 label {
 	padding-right: 15px;
@@ -77,6 +75,7 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 }
 
 .btn {
+	font-weight: lighter;
 	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
