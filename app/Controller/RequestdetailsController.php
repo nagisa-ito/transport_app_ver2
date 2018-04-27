@@ -74,18 +74,25 @@
 			$this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
 
 			if($this->request->is('post')){
-				//added this line 認証
+
 				$this->request->data['RequestDetail']['user_id'] = $login_user_id;
 				if($this->RequestDetail->save($this->request->data)){
-					debug($this->request->data);
 						$ymd = Hash::get($this->request->data, 'RequestDetail.date');
 						preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
-						debug($year_month);
+
 						$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
 						if($this->params['admin']){
-							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+							if(isset($this->request->data['add'])){
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+							} else {
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "add/$login_user_id"));
+							}
 						} else {
-							$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+							if(isset($this->request->data['add'])){
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+							} else {
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "add/$login_user_id"));
+							}
 						}
 				} else {
 					$this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);

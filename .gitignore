@@ -1,1 +1,4 @@
 config.php
+app/tmp/logs/
+app/Config/database.php
+
