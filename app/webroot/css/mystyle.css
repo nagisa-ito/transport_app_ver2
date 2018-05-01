@@ -80,6 +80,11 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
+.error-message {
+	color: red;
+	text-align: right;
+}
+
 #login_title {
 	padding-top: 20px;
 }
