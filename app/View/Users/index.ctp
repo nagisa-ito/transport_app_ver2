@@ -1,6 +1,5 @@
 <html>
 <body>
-
 	<header>
 		<div class="row">
 		<div class="col-sm-10">

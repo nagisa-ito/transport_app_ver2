@@ -13,16 +13,18 @@
                      echo $this->Form->input('RequestDetail.date', ['type' => 'text', 'label' => ['text' => '日付'], 'id' => 'datepicker']);
                      echo $this->Form->input('RequestDetail.client',['label' => ['text' => 'クライアント名'], 'placeholder' => '訪問先が無い場合は空欄', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list, 'label' => '交通手段'));
-                     echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
+                     echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '利用区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.cost', ['label' => ['text' => '費用'], 'class' => 'form-control', 'placeholder' => '定期代を考慮した金額を入力']);
                      echo $this->Form->input('RequestDetail.oneway_or_round', array(
                          'type' => 'select',
                          'options' => $oneway_or_round,
-                         'label' => '往復or片道'
+                         'label' => '往復or片道',
+                         'selected' => '片道'
                      ));
                      echo $this->Form->input('RequestDetail.overview', ['label' => ['text' => '備考'], 'class' => 'form-control']);
                 ?>
+                <div id="test"></div>
                 <div class="text-right">
                 <?php echo $this->Form->button(__('続けて登録'), ['class' => 'btn btn-myset', 'name' => 'add_repeat'] ); ?>
                 <?php echo $this->Form->button(__('登録'), ['class' => 'btn btn-myset', 'name' => 'add']);

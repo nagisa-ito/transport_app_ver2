@@ -57,6 +57,9 @@
 				<!--一覧をループで表示-->
 				<tbody>
 				<?php foreach ($each_user_request_details as $each_user_request_detail) : ?>
+					<?php //削除フラグが1だったら表示しない
+						if($each_user_request_detail['RequestDetail']['is_delete']) { continue; }
+					?>
 						<tr id="request_<?php echo h($each_user_request_detail['RequestDetail']['id']); ?>">
 							<th scope="row"><?php echo h($each_user_request_detail['RequestDetail']['id']); ?></th>
 							<td><?php echo h($each_user_request_detail['RequestDetail']['date'])?></td>

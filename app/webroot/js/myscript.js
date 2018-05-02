@@ -39,3 +39,16 @@ $(function() {
         minViewMode: 1
     });
 });
+
+//往復であればフォームの値を2倍にする
+$('#RequestDetailOnewayOrRound').change(function() {
+    str = $('#RequestDetailOnewayOrRound option:selected').text();
+    cost = $('#RequestDetailCost').val();
+    doublecost = cost * 2;
+    if(str == '往復') {
+        $('#RequestDetailCost').val(cost*2);
+    } else {
+        $('#RequestDetailCost').empty();
+        $('#RequestDetailCost').val(cost/2);
+    }
+}).change();

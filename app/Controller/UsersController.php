@@ -49,12 +49,13 @@
 			$this->loadModel('RequestDetail');
 			$this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
 
-			//conditionsのパラメータ指定
-			$param = 'user_id =' . $login_user_id;
 			//申請を月ごとに分けてカウントする
 			$group_by_month = $this->RequestDetail->find('all', array(
 				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'COUNT(*) as count', 'sum(cost)'),
-				'conditions' => $param,
+				'conditions' => array(
+					'user_id' => $login_user_id,
+					'is_delete' => false
+ 				),
 				'group' => array("DATE_FORMAT(date, '%Y%m')"),
 				'order' => array('date' => 'DESC')
 			));

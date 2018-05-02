@@ -40,7 +40,12 @@
 			);
 			$params['fields'] = array('*');
 			$params['order'] = array('RequestDetail.id' => 'ASC');
-			$params['conditions'] = array('RequestDetail.user_id' => $login_user_id, "DATE_FORMAT(RequestDetail.date, '%Y-%m')" => $year_month);
+			$params['conditions'] = array(
+				'RequestDetail.user_id' => $login_user_id,
+				"DATE_FORMAT(RequestDetail.date, '%Y-%m')" => $year_month,
+				//削除フラグが1になっていないデータを抽出
+				'RequestDetail.is_delete' => false
+			);
 			$each_user_request_details = $this->RequestDetail->find('all', $params);
 			$this->set('each_user_request_details', $each_user_request_details);
 			/************************************/
@@ -110,7 +115,8 @@
 
 			//ajax処理
 			if($this->request->is('ajax')) {
-				if($this->RequestDetail->delete($delete_request_id)) {
+					$this->RequestDetail->id = $delete_request_id;
+					$this->RequestDetail->saveField('is_delete', true);
 					$this->autoRender = false;
 					$this->autoLayout = false;
 					$total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
@@ -118,7 +124,6 @@
 					$this->header('Content-Type: application/json');
 					echo json_encode($response);
 					exit();
-				}
 			}
 
         	if ($this->RequestDetail->delete($delete_request_id)) {
@@ -141,7 +146,8 @@
 				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'sum(cost)'),
 				'conditions' => array(
 					'user_id' => $login_user_id,
-					"DATE_FORMAT(date, '%Y-%m')" => $year_month
+					"DATE_FORMAT(date, '%Y-%m')" => $year_month,
+					'is_delete' => false
 				),
 			));
 			$total_cost = Hash::extract($total_cost, '{n}.{n}');
