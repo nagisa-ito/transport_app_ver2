@@ -107,10 +107,12 @@
 		public function admin_user_lists($department_id = null, $search_year_month = null)
 		{
 			$this->loadModel('Department');
-			$this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
+			$department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
+			array_push($department_id_list, '全て');
+			$this->set('department_id_list', $department_id_list);
 			$this->set('department_id', $department_id);
 
-			if($this->request->is('post')) {
+			if($this->request->is('post') && $this->request->data['User']['department_id'] != 7) {
 				//部署の絞りこみがあった場合、その条件で抽出
 				$users = $this->User->find('all', array('conditions' => array('department_id' => $this->request->data['User']['department_id'])));
 				//年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する

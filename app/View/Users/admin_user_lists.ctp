@@ -1,14 +1,8 @@
     <header>
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <span class="badge badge-success">管理者</span>
                 <h4 style="display: inline">ユーザー一覧</h4>
-            </div>
-            <div class="col-sm-1">
-                <?php echo $this->Html->link('<button class="btn">部署一覧</button>',
-                                                  array('controller' => 'users', 'action' => 'index'),
-                                                  array('escape' => false));
-                ?>
             </div>
             <div class="col-sm-2">
                 <button class="btn btn-danger btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
@@ -26,11 +20,11 @@
                 <div>
                     <?php
                         echo $this->Form->create('User', ['url' => ['action' => "user_lists/$department_id"], 'type' => 'post', 'class' => "form-group"]);
-                        echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'year_month', 'placeholder' => $search_year_month, 'class' => 'form-control']);
+                        echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'year_month', 'value' => $search_year_month, 'class' => 'form-control']);
                         echo $this->Form->input('department_id', array(
                             'options' => $department_id_list,
                             'label' => false,
-                            'empty' => '部署で絞り込む',
+                            'label' => '部署で絞り込む',
                             'class' => 'form-control'));
                         echo $this->Form->button(__('選択'), ['class' => 'btn btn-myset float-right']);
                         echo $this->Form->end();
