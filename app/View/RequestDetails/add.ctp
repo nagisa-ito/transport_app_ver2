@@ -15,7 +15,10 @@
                      echo $this->Form->input('RequestDetail.transportation_id', array('options' => $transportation_id_list, 'label' => '交通手段'));
                      echo $this->Form->input('RequestDetail.from_station',  ['label' => ['text' => '利用区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                      echo $this->Form->input('RequestDetail.to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
-                     echo $this->Form->input('RequestDetail.cost', ['label' => ['text' => '費用'], 'class' => 'form-control', 'placeholder' => '定期代を考慮した金額を入力']);
+                     echo $this->Form->input('RequestDetail.cost', ['label' => ['text' => '費用'], 'class' => 'form-control']);
+                ?>
+                <div class="small caution">定期を考慮した金額を、片道の料金で入力してください</div>
+                <?php
                      echo $this->Form->input('RequestDetail.oneway_or_round', array(
                          'type' => 'select',
                          'options' => $oneway_or_round,

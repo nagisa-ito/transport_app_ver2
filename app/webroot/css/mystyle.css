@@ -85,6 +85,11 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 	text-align: right;
 }
 
+.caution {
+	color: #006e54;
+	padding-bottom: 10px;
+}
+
 #login_title {
 	padding-top: 20px;
 }

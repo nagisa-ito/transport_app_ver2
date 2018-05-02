@@ -19,7 +19,7 @@
 				'rule' => 'alphaNumeric'
 			),
 			'cost' => array(
-				'rule' => 'numeric'
+				'rule' => 'naturalNumber'
 			),
 			'oneway_or_round' => array(
 				'rule' => 'notEmpty'
