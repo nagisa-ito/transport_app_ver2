@@ -19,15 +19,19 @@
     <div class="text-center">
         <?php echo $this->Session->flash(); ?>
     </div>
-
+<div id="test"></div>
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
             <div class="admin_contents list-group">
                 <div>
                     <?php
                         echo $this->Form->create('User', ['url' => ['action' => "user_lists/$department_id"], 'type' => 'post', 'class' => "form-group"]);
-                        echo $this->Form->hidden('department_id', ['default' => $department_id, 'class' => 'form-control']);
                         echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'year_month', 'placeholder' => $search_year_month, 'class' => 'form-control']);
+                        echo $this->Form->input('department_id', array(
+                            'options' => $department_id_list,
+                            'label' => false,
+                            'empty' => '部署で絞り込む',
+                            'class' => 'form-control'));
                         echo $this->Form->button(__('選択'), ['class' => 'btn btn-myset float-right']);
                         echo $this->Form->end();
                     ?>
@@ -37,19 +41,21 @@
                     ユーザーを選択:
                 </li>
                 <?php foreach($users as $user) : ?>
+                    <?php if(isset($user['role'])) continue; ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                     <?php
-                        if(isset($user['role'])) continue;
                         $user_id = $user['id'];
                         echo $this->Html->link($user['yourname'], array('controller' => 'users', 'action' => "admin_user_requests/$user_id"),
-                                                                          array('class' => 'myset'));
+                                                                          array('class' => 'myset',
+                                                                                'id' => $user_id,
+                                                                                'data-department_id' => $user['department_id']));
                         foreach($each_user_month_costs as $month_cost) {
                             if($month_cost['request_details']['user_id'] == $user_id && $month_cost[0]['date'] == $search_year_month) {
                                 echo '¥' . number_format($month_cost[0]['total_cost']);
                             }
                         }
                     ?>
-                </li>
+                    </li>
                 <?php endforeach; ?>
             </div>
         </div>

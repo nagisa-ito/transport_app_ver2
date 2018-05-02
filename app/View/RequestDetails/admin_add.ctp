@@ -25,7 +25,8 @@
                 echo $this->Form->input('RequestDetail.oneway_or_round', array(
                     'type' => 'select',
                     'options' => $oneway_or_round,
-                    'label' => '往復or片道'
+                    'label' => '往復or片道',
+                    'selected' => '片道'
                 ));
                 echo $this->Form->input('RequestDetail.overview', ['label' => ['text' => '備考'], 'class' => 'form-control']);
             ?>

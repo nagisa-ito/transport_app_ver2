@@ -44,11 +44,19 @@ $(function() {
 $('#RequestDetailOnewayOrRound').change(function() {
     str = $('#RequestDetailOnewayOrRound option:selected').text();
     cost = $('#RequestDetailCost').val();
-    doublecost = cost * 2;
     if(str == '往復') {
         $('#RequestDetailCost').val(cost*2);
     } else {
         $('#RequestDetailCost').empty();
         $('#RequestDetailCost').val(cost/2);
+    }
+}).change();
+
+//指定の部署以外のデータを非表示
+$('#department_id').change(function() {
+    var department_id = $('#department_id option:selected').val();
+    var ele = $('a.myset').data('department_id');
+    if(ele == department_id){
+        $('a.myset').hide();
     }
 }).change();

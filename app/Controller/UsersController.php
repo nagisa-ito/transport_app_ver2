@@ -18,7 +18,7 @@
 				if($this->Auth->login()) {
 					$role = $this->Auth->user('role');
 					if(isset($role) && $role === 'admin'){
-						$this->redirect(['admin' => true, 'controller' => 'users', 'action' => 'index']);
+						$this->redirect(['admin' => true, 'controller' => 'users', 'action' => 'user_lists']);
 					} else {
 						$this->redirect($this->Auth->redirect());
 					}
@@ -106,12 +106,23 @@
 
 		public function admin_user_lists($department_id = null, $search_year_month = null)
 		{
+			$this->loadModel('Department');
+			$this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
 			$this->set('department_id', $department_id);
 
-			//指定の部署のユーザーを抽出
-			$users = $this->User->find('all', array('conditions' => array('department_id' => $department_id)));
+			if($this->request->is('post')) {
+				//部署の絞りこみがあった場合、その条件で抽出
+				$users = $this->User->find('all', array('conditions' => array('department_id' => $this->request->data['User']['department_id'])));
+				//年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
+				$search_year_month = $this->request->data['User']['date'];
+			} else {
+				//ユーザー全員を抽出
+				$users = $this->User->find('all');
+				$search_year_month = date('Y-m');
+			}
 			$users = Hash::extract($users, '{n}.User');
 			$this->set('users', $users);
+			$this->set('search_year_month', $search_year_month);
 
 			//その部署の人たちのid一覧を抽出して結合する
 			$user_id_list = implode(',', array_column($users, 'id'));
@@ -128,13 +139,6 @@
 			$each_user_month_costs = $this->RequestDetail->query($sql);
 			$this->set('each_user_month_costs', $each_user_month_costs);
 
-			//adminユーザから年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
-			if($this->request->is('post')) {
-				$search_year_month = $this->request->data['User']['date'];
-			} else {
-				$search_year_month = date('Y-m');
-			}
-			$this->set('search_year_month', $search_year_month);
 		}
 
 		public function admin_user_requests($user_id){
