@@ -21,6 +21,7 @@
                     echo $this->Form->input('pass_from_station', ['label' => ['text' => '定期区間'], 'placeholder' => '乗車駅', 'class' => 'form-control']);
                     echo $this->Form->input('pass_to_station', ['label' => ['text' => ''], 'placeholder' => '降車駅', 'class' => 'form-control']);
                 ?>
+                <p class="small caution">定期がない場合、「なし」と登録してください</p>
                 <div class="row">
                     <div class="col-sm-7"></div>
                     <div class="col-sm-3">
