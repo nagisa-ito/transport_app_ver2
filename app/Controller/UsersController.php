@@ -140,6 +140,7 @@
 			From request_details
 			left join users on request_details.user_id = users.id
 			where users.id in ($user_id_list)
+			and request_details.is_delete != true
 			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
 
 			//上記のクエリを実行して格納
