@@ -32,13 +32,11 @@ $(function() {
     });
 });
 
-$(function() {
-    $('#year_month').datepicker({
-        dateFormat: 'yy-mm',
-        language: 'ja',
-        minViewMode: 1
-    });
-});
+$('#YearMonth').datepicker({
+      format: 'yyyy-mm',
+      language: 'ja',       // カレンダー日本語化のため
+      minViewMode : 1
+  });
 
 //往復であればフォームの値を2倍にする
 $('#RequestDetailOnewayOrRound').change(function() {

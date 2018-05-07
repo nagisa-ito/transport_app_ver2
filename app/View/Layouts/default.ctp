@@ -53,7 +53,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js"></script>
 
-	
+
 
 </head>
 <body>

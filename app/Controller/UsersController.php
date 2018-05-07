@@ -109,18 +109,24 @@
 			$this->loadModel('Department');
 			$department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
 			array_push($department_id_list, '全て');
-			$this->set('department_id_list', $department_id_list);
-			$this->set('department_id', $department_id);
 
-			if($this->request->is('post') && $this->request->data['User']['department_id'] != 7) {
-				//部署の絞りこみがあった場合、その条件で抽出
-				$users = $this->User->find('all', array('conditions' => array('department_id' => $this->request->data['User']['department_id'])));
+			if($this->request->is('post')) {
+
+				if($this->request->data['User']['department_id'] != 7){
+					//部署の絞りこみがあった場合、その条件で抽出
+					$users = $this->User->find('all', array('conditions' => array('department_id' => $this->request->data['User']['department_id'])));
+				} else {
+					//ユーザー全員を抽出
+					$users = $this->User->find('all');
+				}
 				//年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
 				$search_year_month = $this->request->data['User']['date'];
+				$department_id = $this->request->data['User']['department_id'];
+
 			} else {
-				//ユーザー全員を抽出
 				$users = $this->User->find('all');
 				$search_year_month = date('Y-m');
+				$department_id = 7;
 			}
 			$users = Hash::extract($users, '{n}.User');
 			$this->set('users', $users);
@@ -141,6 +147,8 @@
 			$each_user_month_costs = $this->RequestDetail->query($sql);
 			$this->set('each_user_month_costs', $each_user_month_costs);
 
+			$this->set('department_id_list', $department_id_list);
+			$this->set('department_id', $department_id);
 		}
 
 		public function admin_user_requests($user_id){
