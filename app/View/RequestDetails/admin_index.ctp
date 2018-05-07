@@ -5,11 +5,11 @@
         <h4 style="display: inline">交通費精算表</h4>
     </div>
     <div class="col-sm-3 text-right">
-        <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
-        <?php echo $this->Html->link('<button class="btn btn-gold">ユーザー一覧</button>',
-                                          array('controller' => 'users', 'action' => 'index'),
+        <?php echo $this->Html->link('<button class="btn btn-caution">ユーザー一覧</button>',
+                                          array('controller' => 'users', 'action' => 'user_lists'),
                                           array('escape' => false));
         ?>
+        <button type="button" class="btn page-link text-dark d-inline-block" onclick="history.back()" >Back</button>
     </div>
 </header>
 

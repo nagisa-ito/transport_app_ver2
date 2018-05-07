@@ -1,15 +1,12 @@
 <header>
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-11">
             <span class="badge badge-success">管理者</span>
             <h3 style="display: inline">交通費精算表</h3>
         </div>
         <div class="col-sm-1">
-            <button type="button" class="btn page-link text-dark d-inline-block btn-block" onclick="history.back()" >Back</button>
-        </div>
-        <div class="col-sm-2">
-            <?php echo $this->Html->link('<button class="btn btn-gold btn-block">部署一覧</button>',
-                                              array('controller' => 'users', 'action' => 'index'),
+            <?php echo $this->Html->link('<button class="btn btn-block">Back</button>',
+                                              array('controller' => 'users', 'action' => 'user_lists'),
                                               array('escape' => false));
             ?>
         </div>
