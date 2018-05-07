@@ -26,11 +26,11 @@ $(function() {
     });
 });
 
-$(function() {
-    $('#datepicker').datepicker({
-        dateFormat: 'yy-mm-dd',
-    });
+$('#datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    language: 'ja'
 });
+
 
 $('#YearMonth').datepicker({
       format: 'yyyy-mm',

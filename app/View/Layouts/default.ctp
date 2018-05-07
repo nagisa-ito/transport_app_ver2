@@ -45,10 +45,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 	<!--datepicker-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+	<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script-->
+	<?php echo $this->Html->css('bootstrap-datepicker.min'); ?>
+	<?php echo $this->Html->script('bootstrap-datepicker.min'); ?>
+	<?php echo $this->Html->script('bootstrap-datepicker.ja.min'); ?>
+	
 	<!--circliful-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js"></script>
@@ -69,5 +72,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 <?php echo $this->Html->css('mystyle'); ?>
 <?php echo $this->Html->script('myscript'); ?>
+
 </body>
 </html>
