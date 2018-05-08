@@ -6,7 +6,7 @@
 			<h4>交通費精算表</h4>
 		</div>
 		<div class="col-sm-2">
-			<button class="btn btn-danger d-inline-block btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">Logout</button>
+			<button class="btn btn-danger d-inline-block btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">ログアウト</button>
 		</div>
 	</header>
 
@@ -28,9 +28,10 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
-				<div class="row">
-					<div class="col-sm-6 offset-sm-3"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+				<div class="row mb-2">
+					<div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
 				</div>
+				<span class="caution small">申請が一件も無い月がある場合</span>
 			</div>
 		</div>
 		<div class="col-sm-9">

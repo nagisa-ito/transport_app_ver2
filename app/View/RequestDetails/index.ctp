@@ -22,8 +22,11 @@
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
 				</div>
+				<div class="row mb-3">
+					<div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
+				</div>
 				<div class="row">
-				<div class="col-sm-6 offset-sm-3"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">Add</button></div>
+					<div class="col-sm-12"><button class="btn btn-danger btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">今月の申請を確定する</button></div>
 				</div>
 			</div>
 		</div>
@@ -75,14 +78,18 @@
 							<td>
 								<?php
 									//編集・削除を実行
-									echo $this->Html->link('<i class="fas fa-edit"></i>', array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month),
-																						  array('escape' => false));
-									echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#',
-																									array('class' => 'delete',
-																										  'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
-																										  'data-user_id' => $login_user_id,
-																										  'data-year_month' => $year_month,
-																										  'escape' => false));
+									echo $this->Html->link('<div><button type="button" class="btn btn-myset btn-sm mb-2 btn-block"><i class="fas fa-edit mr-1"></i>編集</button></div>', '#',
+															array(  'action' => 'edit',
+																	$each_user_request_detail['RequestDetail']['id'],
+																	$login_user_id,
+																	$year_month,
+																	'escape' => false));
+									echo $this->Html->link('<div><button type="button" class="btn btn-danger btn-sm btn-block"><i class="fas fa-trash-alt mr-1"></i>削除</button></div>', '#',
+															array(  'class' => 'delete',
+																	'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
+																	'data-user_id' => $login_user_id,
+																	'data-year_month' => $year_month,
+																	'escape' => false));
 
 								?>
 							</td>
