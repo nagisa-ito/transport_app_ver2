@@ -31,7 +31,17 @@
 				<div class="row mb-2">
 					<div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
 				</div>
-				<span class="caution small">申請が一件も無い月がある場合</span>
+				<a href='#' class="caution small show-modal">申請が一件も無い月がある場合</a>
+				<!--モーダルウィンドウ-->
+				<div id="modal_window" class="modal_window">
+					<a href='#' class="modal_window_close"></a>
+					<h1>タイトル</h1>
+					<div class="modal_window_contents">
+	        			<p>テキスト</p>
+	        			<button>閉じる</button>
+    				</div>
+				</div>
+				<!---->
 			</div>
 		</div>
 		<div class="col-sm-9">
@@ -66,6 +76,7 @@
 
 	<footer class="footer"></footer>
 
-	<?php echo $this->Html->css('mystyle'); ?>
+	<?php echo $this->Html->css('modal'); ?>
+	<?php echo $this->Html->script('modal'); ?>
 </body>
 </html>

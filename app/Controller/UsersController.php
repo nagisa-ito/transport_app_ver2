@@ -60,7 +60,7 @@
 				'order' => array('date' => 'DESC')
 			));
 			$group_by_month = Hash::extract($group_by_month, '{n}.{n}');
-			//debug($group_by_month);
+			debug($group_by_month);
 
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
