@@ -7,7 +7,7 @@ $(function(){
 $(function() {
     $('a.delete').click(function(e) {
         if (confirm('削除しますか？')) {
-                                            /* /deleteアクションへのパス/削除する申請のid/現在のユーザのid/ */
+                            /* /deleteアクションへのパス/削除する申請のid/現在のユーザのid/ */
             $.post('/transport_app_ver2_1/requestdetails/delete/'
                     + $(this).data('request_id') + '/' + $(this).data('user_id') + '/' + $(this).data('year_month') ,{},
                 function(response) {
@@ -20,6 +20,21 @@ $(function() {
                         text: '¥' + response.total_cost,
                         noPercentageSign: true,
                     });
+            }, "json");
+        }
+        return false;
+    });
+});
+
+//申請確定ボタン
+$(function() {
+    $('a.confirm').click(function(e) {
+        if(confirm('確定してもよろしいですか？')) {
+            $.post('/transport_app_ver2_1/confirmmonths/add/'
+                + $(this).data('year_month') + '/' + $(this).data('user_id'), {},
+            function(response) {
+                confirm('確定しました。');
+                
             }, "json");
         }
         return false;

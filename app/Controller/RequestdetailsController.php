@@ -81,6 +81,7 @@
 			if($this->request->is('post')){
 
 				$this->request->data['RequestDetail']['user_id'] = $login_user_id;
+
 				if($this->RequestDetail->save($this->request->data)){
 						$ymd = Hash::get($this->request->data, 'RequestDetail.date');
 						preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
@@ -99,6 +100,7 @@
 								$this->redirect(array('controller' => 'requestdetails', 'action' => "add", $login_user_id));
 							}
 						}
+
 				} else {
 					$this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
 				}
@@ -117,6 +119,7 @@
 			if($this->request->is('ajax')) {
 					$this->RequestDetail->id = $delete_request_id;
 					$this->RequestDetail->saveField('is_delete', true);
+					$this->Session->setFlash('Deleted!', 'default', ['class' => 'alert alert-warning']);
 					$this->autoRender = false;
 					$this->autoLayout = false;
 					$total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
