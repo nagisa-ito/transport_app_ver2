@@ -1,6 +1,6 @@
 	<header>
 		<div class="row">
-			<div class="col-sm-11">
+			<div class="col-sm-9">
 				<?php
 					if($this->params['admin']) {
 						echo $this->element('admin_badge');
@@ -8,8 +8,13 @@
 				?>
 				<h4 style="display: inline">交通費精算表</h4>
 			</div>
-			<div class="col-sm-1">
-				<?php echo $this->Html->link('<button class="btn btn-block">Back</button>',
+			<div class="col-sm-3 text-right">
+				<?php
+					if($this->params['admin']) {
+						echo $this->element('admin_back_to_user_lists');
+					}
+				?>
+				<?php echo $this->Html->link('<button class="btn">Back</button>',
 	                                              array('controller' => 'users', 'action' => 'user_requests', $login_user_id),
 	                                              array('escape' => false));
 	            ?>
