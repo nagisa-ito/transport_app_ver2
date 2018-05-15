@@ -9,9 +9,10 @@
 				<h4 style="display: inline">交通費精算表</h4>
 			</div>
 			<div class="col-sm-1">
-				<button class="btn page-link text-dark d-inline-block btn-block"
-					onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">
-				Back</button>
+				<?php echo $this->Html->link('<button class="btn btn-block">Back</button>',
+	                                              array('controller' => 'users', 'action' => 'user_requests', $login_user_id),
+	                                              array('escape' => false));
+	            ?>
 			</div>
 	</header>
 

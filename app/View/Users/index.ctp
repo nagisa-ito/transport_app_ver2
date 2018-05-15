@@ -11,7 +11,9 @@
 			<h4 style="display: inline">交通費精算表</h4>
 		</div>
 		<div class="col-sm-2">
-			<button class="btn btn-danger d-inline-block btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">ログアウト</button>
+			<button class="btn btn-danger d-inline-block btn-block"
+				onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">
+			ログアウト</button>
 		</div>
 	</header>
 
