@@ -90,6 +90,10 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 	padding-bottom: 10px;
 }
 
+.confirm_state {
+	display: none;
+}
+
 #login_title {
 	padding-top: 20px;
 }

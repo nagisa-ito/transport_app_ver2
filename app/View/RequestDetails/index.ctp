@@ -64,7 +64,10 @@
 	<div class="col-sm-9">
 		<div id="total_cost_area" class="row">
 			<div class="col-sm-6">
-				<div><h4><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</h4></div>
+				<div>
+					<div><?php echo $this->element('confirm_state_badge'); ?></div>
+					<h4 style="display: inline"><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</h4>
+				</div>
 				<br>
 				<div><h5>合計金額</h5></div>
 			</div>
