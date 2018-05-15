@@ -35,7 +35,6 @@
 
 		public function index($login_user_id = null)
 		{
-
 			if(!isset($login_user_id)){
 				//ログインしたユーザーを変数に格納
 				$login_user_id = $this->Auth->user('id');
@@ -60,7 +59,8 @@
 				'order' => array('date' => 'DESC')
 			));
 			$group_by_month = Hash::extract($group_by_month, '{n}.{n}');
-			debug($group_by_month);
+			//debug($group_by_month);
+			//debug($login_user_id);
 
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
@@ -155,6 +155,7 @@
 
 		public function admin_user_requests($user_id){
 			$this->index($user_id);
+			$this->render('index');
 		}
 
 	}

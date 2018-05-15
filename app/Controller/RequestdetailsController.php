@@ -88,15 +88,15 @@
 						$this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
 						if($this->params['admin']){
 							if(isset($this->request->data['add'])){
-								$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "index", $login_user_id, $year_month[0]));
 							} else {
-								$this->redirect(array('controller' => 'requestdetails', 'action' => "add/$login_user_id"));
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "add", $login_user_id));
 							}
 						} else {
 							if(isset($this->request->data['add'])){
-								$this->redirect(array('controller' => 'requestdetails', 'action' => "index/$login_user_id/$year_month[0]"));
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "index" ,$login_user_id, $year_month[0]));
 							} else {
-								$this->redirect(array('controller' => 'requestdetails', 'action' => "add/$login_user_id"));
+								$this->redirect(array('controller' => 'requestdetails', 'action' => "add", $login_user_id));
 							}
 						}
 				} else {
@@ -182,16 +182,19 @@
 		public function admin_index($login_user_id, $year_month)
 		{
 			$this->index($login_user_id, $year_month);
+			$this->render('index');
 		}
 
 		public function admin_edit($edit_request_id = null, $login_user_id = null, $year_month = null)
 		{
 			$this->edit($edit_request_id, $login_user_id, $year_month);
+			$this->render('edit');
 		}
 
 		public function admin_add($login_user_id = null, $year_month = null)
 		{
 			$this->add($login_user_id, $year_month);
+			$this->render('add');
 		}
 
 		public function admin_delete($delete_request_id = null, $login_user_id = null, $year_month = null){

@@ -81,14 +81,15 @@
                         <td>
                             <?php
                                 //編集・削除を実行
-                                echo $this->Html->link('<i class="fas fa-edit"></i>', array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'], $login_user_id, $year_month),
-                                                                                      array('escape' => false));
+                                echo $this->Html->link('<i class="fas fa-edit"></i>',
+                                    array('action' => 'edit', $each_user_request_detail['RequestDetail']['id'],$login_user_id, $year_month),
+                                    array('escape' => false));
                                 echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#',
-                                                                                      array('class' => 'delete',
-                                                                                            'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
-                                                                                            'data-user_id' => $login_user_id,
-                                                                                            'data-year_month' => $year_month,
-                                                                                            'escape' => false));
+                                    array('class' => 'delete',
+                                        'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
+                                        'data-user_id' => $login_user_id,
+                                        'data-year_month' => $year_month,
+                                        'escape' => false));
                             ?>
                         </td>
                     </tr>

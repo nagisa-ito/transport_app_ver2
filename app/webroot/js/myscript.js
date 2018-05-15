@@ -26,6 +26,16 @@ $(function() {
     });
 });
 
+$(function() {
+    $('a.is_no_request').click(function(e) {
+        var no_request_month = $('#no_request_month').val();
+        $.post('/transport_app_ver2_1/eachmonthrequests/index/' + $(this).data('user_id') + '/' + no_request_month, {},
+            function(response) {
+                console.log(response);
+            }, "json");
+    });
+});
+
 $('#datepicker').datepicker({
     format: 'yyyy-mm-dd',
     language: 'ja'
@@ -37,6 +47,12 @@ $('#YearMonth').datepicker({
       language: 'ja',       // カレンダー日本語化のため
       minViewMode : 1
   });
+
+$('#no_request_month').datepicker({
+        format: 'yyyy-mm',
+        language: 'ja',       // カレンダー日本語化のため
+        minViewMode : 1
+});
 
 //往復であればフォームの値を2倍にする
 $('#RequestDetailOnewayOrRound').change(function() {

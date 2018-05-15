@@ -31,17 +31,10 @@
 				<div class="row mb-2">
 					<div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
 				</div>
-				<a href='#' class="caution small show-modal">申請が一件も無い月がある場合</a>
-				<!--モーダルウィンドウ-->
-				<div id="modal_window" class="modal_window">
-					<a href='#' class="modal_window_close"></a>
-					<h1>タイトル</h1>
-					<div class="modal_window_contents">
-	        			<p>テキスト</p>
-	        			<button>閉じる</button>
-    				</div>
-				</div>
-				<!---->
+				<a href='#' class="caution small show-modal">
+					指定の年月の申請を確定する<br>
+					※申請がない場合も申請してください
+				</a>
 			</div>
 		</div>
 		<div class="col-sm-9">
@@ -75,6 +68,28 @@
 	</div>
 
 	<footer class="footer"></footer>
+
+	<!--モーダルウィンドウ-->
+	<div id="modal_window" class="modal_window text-center">
+		<a href='#' class="modal_window_close"></a>
+		<h1>確定したい月を選択してください :</h1>
+		<div class="modal_window_contents">
+			<div class="row">
+				<div class="col-sm-6 offset-sm-3">
+					<?php echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'comfirm_month', 'class' => 'form-control', 'placeholder' => date('Y-m')]);?>
+				</div>
+			</div>
+			<p>申請を確定してもよろしいですか？</p>
+			<?php
+				echo $this->Html->link('<button type="button" class="btn btn-myset">確定</button>', '#',
+										array(  'class' => 'is_no_request',
+												'data-user_id' => $login_user_id,
+												'escape' => false));
+			?>
+			<button class="btn .page-link.text-dark.d-inline-block">キャンセル</button>
+		</div>
+	</div>
+	<!---->
 
 	<?php echo $this->Html->css('modal'); ?>
 	<?php echo $this->Html->script('modal'); ?>
