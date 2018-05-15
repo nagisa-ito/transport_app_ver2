@@ -3,7 +3,12 @@
 	<header>
 		<div class="row">
 		<div class="col-sm-10">
-			<h4>交通費精算表</h4>
+			<?php
+				if($this->params['admin']) {
+					echo $this->element('admin_badge');
+				}
+			?>
+			<h4 style="display: inline">交通費精算表</h4>
 		</div>
 		<div class="col-sm-2">
 			<button class="btn btn-danger d-inline-block btn-block" onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">ログアウト</button>

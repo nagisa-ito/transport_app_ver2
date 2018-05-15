@@ -1,7 +1,7 @@
     <header>
         <div class="row">
             <div class="col-sm-10">
-                <span class="badge badge-success">管理者</span>
+                <?php echo $this->element('admin_badge'); ?>
                 <h4 style="display: inline">ユーザー一覧</h4>
             </div>
             <div class="col-sm-2">

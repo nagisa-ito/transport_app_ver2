@@ -1,4 +1,11 @@
-    <header><h4>申請を追加</h4></header>
+    <header>
+        <?php
+            if($this->params['admin']) {
+                echo $this->element('admin_badge');
+            }
+        ?>
+        <h4 style="display: inline">申請を追加</h4>
+    </header>
 
     <div class="text-center">
         <?php echo $this->Session->flash(); ?>

@@ -1,4 +1,11 @@
-    <header><h4>申請を編集</h4></header>
+    <header>
+        <?php
+            if($this->params['admin']) {
+                echo $this->element('admin_badge');
+            }
+        ?>
+        <h4 style="display: inline">申請を編集</h4>
+    </header>
 
     <div id="content" class="text-center box24">
         <?php echo $this->Session->flash(); ?>

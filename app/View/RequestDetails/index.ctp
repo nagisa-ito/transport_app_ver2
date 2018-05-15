@@ -1,7 +1,18 @@
 	<header>
 		<div class="row">
-			<div class="col-sm-11"><h4>交通費精算表</h4></div>
-			<div class="col-sm-1"><button class="btn page-link text-dark d-inline-block btn-block" onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">Back</button></div>
+			<div class="col-sm-11">
+				<?php
+					if($this->params['admin']) {
+						echo $this->element('admin_badge');
+					}
+				?>
+				<h4 style="display: inline">交通費精算表</h4>
+			</div>
+			<div class="col-sm-1">
+				<button class="btn page-link text-dark d-inline-block btn-block"
+					onclick="location.href='<?php echo $this->Html->url("/users/index/$login_user_id"); ?>';">
+				Back</button>
+			</div>
 	</header>
 
 	<div class="text-center">
