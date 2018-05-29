@@ -33,26 +33,41 @@
                     ?>
                 </div>
                 <br>
-                <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
-                    ユーザーを選択:
-                </li>
-                <?php foreach($users as $user) : ?>
-                    <?php if(isset($user['role'])) continue; ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                <table class="table">
+                    <thead>
+                        <tr class="table-success"><th colspan="2">ユーザーを選択:</th></tr>
+                    </thead>
+                    <?php foreach($users as $user) : ?>
                     <?php
                         $user_id = $user['id'];
-                        echo $this->Html->link($user['yourname'], array('controller' => 'users', 'action' => "admin_user_requests/$user_id"),
-                                                                          array('class' => 'myset',
-                                                                                'id' => $user_id,
-                                                                                'data-department_id' => $user['department_id']));
-                        foreach($each_user_month_costs as $month_cost) {
-                            if($month_cost['request_details']['user_id'] == $user_id && $month_cost[0]['date'] == $search_year_month) {
-                                echo '¥' . number_format($month_cost[0]['total_cost']);
-                            }
-                        }
+                        if(($user['role']) == 'admin') continue;
                     ?>
-                    </li>
-                <?php endforeach; ?>
+                    <tbody>
+                        <tr>
+                            <td>
+                              <?php
+                                echo $this->Html->link($user['yourname'],
+                                                 array( 'controller' => 'users',
+                                                        'action' => "admin_user_requests",
+                                                        $user['id'],
+                                                        $user['department_id']),
+                                                 array( 'class' => 'myset'));
+                                ?>
+                            </td>
+                            <td class="text-right">
+                                <?php
+                                    foreach($each_user_month_costs as $month_cost) {
+                                        if($month_cost['request_details']['user_id'] == $user_id
+                                                           && $month_cost[0]['date'] == $search_year_month) {
+                                        echo '¥' . number_format($month_cost[0]['total_cost']);
+                                        }
+                                    }
+                                ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </div>
     </div>

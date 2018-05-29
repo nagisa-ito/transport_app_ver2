@@ -59,8 +59,6 @@
 				'order' => array('date' => 'DESC')
 			));
 			$group_by_month = Hash::extract($group_by_month, '{n}.{n}');
-			//debug($group_by_month);
-			//debug($login_user_id);
 
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
@@ -107,6 +105,7 @@
 
 		public function admin_user_lists($department_id = null, $search_year_month = null)
 		{
+
 			$this->loadModel('Department');
 			$department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
 			array_push($department_id_list, '全て');
@@ -120,6 +119,7 @@
 					//ユーザー全員を抽出
 					$users = $this->User->find('all');
 				}
+
 				//年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
 				$search_year_month = $this->request->data['User']['date'];
 				$department_id = $this->request->data['User']['department_id'];
