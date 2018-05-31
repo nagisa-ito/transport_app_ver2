@@ -56,18 +56,20 @@
 					<?php foreach($group_by_month as $each_month_request) : ?>
 						<li class="list-group-item d-flex justify-content-between align-items-center">
 							<?php
-								$print_date = $each_month_request['date'];
+								$print_date = $each_month_request[0]['date'];
 								$print_date = date('Y年m月', strtotime($print_date));
-								$login_user_id = $login_user['id'];
-								$year_name = $each_month_request['date'];
+								$year_name = $each_month_request[0]['date'];
 								echo $this->Html->link($print_date, array(
 																			'controller' => 'requestdetails',
 																			'action' => "/index/$login_user_id/$year_name/",
 																		), ['class' => 'myset']);
 							?>
+                            <?php if($each_month_request['confirm_months']['is_confirm'] == true) : ?>
+                                確定済
+                            <?php endif; ?>
 							<div class="pull-right">
-								¥<?php echo number_format($each_month_request['sum(cost)']); ?>
-								<?php echo $this->Html->link($each_month_request['count']. '件', array(
+								¥<?php echo number_format($each_month_request[0]['total_cost']); ?>
+								<?php echo $this->Html->link($each_month_request[0]['count']. '件', array(
 																										'controller' => 'requestdetails',
 																										'action' => "/index/$login_user_id/$year_name/",
 																										), ['class' => 'myset']); ?>

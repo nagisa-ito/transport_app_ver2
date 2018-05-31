@@ -46,24 +46,15 @@
 			}
 
 			$this->loadModel('RequestDetail');
-			$this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
+            $group_by_month = $this->RequestDetail->getGroupByMonth($login_user_id);
 
-			//申請を月ごとに分けてカウントする
-			$group_by_month = $this->RequestDetail->find('all', array(
-				'fields' => array("DATE_FORMAT(date, '%Y-%m') as date", 'COUNT(*) as count', 'sum(cost)'),
-				'conditions' => array(
-					'user_id' => $login_user_id,
-					'is_delete' => false
- 				),
-				'group' => array("DATE_FORMAT(date, '%Y%m')"),
-				'order' => array('date' => 'DESC')
-			));
-			$group_by_month = Hash::extract($group_by_month, '{n}.{n}');
+            debug($group_by_month);
+            debug($login_user_id);
 
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
-			$this->set('departments', $departments);
-			$this->set('group_by_month', $group_by_month);
+
+            $this->set(compact('departments', 'group_by_month', 'login_user_id'));
 		}
 
 		public function add()
@@ -132,9 +123,10 @@
 
 			//その部署の人たちのid一覧を抽出して結合する
 			$user_id_list = implode(',', array_column($users, 'id'));
-			$this->loadModel('RequestDetail');
+
             //各月、各ユーザごとの合計費用を抽出するためのsql文
-			$sql = $this->RequestDetail->EachUserTotalCost($user_id_list);
+            $this->loadModel('RequestDetail');
+            $sql = $this->RequestDetail->getEachUserTotalCost($user_id_list);
             $each_user_month_costs = $this->RequestDetail->query($sql);
 
             $this->set(compact('each_user_month_costs', 'department_id_list', 'department_id'));

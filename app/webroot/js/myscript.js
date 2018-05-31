@@ -34,8 +34,8 @@ $(function() {
                 + $(this).data('year_month') + '/' + $(this).data('user_id'), {},
             function(response) {
                 confirm('確定しました。');
+                $('.confirm_state').show();
             }, "json");
-            $('.confirm_state').show();
         }
         return false;
     });
