@@ -48,9 +48,6 @@
 			$this->loadModel('RequestDetail');
             $group_by_month = $this->RequestDetail->getGroupByMonth($login_user_id);
 
-            debug($group_by_month);
-            debug($login_user_id);
-
 			$this->loadModel('Department');
 			$departments = $this->Department->find('list', array('fields' => 'department_name'));
 

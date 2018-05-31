@@ -42,11 +42,12 @@ $(function() {
 });
 
 $(function() {
-    $('a.is_no_request').click(function(e) {
-        var no_request_month = $('#no_request_month').val();
-        $.post('/transport_expense_app/eachmonthrequests/index/' + $(this).data('user_id') + '/' + no_request_month, {},
+    $('#no_request').click(function(e) {
+        var year_month = $('#no_request_year_month').val();
+        var user_id = $('#no_request_user_id').val();
+        $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id, {},
             function(response) {
-                console.log(response);
+                confirm('確定しました。');
             }, "json");
     });
 });

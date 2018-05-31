@@ -90,21 +90,21 @@
 		<div class="modal_window_contents">
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
-					<?php echo $this->Form->input('date',
+					<?php
+                        echo $this->Form->input('date',
                                                 ['label' => '',
                                                   'type' => 'text',
-                                                    'id' => 'YearMonth',
+                                                    'id' => 'no_request_year_month',
                                                  'class' => 'form-control',
                                                  'value' => date('Y-m')]);
+                        echo $this->Form->hidden('user_id', ['value' => $login_user_id, 'id' => 'no_request_user_id']);
                     ?>
 				</div>
 			</div>
 			<p>申請を確定してもよろしいですか？</p>
 			<?php
-				echo $this->Html->link('<button type="button" class="btn btn-myset">確定</button>', '#',
-										array(  'class' => 'is_no_request',
-												'data-user_id' => $login_user_id,
-												'escape' => false));
+				echo $this->Html->link('<button type="button" class="btn btn-myset" id="no_request">確定</button>',
+                                        '#', ['escape' => false]);
 			?>
 			<button class="btn .page-link.text-dark.d-inline-block">キャンセル</button>
 		</div>
