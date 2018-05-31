@@ -90,7 +90,13 @@
 		<div class="modal_window_contents">
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
-					<?php echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'comfirm_month datepicker', 'class' => 'form-control', 'placeholder' => date('Y-m')]);?>
+					<?php echo $this->Form->input('date',
+                                                ['label' => '',
+                                                  'type' => 'text',
+                                                    'id' => 'YearMonth',
+                                                 'class' => 'form-control',
+                                                 'value' => date('Y-m')]);
+                    ?>
 				</div>
 			</div>
 			<p>申請を確定してもよろしいですか？</p>
