@@ -37,17 +37,15 @@
 			return true;
 		}
 
-		public function passwordConfirm($check){
-        //２つのパスワードフィールドが一致する事を確認する
-        if($this->data['User']['password'] === $this->data['User']['password_confirm']) {
-            return true;
-        } else {
-            return false;
+		public function passwordConfirm($check)
+        {
+            //２つのパスワードフィールドが一致する事を確認する
+            if($this->data['User']['password'] === $this->data['User']['password_confirm']) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
     }
-
-
-	}
-
 ?>

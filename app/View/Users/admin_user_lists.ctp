@@ -19,15 +19,21 @@
             <div class="admin_contents list-group">
                 <div>
                     <?php
-                        echo $this->Form->create('User', ['url' => ['action' => "user_lists/$department_id"], 'type' => 'post', 'class' => "form-group"]);
-                        echo $this->Form->input('date', ['label' => '', 'type' => 'text', 'id' => 'YearMonth', 'value' => $search_year_month, 'class' => 'form-control']);
+                        echo $this->Form->create('User', ['url' =>
+                                                         ['action' => "user_lists/$department_id"],
+                                                          'type' => 'post',
+                                                          'class' => "form-group"]);
+                        echo $this->Form->input('date', ['label' => '',
+                                                         'type' => 'text',
+                                                         'id' => 'YearMonth',
+                                                         'value' => $search_year_month,
+                                                         'class' => 'form-control']);
                         echo $this->Form->input('department_id', array(
-                            'options' => $department_id_list,
-                            'label' => false,
-                            'label' => '部署で絞り込む',
-                            'class' => 'form-control',
-                            'selected' => $department_id
-                        ));
+                                                         'options' => $department_id_list,
+                                                         'label' => false,
+                                                         'label' => '部署で絞り込む',
+                                                         'class' => 'form-control',
+                                                         'selected' => $department_id));
                         echo $this->Form->button(__('選択'), ['class' => 'btn btn-myset float-right']);
                         echo $this->Form->end();
                     ?>

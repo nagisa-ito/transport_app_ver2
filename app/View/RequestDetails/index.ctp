@@ -12,12 +12,15 @@
 			<?php
 				if($this->params['admin']) {
 					echo $this->element('admin_back_to_user_lists');
-				}
+                    echo $this->Html->link('<button class="btn">Back</button>',
+                                                      array('controller' => 'users', 'action' => 'user_requests', $login_user_id),
+                                                      array('escape' => false));
+				} else {
+                    echo $this->Html->link('<button class="btn">Back</button>',
+                                                      array('controller' => 'users', 'action' => 'index', $login_user_id),
+                                                      array('escape' => false));
+                }
 			?>
-			<?php echo $this->Html->link('<button class="btn">Back</button>',
-                                              array('controller' => 'users', 'action' => 'index', $login_user_id),
-                                              array('escape' => false));
-            ?>
 		</div>
 </header>
 

@@ -26,6 +26,19 @@
 			),
 		);
 
+        public function EachUserTotalCost($user_id_list)
+        {
+            //各月、各ユーザごとの合計費用を抽出するためのsql文
+			$sql = "Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
+			From request_details
+			left join users on request_details.user_id = users.id
+			where users.id in ($user_id_list)
+			and request_details.is_delete != true
+			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
+
+            return $sql;
+        }
+
 
 
 	}
