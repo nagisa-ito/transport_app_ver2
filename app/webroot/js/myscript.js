@@ -8,7 +8,7 @@ $(function() {
     $('a.delete').click(function(e) {
         if (confirm('削除しますか？')) {
                             /* /deleteアクションへのパス/削除する申請のid/現在のユーザのid/ */
-            $.post('/transport_app_ver2_1/requestdetails/delete/'
+            $.post('/transport_expense_app/requestdetails/delete/'
                     + $(this).data('request_id') + '/' + $(this).data('user_id') + '/' + $(this).data('year_month') ,{},
                 function(response) {
                     $('#request_'+response.request_id).fadeOut();
@@ -30,7 +30,7 @@ $(function() {
 $(function() {
     $('a.confirm').click(function(e) {
         if(confirm('確定してもよろしいですか？')) {
-            $.post('/transport_app_ver2_1/confirmmonths/add/'
+            $.post('/transport_expense_app/confirmmonths/add/'
                 + $(this).data('year_month') + '/' + $(this).data('user_id'), {},
             function(response) {
                 confirm('確定しました。');
@@ -44,7 +44,7 @@ $(function() {
 $(function() {
     $('a.is_no_request').click(function(e) {
         var no_request_month = $('#no_request_month').val();
-        $.post('/transport_app_ver2_1/eachmonthrequests/index/' + $(this).data('user_id') + '/' + no_request_month, {},
+        $.post('/transport_expense_app/eachmonthrequests/index/' + $(this).data('user_id') + '/' + no_request_month, {},
             function(response) {
                 console.log(response);
             }, "json");

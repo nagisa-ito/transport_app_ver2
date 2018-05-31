@@ -13,7 +13,7 @@
             if($this->request->is('ajax')) {
                 $this->ConfirmMonth->set(array(
                     'year_month' => $year_month,
-                    'is_confirm' => true,
+                    'is_confirm' => 1,
                     'user_id' => $user_id
                 ));
 

@@ -104,7 +104,6 @@
 
 		public function admin_user_lists($department_id = null, $search_year_month = null)
 		{
-
 			$this->loadModel('Department');
 			$department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
 			array_push($department_id_list, '全て');
