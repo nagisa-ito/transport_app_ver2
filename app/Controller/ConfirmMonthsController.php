@@ -8,13 +8,14 @@
 			parent::beforeFilter();
         }
 
-        public function add ($year_month, $user_id)
+        public function add ($year_month, $user_id, $is_no_request = 0)
         {
             if($this->request->is('ajax')) {
                 $this->ConfirmMonth->set(array(
                     'year_month' => $year_month,
+                    'user_id' => $user_id,
                     'is_confirm' => 1,
-                    'user_id' => $user_id
+                    'is_no_request' => $is_no_request
                 ));
 
                 if($this->ConfirmMonth->save()) {
