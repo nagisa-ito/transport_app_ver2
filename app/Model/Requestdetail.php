@@ -43,10 +43,15 @@
         {
             //申請を月ごとに分けてカウントする
             $this->unbindModel(array('hasOne' => array('Transportation')));
-            $sql = "select DATE_FORMAT(request_details.date, '%Y-%m') as date, COUNT(*) as count, sum(request_details.cost) as total_cost, confirm_months.is_confirm
-                    from request_details
-                    left join confirm_months on DATE_FORMAT(request_details.date, '%Y-%m') = confirm_months.year_month
-                    where request_details.user_id = $login_user_id";
+            $sql = "select confirm_months.year_month as date, COUNT(*) as count, sum(request_details.cost) as total_cost,
+                    confirm_months.is_confirm, confirm_months.user_id, confirm_months.is_no_request
+                    from confirm_months
+                    left join request_details
+                    on confirm_months.year_month = DATE_FORMAT(request_details.date, '%Y-%m')
+                    and confirm_months.user_id = request_details.user_id
+                    where confirm_months.user_id = $login_user_id
+                    group by confirm_months.year_month
+                    order by confirm_months.year_month DESC";
 
             $group_by_month = $this->query($sql);
             return $group_by_month;

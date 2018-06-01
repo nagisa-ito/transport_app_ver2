@@ -43,11 +43,12 @@ $(function() {
 
 $(function() {
     $('#no_request').click(function(e) {
-        var year_month = $('#no_request_year_month').val();
+        var year_month = $('#no_request_month').val();
         var user_id = $('#no_request_user_id').val();
         $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id + '/1', {},
             function(response) {
                 confirm('確定しました。');
+                location.reload();
             }, "json");
     });
 });

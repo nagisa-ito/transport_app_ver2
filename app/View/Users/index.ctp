@@ -56,24 +56,38 @@
 					<?php foreach($group_by_month as $each_month_request) : ?>
 						<li class="list-group-item d-flex justify-content-between align-items-center">
 							<?php
-								$print_date = $each_month_request[0]['date'];
+								$print_date = $each_month_request['confirm_months']['date'];
 								$print_date = date('Y年m月', strtotime($print_date));
-								$year_name = $each_month_request[0]['date'];
-								echo $this->Html->link($print_date, array(
-																			'controller' => 'requestdetails',
-																			'action' => "/index/$login_user_id/$year_name/",
-																		), ['class' => 'myset']);
+								$year_name = $each_month_request['confirm_months']['date'];
+                            ?>
+                            <?php
+                                if(!$each_month_request['confirm_months']['is_no_request']) {
+                                    echo $this->Html->link($print_date, array(
+    																			'controller' => 'requestdetails',
+    																			'action' => "/index/$login_user_id/$year_name/",
+    																		), ['class' => 'myset']);
+                                } else {
+                                    echo $this->Html->link($print_date, '#', array('class' => 'myset'));
+                                }
+
+                                if($each_month_request['confirm_months']['is_confirm'] == true) {
+                                    echo '確定済';
+                                }
 							?>
-                            <?php if($each_month_request['confirm_months']['is_confirm'] == true) : ?>
-                                確定済
-                            <?php endif; ?>
 							<div class="pull-right">
-								¥<?php echo number_format($each_month_request[0]['total_cost']); ?>
-								<?php echo $this->Html->link($each_month_request[0]['count']. '件', array(
-																										'controller' => 'requestdetails',
-																										'action' => "/index/$login_user_id/$year_name/",
-																										), ['class' => 'myset']); ?>
-							</div>
+                                <?php
+                                    if(!$each_month_request['confirm_months']['is_no_request']) {
+                                        echo '¥ ' . number_format($each_month_request[0]['total_cost']);
+                                        echo $this->Html->link($each_month_request[0]['count']. '件',
+                                                array(
+                                                        'controller' => 'requestdetails',
+                                                        'action' => "/index/$login_user_id/$year_name/",
+                                                    ), ['class' => 'myset']);
+                                    } else {
+                                        echo '¥ 0 ';
+                                        echo $this->Html->link('0件', '#', array('class' => 'myset'));
+                                    }
+                                ?>
 						</li>
 					<?php endforeach; ?>
 				</ul>
@@ -94,7 +108,7 @@
                         echo $this->Form->input('date',
                                                 ['label' => '',
                                                   'type' => 'text',
-                                                    'id' => 'no_request_year_month',
+                                                    'id' => 'no_request_month',
                                                  'class' => 'form-control',
                                                  'value' => date('Y-m')]);
                         echo $this->Form->hidden('user_id', ['value' => $login_user_id, 'id' => 'no_request_user_id']);

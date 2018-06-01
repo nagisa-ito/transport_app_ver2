@@ -11,6 +11,7 @@
         public function add ($year_month, $user_id, $is_no_request = 0)
         {
             if($this->request->is('ajax')) {
+                //データセット
                 $this->ConfirmMonth->set(array(
                     'year_month' => $year_month,
                     'user_id' => $user_id,
