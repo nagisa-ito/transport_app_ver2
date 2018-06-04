@@ -1,5 +1,5 @@
 <?php
 
-	class RequestsController extends AppController {
-		public $scaffold;
-	}
+    class RequestsController extends AppController {
+        public $scaffold;
+    }

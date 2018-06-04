@@ -35,7 +35,7 @@
 					<li><?php echo h($departments[$login_user['department_id']]); ?></li>
 					<br>
 					<table class="table table-bordered">
-    					<th>定期区間</th>
+                        <th>定期区間</th>
 						<th><?php echo h($login_user['pass_from_station']); ?></th>
 						<th><?php echo h($login_user['pass_to_station']); ?></th>
 					</table>
@@ -43,9 +43,8 @@
 				<div class="row mb-2">
 					<div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
 				</div>
-				<a href='#' class="caution small show-modal">
-					指定の年月の申請を確定する<br>
-					※申請がない場合も申請してください
+				<a href='#' class="caution small show-modal btn btn-success">
+					申請が無い月を確定する
 				</a>
 			</div>
 		</div>
@@ -54,7 +53,8 @@
 				<h4>申請一覧</h4>
 				<ul class="list-group">
 					<?php foreach($group_by_month as $each_month_request) : ?>
-						<li class="list-group-item d-flex justify-content-between align-items-center">
+						<li class="list-group-item d-flex justify-content-between">
+                            <div>
 							<?php
 								$print_date = $each_month_request['confirm_months']['date'];
 								$print_date = date('Y年m月', strtotime($print_date));
@@ -71,21 +71,22 @@
                                 }
 
                                 if($each_month_request['confirm_months']['is_confirm'] == true) {
-                                    echo '確定済';
+                                    echo $this->element('confirm_badge');
                                 }
 							?>
+                            </div>
 							<div class="pull-right">
                                 <?php
                                     if(!$each_month_request['confirm_months']['is_no_request']) {
-                                        echo '¥ ' . number_format($each_month_request[0]['total_cost']);
+                                        echo '¥ ' . number_format($each_month_request[0]['total_cost']) ;
                                         echo $this->Html->link($each_month_request[0]['count']. '件',
                                                 array(
                                                         'controller' => 'requestdetails',
                                                         'action' => "/index/$login_user_id/$year_name/",
-                                                    ), ['class' => 'myset']);
+                                                    ), ['class' => 'myset ml-sm-2']);
                                     } else {
-                                        echo '¥ 0 ';
-                                        echo $this->Html->link('0件', '#', array('class' => 'myset'));
+                                        echo '¥ 0';
+                                        echo $this->Html->link('0件', '#', array('class' => 'myset ml-sm-2'));
                                     }
                                 ?>
 						</li>

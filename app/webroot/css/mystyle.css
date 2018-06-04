@@ -90,8 +90,14 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 	padding-bottom: 10px;
 }
 
-.confirm_state {
-	display: none;
+.badge-confirm {
+	display: inline-block;
+    font-size: 12px;
+    color: white !important;
+    background-color: rgb(215, 61, 98);
+    padding: 5px 10px;
+    margin: 0px 20px 0px;
+    border-radius: 3px;
 }
 
 #login_title {
