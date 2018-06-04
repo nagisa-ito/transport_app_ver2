@@ -1,7 +1,7 @@
 <?php
 
-	class ConfirmMonth extends AppModel {
+    class ConfirmMonth extends AppModel {
 
-	}
+    }
 
 ?>

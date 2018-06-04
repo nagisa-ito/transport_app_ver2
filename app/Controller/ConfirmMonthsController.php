@@ -4,8 +4,8 @@
         public $helpers = array('Html', 'Form');
 
         public function beforeFilter()
-		{
-			parent::beforeFilter();
+        {
+            parent::beforeFilter();
         }
 
         public function add ($year_month, $user_id, $is_no_request = 0)
@@ -21,7 +21,7 @@
 
                 if($this->ConfirmMonth->save()) {
                     $this->autoRender = false;
-					$this->autoLayout = false;
+                    $this->autoLayout = false;
                     $response = array('year_month' => $year_month, 'user_id' => $user_id);
                     $this->header('Content-Type: application/json');
                     echo json_encode($response);

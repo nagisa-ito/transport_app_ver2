@@ -1,40 +1,40 @@
 <?php
-	class RequestDetail extends AppModel
-	{
-		public $actsAs = array('Containable');
+    class RequestDetail extends AppModel
+    {
+        public $actsAs = array('Containable');
 
-		var $hasOne = 'Transportation';
+        var $hasOne = 'Transportation';
 
-		public $validate = array(
-			'date' => array(
-				'rule' => 'date'
-			),
-			'transportation_id' => array(
-				'rule' => 'notEmpty'
-			),
-			'from_station' => array(
-				'rule' => 'alphaNumeric'
-			),
-			'to_station' => array(
-				'rule' => 'alphaNumeric'
-			),
-			'cost' => array(
-				'rule' => 'naturalNumber'
-			),
-			'oneway_or_round' => array(
-				'rule' => 'notEmpty'
-			),
-		);
+        public $validate = array(
+            'date' => array(
+                'rule' => 'date'
+            ),
+            'transportation_id' => array(
+                'rule' => 'notEmpty'
+            ),
+            'from_station' => array(
+                'rule' => 'alphaNumeric'
+            ),
+            'to_station' => array(
+                'rule' => 'alphaNumeric'
+            ),
+            'cost' => array(
+                'rule' => 'naturalNumber'
+            ),
+            'oneway_or_round' => array(
+                'rule' => 'notEmpty'
+            ),
+        );
 
         public function getEachUserTotalCost($user_id_list)
         {
             //各月、各ユーザごとの合計費用を抽出するためのsql文
-			$sql = "Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
-			From request_details
-			left join users on request_details.user_id = users.id
-			where users.id in ($user_id_list)
-			and request_details.is_delete != true
-			Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
+            $sql = "Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
+            From request_details
+            left join users on request_details.user_id = users.id
+            where users.id in ($user_id_list)
+            and request_details.is_delete != true
+            Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
 
             return $sql;
         }
@@ -57,6 +57,6 @@
             return $group_by_month;
         }
 
-	}
+    }
 
 ?>

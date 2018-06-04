@@ -27,8 +27,8 @@ App::uses('Controller', 'Controller');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package        app.Controller
+ * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
 
@@ -67,21 +67,21 @@ class AppController extends Controller {
 
     public $components = array(
         'Session',
-		'Auth' => array(
+        'Auth' => array(
             'loginAction' => array(),
             'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'flash' => array(
-				'element' => 'alert',
-				'key' => 'auth',
-				'params' => array(
-					'plugin' => 'BoostCake',
-					'class' => 'alert-error',
-				)
-			),
+            'flash' => array(
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-error',
+                )
+            ),
             'authorize' => array('Controller') //認証
-		)
-	);
+        )
+    );
 
     //誰かが他の人の申請を編集したり削除したりするのを防ぐように、アプリケーションをセキュアにする。
     public function isAuthorized($user) {
