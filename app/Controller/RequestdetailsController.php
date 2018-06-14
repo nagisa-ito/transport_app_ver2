@@ -119,7 +119,6 @@
             if($this->request->is('ajax')) {
                     $this->RequestDetail->id = $delete_request_id;
                     $this->RequestDetail->saveField('is_delete', true);
-                    $this->Session->setFlash('Deleted!', 'default', ['class' => 'alert alert-warning']);
                     $this->autoRender = false;
                     $this->autoLayout = false;
                     $total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);

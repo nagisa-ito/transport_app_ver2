@@ -43,31 +43,26 @@
                     <thead>
                         <tr class="table-success"><th colspan="2">ユーザーを選択:</th></tr>
                     </thead>
-                    <?php foreach($users as $user) : ?>
-                    <?php
-                        $user_id = $user['id'];
-                        if(($user['role']) == 'admin') continue;
-                    ?>
+                    <?php foreach($each_user_monthly_costs as $user_monthly_cost) : ?>
                     <tbody>
                         <tr>
                             <td>
                               <?php
-                                echo $this->Html->link($user['yourname'],
+                                echo $this->Html->link($user_monthly_cost['yourname'],
                                                  array( 'controller' => 'users',
                                                         'action' => "admin_user_requests",
-                                                        $user['id'],
-                                                        $user['department_id']),
+                                                        $user_monthly_cost['id'],
+                                                        $user_monthly_cost['department_id']),
                                                  array( 'class' => 'myset'));
+                                if($user_monthly_cost['is_confirm']) {
+                                    echo $this->element('confirm_badge');
+                                }
                                 ?>
                             </td>
                             <td class="text-right">
-                                <?php
-                                    foreach($each_user_month_costs as $month_cost) {
-                                        if($month_cost['request_details']['user_id'] == $user_id
-                                                           && $month_cost[0]['date'] == $search_year_month) {
-                                        echo '¥' . number_format($month_cost[0]['total_cost']);
-                                        }
-                                    }
+                               <?php
+                                    $cost =  empty($user_monthly_cost['total_cost']) ? 0 : $user_monthly_cost['total_cost'];
+                                    echo '¥' . number_format($cost);
                                 ?>
                             </td>
                         </tr>

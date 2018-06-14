@@ -26,34 +26,65 @@
             ),
         );
 
-        public function getEachUserTotalCost($user_id_list)
+        public function getEachUserTotalCost($user_ids, $search_year_month)
         {
             //各月、各ユーザごとの合計費用を抽出するためのsql文
-            $sql = "Select request_details.user_id, users.yourname, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
-            From request_details
-            left join users on request_details.user_id = users.id
-            where users.id in ($user_id_list)
-            and request_details.is_delete != true
-            Group by request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')";
-
-            return $sql;
+            $sql = "
+            SELECT *
+            FROM
+            (
+                SELECT users.id, users.yourname, users.department_id,user_request_lists.date,
+                    user_request_lists.total_cost, user_request_lists.is_confirm, user_request_lists.is_no_request
+                    FROM
+                    (
+                    SELECT all_month_requests.*, confirm_months.is_confirm, confirm_months.is_no_request
+                    FROM
+                    (
+                        SELECT request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost
+                        FROM request_details
+                        LEFT JOIN users ON request_details.user_id = users.id
+                        AND request_details.is_delete != true
+                        GROUP BY request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')
+                    )
+                    AS all_month_requests
+                    LEFT JOIN confirm_months
+                    ON all_month_requests.user_id = confirm_months.user_id
+                    AND all_month_requests.date = confirm_months.year_month
+                    WHERE all_month_requests.date = '$search_year_month'
+                    ) 
+                    AS user_request_lists
+                    RIGHT JOIN users
+                    ON user_request_lists.user_id = users.id
+                    WHERE users.role != 'admin'
+                    AND users.id IN ($user_ids)
+            )
+            AS each_month_user_lists
+            ";
+            $result = $this->query($sql);
+            $result = Hash::extract($result, '{n}.{s}');
+            return $result;
         }
 
+        //申請を月ごとに分けてカウントする
         public function getGroupByMonth($login_user_id)
         {
-            //申請を月ごとに分けてカウントする
             $this->unbindModel(array('hasOne' => array('Transportation')));
-            $sql = "select confirm_months.year_month as date, COUNT(*) as count, sum(request_details.cost) as total_cost,
-                    confirm_months.is_confirm, confirm_months.user_id, confirm_months.is_no_request
-                    from confirm_months
-                    left join request_details
-                    on confirm_months.year_month = DATE_FORMAT(request_details.date, '%Y-%m')
-                    and confirm_months.user_id = request_details.user_id
-                    where confirm_months.user_id = $login_user_id
-                    group by confirm_months.year_month
-                    order by confirm_months.year_month DESC";
-
+            $sql = "
+                SELECT *
+                FROM(
+                    SELECT request_details.user_id as user_id, DATE_FORMAT(request_details.date, '%Y-%m') as date, COUNT(*) as count, sum(request_details.cost) as total_cost, 
+                    confirm_months.is_confirm, confirm_months.is_no_request
+                    FROM request_details
+                    LEFT JOIN confirm_months
+                    ON DATE_FORMAT(request_details.date, '%Y-%m') = confirm_months.year_month
+                    WHERE request_details.is_delete != 1
+                    AND request_details.user_id = 1
+                    GROUP BY DATE_FORMAT(request_details.date, '%Y-%m')
+                    ORDER BY DATE_FORMAT(request_details.date, '%Y-%m') DESC
+                ) AS group_by_month
+            ";
             $group_by_month = $this->query($sql);
+            
             return $group_by_month;
         }
 

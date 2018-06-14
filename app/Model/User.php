@@ -46,6 +46,18 @@
                 return false;
             }
         }
+        
+        public function getUserIdsByDepartmentId($department_id) {
+            $param = array();
+            $param['fields'] = array('id');
+            if($department_id != 7) {
+                $param['conditions'] = array('department_id' => $department_id);
+            }
+            $user_ids = $this->find('all', $param);
+            $user_ids = Hash::extract($user_ids, '{n}.User.id');
+            
+            return $user_ids;
+        }
 
     }
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-    class UsersController extends AppController {
-
+    class UsersController extends AppController
+    {
         public $helpers = array('Html', 'Form');
 
         public function beforeFilter()
@@ -93,40 +93,24 @@
         public function admin_user_lists($department_id = null, $search_year_month = null)
         {
             $this->loadModel('Department');
+            $department_id = 7;
+            $search_year_month = date('Y-m');
             $department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
             array_push($department_id_list, '全て');
 
             if($this->request->is('post')) {
-
-                if($this->request->data['User']['department_id'] != 7){
-                    //部署の絞りこみがあった場合、その条件で抽出
-                    $users = $this->User->find('all', array('conditions' => array('department_id' => $this->request->data['User']['department_id'])));
-                } else {
-                    //ユーザー全員を抽出
-                    $users = $this->User->find('all');
-                }
-
-                //年月の指定があった場合はその年月を格納し、なければ今月のデータを格納する
-                $search_year_month = $this->request->data['User']['date'];
                 $department_id = $this->request->data['User']['department_id'];
-
-            } else {
-                $users = $this->User->find('all');
-                $search_year_month = date('Y-m');
-                $department_id = 7;
+                $search_year_month = $this->request->data['User']['date'];
             }
-            $users = Hash::extract($users, '{n}.User');
-            $this->set(compact('users', 'search_year_month'));
 
-            //その部署の人たちのid一覧を抽出して結合する
-            $user_id_list = implode(',', array_column($users, 'id'));
+            $users = $this->User->getUserIdsByDepartmentId($department_id);
+            $user_ids = implode(',', $users);
 
-            //各月、各ユーザごとの合計費用を抽出するためのsql文
+            //各月、各ユーザごとの合計費用を抽出する
             $this->loadModel('RequestDetail');
-            $sql = $this->RequestDetail->getEachUserTotalCost($user_id_list);
-            $each_user_month_costs = $this->RequestDetail->query($sql);
+            $each_user_monthly_costs = $this->RequestDetail->getEachUserTotalCost($user_ids, $search_year_month);
 
-            $this->set(compact('each_user_month_costs', 'department_id_list', 'department_id'));
+            $this->set(compact('each_user_monthly_costs', 'department_id_list', 'department_id','search_year_month'));
         }
 
         public function admin_user_requests($user_id){

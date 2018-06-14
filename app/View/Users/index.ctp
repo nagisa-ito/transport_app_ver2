@@ -43,7 +43,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
                 </div>
-                <a href='#' class="caution small show-modal btn btn-success">
+                <a href='#' class="caution small show-modal btn-no-request">
                     申請が無い月を確定する
                 </a>
             </div>
@@ -56,12 +56,12 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <div>
                             <?php
-                                $print_date = $each_month_request['confirm_months']['date'];
+                                $print_date = $each_month_request['group_by_month']['date'];
                                 $print_date = date('Y年m月', strtotime($print_date));
-                                $year_name = $each_month_request['confirm_months']['date'];
+                                $year_name = $each_month_request['group_by_month']['date'];
                             ?>
                             <?php
-                                if(!$each_month_request['confirm_months']['is_no_request']) {
+                                if(!$each_month_request['group_by_month']['is_no_request']) {
                                     echo $this->Html->link($print_date, array(
                                                                                 'controller' => 'requestdetails',
                                                                                 'action' => "/index/$login_user_id/$year_name/",
@@ -70,16 +70,16 @@
                                     echo $this->Html->link($print_date, '#', array('class' => 'myset'));
                                 }
 
-                                if($each_month_request['confirm_months']['is_confirm'] == true) {
+                                if($each_month_request['group_by_month']['is_confirm'] == true) {
                                     echo $this->element('confirm_badge');
                                 }
                             ?>
                             </div>
                             <div class="pull-right">
                                 <?php
-                                    if(!$each_month_request['confirm_months']['is_no_request']) {
-                                        echo '¥ ' . number_format($each_month_request[0]['total_cost']) ;
-                                        echo $this->Html->link($each_month_request[0]['count']. '件',
+                                    if(!$each_month_request['group_by_month']['is_no_request']) {
+                                        echo '¥ ' . number_format($each_month_request['group_by_month']['total_cost']) ;
+                                        echo $this->Html->link($each_month_request['group_by_month']['count']. '件',
                                                 array(
                                                         'controller' => 'requestdetails',
                                                         'action' => "/index/$login_user_id/$year_name/",
