@@ -2,7 +2,9 @@
 
     class UsersController extends AppController
     {
-        public $helpers = array('Html', 'Form');
+        public $helpers = array('Html', 'Form', 'Csv');
+        public $uses = array('RequestDetail', 'User', 'Department');
+        public $each_user_monthly_costs = array();
 
         public function beforeFilter()
         {
@@ -45,10 +47,7 @@
                 $this->set('login_user', $login_user[0]);
             }
 
-            $this->loadModel('RequestDetail');
             $group_by_month = $this->RequestDetail->getGroupByMonth($login_user_id);
-
-            $this->loadModel('Department');
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
             $this->set(compact('departments', 'group_by_month', 'login_user_id'));
@@ -56,7 +55,6 @@
 
         public function add()
         {
-            $this->loadModel('Department');
             $this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
 
             if($this->request->is('post')){
@@ -84,7 +82,6 @@
             $users = $this->User->find('all');
             $users = Hash::extract($users, '{n}.{s}');
 
-            $this->loadModel('Department');
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
             $this->set(compact('departments', 'users'));
 
@@ -92,7 +89,6 @@
 
         public function admin_user_lists($department_id = null, $search_year_month = null)
         {
-            $this->loadModel('Department');
             $department_id = 7;
             $search_year_month = date('Y-m');
             $department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
@@ -107,15 +103,35 @@
             $user_ids = implode(',', $users);
 
             //各月、各ユーザごとの合計費用を抽出する
-            $this->loadModel('RequestDetail');
-            $each_user_monthly_costs = $this->RequestDetail->getEachUserTotalCost($user_ids, $search_year_month);
+            $this->each_user_monthly_costs = $this->RequestDetail->getEachUserTotalCost($user_ids, $search_year_month);
+            $each_user_monthly_costs = $this->each_user_monthly_costs;
 
-            $this->set(compact('each_user_monthly_costs', 'department_id_list', 'department_id','search_year_month'));
+            $this->set(compact('department_id_list', 'department_id','search_year_month'));
+            $this->set(compact('each_user_monthly_costs'));
         }
 
         public function admin_user_requests($user_id){
             $this->index($user_id);
             $this->render('index');
+        }
+
+        public function admin_csv_download($department_id, $date) {
+            $department = '_';
+            $this->layout = false;
+
+            $user_ids = $this->User->getUserIdsByDepartmentId($department_id);
+            $user_ids = implode(',', $user_ids);
+            $data = $this->RequestDetail->outputCsvData($user_ids, $date);
+
+            if($department_id != 7) {
+                $this->Department->id = $department_id;
+                $department .= $this->Department->field('department_name');
+            }
+
+            $print_date = str_replace('-', '_', $date);
+            $filename = "交通費" . $department . "_" . $print_date;
+            $header = array('社員id', '部署', '名前', '合計金額', '申請金額'); //部署と申請件数があったほうがいいかも
+            $this->set(compact('filename', 'header', 'data'));
         }
 
     }

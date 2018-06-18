@@ -16,6 +16,15 @@
 <div id="test"></div>
     <div class="content row">
         <div class="col-sm-6 offset-sm-3">
+            <?php
+                echo $this->Html->link('CSVダウンロード',
+                                                    array( 'controller' => 'users',
+                                                            'action' => "admin_csv_download",
+                                                            $department_id,
+                                                            $search_year_month,
+                                                        ),
+                                                    array( 'class' => 'btn btn-success'));
+                ?>
             <div class="admin_contents list-group">
                 <div>
                     <?php
@@ -72,6 +81,5 @@
             </div>
         </div>
     </div>
-
 
     <footer class="footer"></footer>

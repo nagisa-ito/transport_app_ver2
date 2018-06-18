@@ -72,7 +72,7 @@
             $sql = "
                 SELECT *
                 FROM(
-                    SELECT request_details.user_id as user_id, DATE_FORMAT(request_details.date, '%Y-%m') as date, COUNT(*) as count, sum(request_details.cost) as total_cost, 
+                    SELECT request_details.user_id as user_id, DATE_FORMAT(request_details.date, '%Y-%m') as date, COUNT(*) as count, sum(request_details.cost) as total_cost,
                     confirm_months.is_confirm, confirm_months.is_no_request
                     FROM request_details
                     LEFT JOIN confirm_months
@@ -84,6 +84,52 @@
                 ) AS group_by_month
             ";
             $group_by_month = $this->query($sql);
+            
+            return $group_by_month;
+        }
+
+        public function outputCsvData($user_ids, $date)
+        {
+            $sql = "
+            SELECT *
+            FROM
+            (
+                SELECT each_month_user_lists.id, departments.department_name, each_month_user_lists.yourname,
+                    each_month_user_lists.date, each_month_user_lists.count, each_month_user_lists.total_cost
+                FROM
+                (
+                    SELECT users.id, users.yourname, users.department_id, user_request_lists.date,
+                        user_request_lists.total_cost,  user_request_lists.count
+                        FROM
+                        (
+                        SELECT all_month_requests.*
+                        FROM
+                        (
+                            SELECT request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m') as date, sum(request_details.cost) as total_cost, COUNT(*) as count
+                            FROM request_details
+                            LEFT JOIN users ON request_details.user_id = users.id
+                            AND request_details.is_delete != true
+                            GROUP BY request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')
+                        )
+                        AS all_month_requests
+                        LEFT JOIN confirm_months
+                        ON all_month_requests.user_id = confirm_months.user_id
+                        AND all_month_requests.date = confirm_months.year_month
+                        WHERE all_month_requests.date = '$date'
+                        ) 
+                        AS user_request_lists
+                        RIGHT JOIN users
+                        ON user_request_lists.user_id = users.id
+                        WHERE users.role != 'admin'
+                        AND users.id IN ($user_ids)
+                )
+                AS each_month_user_lists
+                INNER JOIN departments
+                ON departments.id = each_month_user_lists.department_id 
+            ) AS output_csv_data
+            ";
+            $group_by_month = $this->query($sql);
+            $group_by_month = Hash::extract($group_by_month, '{n}.{s}');
             
             return $group_by_month;
         }

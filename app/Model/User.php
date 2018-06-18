@@ -1,5 +1,4 @@
 <?php
-
     App::uses('AppModel', 'Model');
     App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
@@ -23,6 +22,8 @@
             'pass_from_station' => array('rule' => 'alphaNumeric'),
             'pass_to_station' => array('rule' => 'alphaNumeric')
         );
+        
+        public $each_user_monthly_costs = array(1,2);
 
         //パスワードの暗号化
         public function beforeSave($options = array())
@@ -57,6 +58,11 @@
             $user_ids = Hash::extract($user_ids, '{n}.User.id');
             
             return $user_ids;
+        }
+
+        public function getEachUserMonthlyCosts()
+        {
+            return $this->each_user_monthly_costs;
         }
 
     }
