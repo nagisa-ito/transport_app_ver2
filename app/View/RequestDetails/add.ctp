@@ -20,31 +20,35 @@
                     echo $this->Form->input('RequestDetail.date', array(
                         'type'  => 'text',
                         'label' => array('text' => '日付'),
-                        'id'    => 'datepicker')
-                    );
+                        'id'    => 'datepicker',
+                    ));
                     echo $this->Form->input('RequestDetail.client', array(
                         'label'       => array('text' => 'クライアント名'),
                         'placeholder' => '訪問先が無い場合は空欄',
-                        'class'       => 'form-control')
-                    );
+                        'class'       => 'form-control',
+                    ));
                     echo $this->Form->input('RequestDetail.transportation_id', array(
                         'options' => $transportation_id_list,
-                        'label'   => '交通手段')
-                    );
+                        'label'   => '交通手段',
+                    ));
+                    echo $this->Form->input('RequestDetail.is_season_ticket', array(
+                        'type' => 'checkbox',
+                        'label' => '定期',
+                    ));
                     echo $this->Form->input('RequestDetail.from_station',  array(
                         'label'       => array('text' => '利用区間'),
                         'placeholder' => '乗車駅',
-                        'class'       => 'form-control')
-                    );
+                        'class'       => 'form-control',
+                    ));
                     echo $this->Form->input('RequestDetail.to_station', array(
                         'label'       => array('text' => ''),
                         'placeholder' => '降車駅',
-                        'class'       => 'form-control')
-                    );
+                        'class'       => 'form-control',
+                    ));
                     echo $this->Form->input('RequestDetail.cost', array(
                         'label' => array('text' => '費用'),
-                        'class' => 'form-control')
-                    );
+                        'class' => 'form-control',
+                    ));
                 ?>
                 <div class="small caution">定期を考慮した金額を、片道の料金で入力してください</div>
                 <?php
@@ -52,12 +56,12 @@
                          'type' => 'select',
                          'options' => $oneway_or_round,
                          'label' => '往復or片道',
-                         'selected' => '片道'
+                         'selected' => '片道',
                      ));
                      echo $this->Form->input('RequestDetail.overview', array(
                         'label' => array('text' => '備考'),
-                        'class' => 'form-control')
-                    );
+                        'class' => 'form-control',
+                    ));
                 ?>
                 <div id="test"></div>
                 <div class="text-right">
