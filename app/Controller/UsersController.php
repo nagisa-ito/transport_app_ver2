@@ -20,7 +20,11 @@
                 if($this->Auth->login()) {
                     $role = $this->Auth->user('role');
                     if(isset($role) && $role === 'admin'){
-                        $this->redirect(['admin' => true, 'controller' => 'users', 'action' => 'user_lists']);
+                        $this->redirect(array(
+                            'admin' => true,
+                            'controller' => 'users',
+                            'action' => 'user_lists',
+                        ));
                     } else {
                         $this->redirect($this->Auth->redirect());
                     }

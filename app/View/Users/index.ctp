@@ -41,7 +41,14 @@
                     </table>
                 </div>
                 <div class="row mb-2">
-                    <div class="col-sm-8 offset-sm-2"><button class="btn btn-myset btn-block" onClick = "location.href='<?php echo $this->html->url("/requestdetails/add/$login_user[id]");?>';">申請を追加</button></div>
+                    <div class="col-sm-8 offset-sm-2">
+                        <?php echo $this->Html->link('申請を追加', array(
+                                'controller' => 'requestdetails',
+                                'action' => 'add',
+                                $login_user_id,
+                                ), array('class' => 'myset'));
+                        ?>
+                    </div>
                 </div>
                 <a href='#' class="caution small show-modal btn-no-request">
                     申請が無い月を確定する
