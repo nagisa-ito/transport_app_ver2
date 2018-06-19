@@ -107,7 +107,7 @@
             $user_ids = implode(',', $users);
 
             //各月、各ユーザごとの合計費用を抽出する
-            $this->each_user_monthly_costs = $this->RequestDetail->getEachUserTotalCost($user_ids, $search_year_month);
+            $this->each_user_monthly_costs = $this->RequestDetail->getEachUserMonthlyCost($user_ids, $search_year_month);
             $each_user_monthly_costs = $this->each_user_monthly_costs;
 
             $this->set(compact('department_id_list', 'department_id','search_year_month'));
@@ -125,7 +125,19 @@
 
             $user_ids = $this->User->getUserIdsByDepartmentId($department_id);
             $user_ids = implode(',', $user_ids);
-            $data = $this->RequestDetail->outputCsvData($user_ids, $date);
+
+            $csv_output_data = $this->RequestDetail->getCsvDownloadTotalCost($user_ids, $date);
+            $season_ticket = $this->RequestDetail->getCsvDownloadSeasonTicket($user_ids, $date, 1, 'season_ticket');
+            $season_ticket = Hash::extract($season_ticket, '{n}.season_ticket.total_cost');
+            $NOT_season_ticket = $this->RequestDetail->getCsvDownloadSeasonTicket($user_ids, $date, 0, 'NOT_season_ticket');
+            $NOT_season_ticket = Hash::extract($NOT_season_ticket, '{n}.NOT_season_ticket.total_cost');
+
+            foreach($season_ticket as $key => $value) {
+                $csv_output_data[$key]['season_ticket'] = $value;
+                $csv_output_data[$key]['NOT_season_ticket'] = $NOT_season_ticket[$key];
+            }
+
+            $data = $this->RequestDetail->sortCsvOutputData($csv_output_data);
 
             if($department_id != 7) {
                 $this->Department->id = $department_id;
@@ -134,7 +146,7 @@
 
             $print_date = str_replace('-', '_', $date);
             $filename = "交通費" . $department . "_" . $print_date;
-            $header = array('社員id', '部署', '名前', '合計金額', '申請金額'); //部署と申請件数があったほうがいいかも
+            $header = array('社員id', '部署', '名前', '件数', '営業交通費', '定期代', '合計金額');
             $this->set(compact('filename', 'header', 'data'));
         }
 
