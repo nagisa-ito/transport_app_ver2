@@ -111,9 +111,14 @@
                         <td><?php echo h($each_user_request_detail['RequestDetail']['to_station'])?></td>
                         <td><?php echo h($each_user_request_detail['RequestDetail']['cost'])?></td>
                         <td><?php echo h($each_user_request_detail['RequestDetail']['oneway_or_round'])?></td>
+                        <td>
+                            <?php
+                                echo $request_state =
+                                    $each_user_request_detail['RequestDetail']['is_season_ticket']
+                                    ? '定期代' : '営業交通費';
+                            ?>
+                        </td>
                         <td><?php echo h($each_user_request_detail['RequestDetail']['overview'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['created'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['modified'])?></td>
                         <td>
                             <?php
                                 //編集・削除を実行

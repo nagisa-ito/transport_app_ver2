@@ -60,10 +60,9 @@
                 '交通手段',
                 '区間',
                 '費用',
-                '片道or往復',
+                '状態',
+                '',
                 '備考',
-                'created',
-                'modified',
             );
             $this->set('column_names', $column_names);
             $this->set('total_cost', $total_cost);
