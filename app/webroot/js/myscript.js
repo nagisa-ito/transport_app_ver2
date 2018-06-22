@@ -71,18 +71,6 @@ $('#no_request_month').datepicker({
         minViewMode : 1
 });
 
-//往復であればフォームの値を2倍にする
-$('#RequestDetailOnewayOrRound').change(function() {
-    str = $('#RequestDetailOnewayOrRound option:selected').text();
-    cost = $('#RequestDetailCost').val();
-    if(str == '往復') {
-        $('#RequestDetailCost').val(cost*2);
-    } else {
-        $('#RequestDetailCost').empty();
-        $('#RequestDetailCost').val(cost/2);
-    }
-}).change();
-
 //指定の部署以外のデータを非表示
 $('#department_id').change(function() {
     var department_id = $('#department_id option:selected').val();
@@ -91,3 +79,11 @@ $('#department_id').change(function() {
         $('a.myset').hide();
     }
 }).change();
+
+$(function() {
+    var $input = $('#input');
+    var $output = $('#output2');
+    $input.on('change', function(event) {
+    $output.text($input.val());
+    });
+});

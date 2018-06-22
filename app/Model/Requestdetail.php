@@ -191,7 +191,7 @@
             return $data;
         }
         
-        public function sortCsvOutputData($data)
+        public function sortCsvOutputColumn($data)
         {
             $sort_standard = array(
                 'id',

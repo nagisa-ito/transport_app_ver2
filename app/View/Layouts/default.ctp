@@ -28,10 +28,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
    </title>
    <?php
 
-	   echo $this->Html->meta('icon');
+	    echo $this->Html->meta('icon');
 
-	   // jQuery CDN
-	   echo $this->Html->script('//code.jquery.com/jquery-1.10.2.min.js');
+	    // jQuery CDN
+	    echo $this->Html->script('//code.jquery.com/jquery-1.10.2.min.js');
 
 	   // Twitter Bootstrap 3.0 CDN
 	   echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
@@ -43,11 +43,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
    ?>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
+    
+    <!--jQuery UI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    
 	<!--datepicker-->
-	<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script-->
 	<?php echo $this->Html->css('bootstrap-datepicker.min'); ?>
 	<?php echo $this->Html->script('bootstrap-datepicker.min'); ?>
 	<?php echo $this->Html->script('bootstrap-datepicker.ja.min'); ?>

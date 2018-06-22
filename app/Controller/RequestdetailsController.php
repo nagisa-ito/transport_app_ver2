@@ -4,11 +4,11 @@
         //helperという機能を使うための合言葉のようなもの
         public $helpers = array('Html', 'Form');
         public $oneway_or_round = array('往復' => '往復', '片道' => '片道');
-
+        public $uses = array('RequestDetail', 'User', 'Company', 'Department', 'TravelSection');
+        
         public function beforeFilter()
         {
             parent::beforeFilter();
-            $this->loadModel('Department');
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
             $this->set('departments', $departments);
         }
@@ -70,9 +70,10 @@
 
         public function add($login_user_id = null, $year_month = null)
         {
+            $this->getAutocompleteContents();
             $this->set('login_user',$this->Auth->user());
             $this->set('oneway_or_round', $this->oneway_or_round);
-            $this->set('login_user_id', $login_user_id);
+            $this->set(compact('login_user_id'));
 
             $this->loadModel('Transportation');
             $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
@@ -200,6 +201,36 @@
 
         public function admin_delete($delete_request_id = null, $login_user_id = null, $year_month = null){
             $this->delete($delete_request_id, $login_user_id, $year_month);
+        }
+
+        private function getAutocompleteContents()
+        {
+            $companies = $this->Company->find('list', array('fields' => 'name'));
+            $companies = json_encode($companies);
+
+            $from_stations = $this->Company->find('list', array('fields' => 'from'));
+            $to_stations = $this->Company->find('list', array('fields' => 'to'));
+            $stations = array_values(array_unique(array_merge_recursive($from_stations, $to_stations)));
+            $stations = json_encode($stations);
+
+            $this->set(compact('companies', 'stations'));
+        }
+
+        public function search_travel_section($name = null)
+        {
+            //ajax処理
+            if($this->request->is('ajax')) {
+                $travel_section = $this->Company->find('first', array(
+                    'conditions' => array('name' => $name),
+                ));
+                //$travel_section = Hash::extract($travel_section, '{n}.{s}');
+                $this->autoRender = false;
+                $this->autoLayout = false;
+                $response = $travel_section;
+                $this->header('Content-Type: application/json');
+                echo json_encode($response);
+                exit();
+            }
         }
 
     }

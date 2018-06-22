@@ -137,7 +137,7 @@
                 $csv_output_data[$key]['NOT_season_ticket'] = $NOT_season_ticket[$key];
             }
 
-            $data = $this->RequestDetail->sortCsvOutputData($csv_output_data);
+            $data = $this->RequestDetail->sortCsvOutputColumn($csv_output_data);
 
             if($department_id != 7) {
                 $this->Department->id = $department_id;
