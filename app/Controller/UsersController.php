@@ -114,12 +114,14 @@
             $this->set(compact('each_user_monthly_costs'));
         }
 
-        public function admin_user_requests($user_id){
+        public function admin_user_requests($user_id)
+        {
             $this->index($user_id);
             $this->render('index');
         }
 
-        public function admin_csv_download($department_id, $date) {
+        public function admin_csv_download($department_id, $date)
+        {
             $department = '_';
             $this->layout = false;
 

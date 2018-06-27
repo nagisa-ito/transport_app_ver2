@@ -21,55 +21,54 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
+    <?php echo $this->Html->charset(); ?>
    <title>
-	   <?php echo $cakeDescription ?>:
-	   <?php echo $title_for_layout; ?>
+        <?php echo $cakeDescription ?>:
+        <?php echo $title_for_layout; ?>
    </title>
-   <?php
+    <?php
+        echo $this->Html->meta('icon');
 
-	    echo $this->Html->meta('icon');
+        // jQuery CDN
+        echo $this->Html->script('//code.jquery.com/jquery-3.2.1.min.js');
 
-	    // jQuery CDN
-	    echo $this->Html->script('//code.jquery.com/jquery-1.10.2.min.js');
-
-	   // Twitter Bootstrap 3.0 CDN
-	   echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
-	   echo $this->Html->script('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js');
-
-	   echo $this->fetch('meta');
-	   echo $this->fetch('css');
-	   echo $this->fetch('script');
-   ?>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        // Twitter Bootstrap 3.0 CDN
+        echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
+        echo $this->Html->script('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js');
     
-    <!--jQuery UI-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        //jQuery UI
+        echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
+        echo $this->Html->css('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
     
-	<!--datepicker-->
-	<?php echo $this->Html->css('bootstrap-datepicker.min'); ?>
-	<?php echo $this->Html->script('bootstrap-datepicker.min'); ?>
-	<?php echo $this->Html->script('bootstrap-datepicker.ja.min'); ?>
-	
-	<!--circliful-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js"></script>
+        //font awesome
+        echo $this->Html->css('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+    
+        //datepicker
+        echo $this->Html->css('bootstrap-datepicker.min');
+        echo $this->Html->script('bootstrap-datepicker.min');
+        echo $this->Html->script('bootstrap-datepicker.ja.min');
+    
+        //circriful
+        echo $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css');
+        echo $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js');
 
+        //google fonts
+        echo $this->Html->css('https://fonts.googleapis.com/css?family=Lora');
+        echo $this->Html->css('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 
-
+        echo $this->fetch('meta');
+        echo $this->fetch('css');
+        echo $this->fetch('script');
+    ?>
 </head>
-<body>
-	<div id="container">
-		<div id="header">
-		</div>
-		<div id="content">
-			<?php echo $this->fetch('content'); ?>
-		</div>
 
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+<body>
+    <div id="container">
+        <div id="content">
+            <?php echo $this->fetch('content'); ?>
+        </div>
+    </div>
+    <?php echo $this->element('sql_dump'); ?>
 
 <?php echo $this->Html->css('mystyle'); ?>
 <?php echo $this->Html->script('myscript'); ?>
