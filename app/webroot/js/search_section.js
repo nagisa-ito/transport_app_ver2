@@ -46,9 +46,10 @@ $(function() {
 //往復であればフォームの値を2倍にする
 $('#RequestDetailOnewayOrRound').change(function() {
     str = $('#RequestDetailOnewayOrRound option:selected').text();
-    cost = $('#RequestDetailCost').val();
+    cost = $('#cost').val();
+    
     if(str == '往復') {
-        $('#RequestDetailCost').val(cost*2);
+        $('#cost').val(cost*2);
     } else {
         $('#cost').empty();
         $('#cost').val(cost/2);
