@@ -1,1 +1,1 @@
-<span class="badge badge-success">管理者</span>
+<span class="small" id="admin_badge">admin</span>

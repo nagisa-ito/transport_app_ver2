@@ -39,7 +39,7 @@
             $this->redirect($this->Auth->logout());
         }
 
-        public function index($login_user_id = null)
+        public function index($login_user_id = null, $is_admin = 0)
         {
             if(!isset($login_user_id)){
                 //ログインしたユーザーを変数に格納
@@ -50,11 +50,10 @@
                 $login_user = Hash::extract($login_user, '{n}.{s}');
                 $this->set('login_user', $login_user[0]);
             }
-
             $group_by_month = $this->RequestDetail->getGroupByMonth($login_user_id);
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
-            $this->set(compact('departments', 'group_by_month', 'login_user_id'));
+            $this->set(compact('departments', 'group_by_month', 'login_user_id', 'is_admin'));
         }
 
         public function add()
@@ -116,7 +115,7 @@
 
         public function admin_user_requests($user_id)
         {
-            $this->index($user_id);
+            $this->index($user_id, 1);
             $this->render('index');
         }
 

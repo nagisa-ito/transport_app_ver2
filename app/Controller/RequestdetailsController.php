@@ -4,7 +4,7 @@
         //helperという機能を使うための合言葉のようなもの
         public $helpers = array('Html', 'Form');
         public $oneway_or_round = array('往復' => '往復', '片道' => '片道');
-        public $uses = array('RequestDetail', 'User', 'Company', 'Department', 'TravelSection');
+        public $uses = array('RequestDetail', 'User', 'Company', 'Department', 'TravelSection', 'ConfirmMonth');
         
         public function beforeFilter()
         {
@@ -13,7 +13,7 @@
             $this->set('departments', $departments);
         }
 
-        public function index($login_user_id = null, $year_month = null)
+        public function index($login_user_id = null, $year_month = null, $is_admin = 0)
         {
             if(!isset($login_user_id)){
                 //ログインしたユーザーを変数に格納
@@ -52,6 +52,7 @@
 
             $total_cost = array_column($each_user_request_details, "RequestDetail");
             $total_cost = array_sum(array_column($total_cost, 'cost'));
+            $is_confirm = $this->ConfirmMonth->isConfirmMonth($year_month, $login_user_id);
 
             $column_names = array(
                 '申請id',
@@ -64,16 +65,15 @@
                 '',
                 '備考',
             );
-            $this->set('column_names', $column_names);
-            $this->set('total_cost', $total_cost);
+            $this->set(compact('column_names', 'total_cost', 'is_admin', 'is_confirm'));
         }
 
-        public function add($login_user_id = null, $year_month = null)
+        public function add($login_user_id = null, $year_month = null, $is_admin = 0)
         {
             $this->getAutocompleteContents();
             $this->set('login_user',$this->Auth->user());
             $this->set('oneway_or_round', $this->oneway_or_round);
-            $this->set(compact('login_user_id'));
+            $this->set(compact('login_user_id', 'is_admin'));
 
             $this->loadModel('Transportation');
             $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
@@ -156,14 +156,15 @@
             return number_format($total_cost[0]['sum(cost)']);
         }
 
-        public function edit($edit_request_id = null, $login_user_id = null, $year_month = null)
+        public function edit($edit_request_id = null, $login_user_id = null, $year_month = null, $is_admin = 0)
         {
+            $this->getAutocompleteContents();
             $this->set('login_user',$this->Auth->user());
             //色々と変数をセット
             $this->set('oneway_or_round', $this->oneway_or_round);
             $this->loadModel('Transportation');
             $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
-            $this->set('login_user_id', $login_user_id);
+            $this->set(compact('login_user_id', 'is_admin'));
 
             //Transportationモデルとの連携を一時的に解除
             $this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
@@ -183,19 +184,19 @@
 
         public function admin_index($login_user_id, $year_month)
         {
-            $this->index($login_user_id, $year_month);
+            $this->index($login_user_id, $year_month, 1);
             $this->render('index');
         }
 
         public function admin_edit($edit_request_id = null, $login_user_id = null, $year_month = null)
         {
-            $this->edit($edit_request_id, $login_user_id, $year_month);
+            $this->edit($edit_request_id, $login_user_id, $year_month, 1);
             $this->render('edit');
         }
 
         public function admin_add($login_user_id = null, $year_month = null)
         {
-            $this->add($login_user_id, $year_month);
+            $this->add($login_user_id, $year_month, 1);
             $this->render('add');
         }
 

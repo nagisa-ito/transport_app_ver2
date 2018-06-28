@@ -16,7 +16,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', '交通費精算アプリ');
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +41,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         echo $this->Html->css('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
     
         //font awesome
-        echo $this->Html->css('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+        echo $this->Html->css('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
     
         //datepicker
         echo $this->Html->css('bootstrap-datepicker.min');
@@ -55,6 +55,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         //google fonts
         echo $this->Html->css('https://fonts.googleapis.com/css?family=Lora');
         echo $this->Html->css('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+        echo $this->Html->css('https://fonts.googleapis.com/css?family=Fugaz+One');
 
         echo $this->fetch('meta');
         echo $this->fetch('css');
