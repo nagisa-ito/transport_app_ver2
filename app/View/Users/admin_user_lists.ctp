@@ -67,7 +67,6 @@
                                 'controller' => 'users',
                                 'action' => 'admin_user_requests',
                                 $user_monthly_cost['id'],
-                                $user_monthly_cost['department_id'],
                                 ),
                                 array('class' => 'note mr-2')
                             );

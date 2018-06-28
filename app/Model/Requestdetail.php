@@ -53,7 +53,7 @@
                                     SELECT request_details.id, request_details.user_id, request_details.date, request_details.cost
                                     FROM request_details
                                     WHERE is_delete != 1
-                                    AND user_id IN(1,4)
+                                    AND user_id IN($user_ids)
                                 )AS request_details
                                 LEFT OUTER JOIN confirm_months
                                 ON request_details.user_id = confirm_months.user_id
@@ -70,7 +70,7 @@
             ";
             $result = $this->query($sql);
             $result = Hash::extract($result, '{n}.{s}');
-            debug($result);
+
             return $result;
         }
 
@@ -99,7 +99,20 @@
             ";
             $group_by_month = $this->query($sql);
             
-            return $group_by_month;
+            $sql = "
+                SELECT *
+                FROM
+                (
+                    SELECT user_id, `year_month` as date, is_confirm, is_no_request
+                    FROM confirm_months
+                    WHERE user_id = $login_user_id
+                    AND is_no_request = 1
+                ) AS monthly_request_status
+            ";
+            $no_request_month = $this->query($sql);
+            $result = $this->mergeArrayAndSortByDate($group_by_month, $no_request_month);
+
+            return $result;
         }
 
         /*
@@ -223,7 +236,20 @@
             foreach($data as $value) {
                 array_push($sorted_data, array_replace($sort, $value));
             }
+            
             return $sorted_data;
+        }
+        
+        public function mergeArrayAndSortByDate($array_A, $array_B) {
+            $result = array_merge($array_A, $array_B);
+            $result = Hash::extract($result, '{n}.{s}');
+            
+            foreach($result as $key => $value) {
+                $sort[$key] = $value['date'];
+            }
+            array_multisort($sort, SORT_DESC, $result);
+            
+            return $result;
         }
     }
 
