@@ -12,14 +12,7 @@ $(function() {
                     + $(this).data('request_id') + '/' + $(this).data('user_id') + '/' + $(this).data('year_month') ,{},
                 function(response) {
                     $('#request_'+response.request_id).fadeOut();
-                    $('#myStat').empty();
-                    $('#myStat').circliful({
-                        animationStep: 12,
-                        percent: 100,
-                        foregroundColor: '#1bab9e',
-                        text: '¥' + response.total_cost,
-                        noPercentageSign: true,
-                    });
+                    $('#total_cost').html(response.total_cost);
             }, "json");
         }
         return false;

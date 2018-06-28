@@ -1,18 +1,148 @@
 body {
-	background: linear-gradient(135deg, #2b6a8e, #3ed6c8 40%, #e8e394);
-	font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serifs;
+    background-image: url('../img/seigaiha.png');
+    font-family: "Helvetica Neue", "Yu Gothic", "游ゴシック", YuGothic, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+    color: #474a4d;
 }
 
 header {
-	background-color: #ebf6f7;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
-	min-height: 50px;
-	padding: 10px;
-	color: #474a4d;
-	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    min-height: 50px;
+    padding: 0px 20px;
+    color: #474a4d;
 }
 
-h4 { color: #3a5b52; }
+.box {
+    width: 100%;
+    display: table;
+}
+
+.left-content {
+  width: 30%;
+  display: table-cell;
+}
+
+.right-content {
+  width: 70%;
+  display: table-cell;
+}
+
+.table {
+    width: 100%;
+    display: table;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.title {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+.display-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header-icon {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #6c5c96;
+    color: #fff;
+    padding: 10px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 5px;
+    border-style: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #22e89f;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.logout-button:hover,
+.login-button:hover {
+    text-decoration: none;
+    background-color: #ff359a;
+    transition: 0.3s;
+}
+
+.btn-black-pink,
+.btn-black-green {
+    background-color: #2f2725;
+    color: #fff !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-black-pink:hover {
+    text-decoration: none;
+    background-color: #ff359a;
+    transition: 0.3s;
+}
+
+.btn-black-green:hover {
+    text-decoration: none;
+    background-color: #22e89f;
+    transition: 0.3s;
+}
+
+.note {
+    color: #9a87be;
+}
+
+.decor {
+    margin-top: 40px;
+    height: 10px;
+    background-color: #9a87be;
+}
+
+.btn-green {
+    background-color: #22e89f;
+    color: #fff !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-green:hover {
+    text-decoration: none !important;
+}
+
+.btn-purple {
+    background-color: #6c5c96;
+    color: #fff !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: black !important;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.numerals {
+    font-family: "Fugaz One", "cursive";
+}
+
+.strong_str {
+    font-size: 20px;
+}
 
 label {
 	padding-right: 15px;
@@ -32,25 +162,14 @@ thead { border-top: hidden; }
 
 .content { min-height: calc(100vh - 70px); }
 
-.str { color: #2a83a2; }
-
-.white { color: #fff; }
-
-.btn-caution {
-	background: #ee7948;
-	color: white;
- }
-
 div.input.text, div.input.password, div.input.select, div.input.date, div.input.number, div.input.textarea {
 	padding-bottom: 10px;
 }
 
 .form_contents {
-	margin-top: 40px;
-	padding: 40px;
-	background: rgba(255,255,255,0.5);
-	border-radius: 10px;
+	background: white;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    padding: 30px;
 }
 
 .admin_contents {
@@ -65,19 +184,8 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 	background: rgba(255,255,255);
 }
 
-.btn-myset {
-	background: #1bba8a;
-	color: white;
-}
-
-.myset {
-	color: #1bba8a;
-}
-
 .btn {
-	font-weight: lighter;
-	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
@@ -93,43 +201,21 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 .badge-confirm {
 	display: inline-block;
     font-size: 12px;
-    color: white !important;
-    background-color: rgb(215, 61, 98);
+    color: #f8f4e6 !important;
+    background-color: #2f2725;
     padding: 5px 10px;
-    margin: 0px 20px 0px;
     border-radius: 3px;
+}
+
+#admin_badge {
+    color: white;
+    background: #22e89f;
+    padding: 2px 4px;
+    border-radius: 2px;
 }
 
 #login_title {
 	padding-top: 20px;
-}
-
-#login_form {
-	padding: 20px;
-	color: gray;
-	border-radius: 10px;
-}
-
-#login_button {
-	background: #1bba8a;
-	color: white;
-	margin-top: 30px;
-}
-
-#profile-area {
-	background: rgba(255, 255, 255, 0.7);
-	margin: 30px 0px 0px 30px;
-	padding: 25px;
-	border-radius: 10px;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
-}
-
-#requests-area {
-	background: rgba(255, 255, 255, 0.7);
-	margin: 30px 30px 0px 0px;
-	padding: 25px;
-	border-radius: 10px;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
 }
 
 #request-details-area {
@@ -165,3 +251,11 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 }
 
 text.timer { display: none; }
+
+.height-middle {
+    position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

@@ -26,7 +26,8 @@
         }
 
         .modal_window h1 {
-            background: #ededed;
+            background: #6c5c96;
+            color: #fff;
             padding: 20px;
             border-radius: 5px 5px 0 0;
             font-size: 1.2em;

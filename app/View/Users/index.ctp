@@ -1,109 +1,100 @@
-<html>
-<body>
-    <header>
-        <div class="row">
-        <div class="col-sm-9">
-            <?php
-                if($this->params['admin']) {
-                    echo $this->element('admin_badge');
-                }
-            ?>
-            <h4 style="display: inline">交通費精算表</h4>
-        </div>
-        <div class="col-sm-3 text-right">
-            <?php
-                if($this->params['admin']) {
-                    echo $this->element('admin_back_to_user_lists');
-                }
-            ?>
-            <button class="btn btn-danger"
-                onclick="location.href='<?php echo $this->html->url('/users/logout/'); ?>';">
-            ログアウト</button>
-        </div>
-    </header>
+<?php echo $this->Html->css('user_index'); ?>
 
-    <div class="text-center">
-        <?php echo $this->Session->flash(); ?>
-    </div>
+<header>
+    <?php
+        echo $this->element('admin_header', array(
+            'title' => '交通費精算表',
+            'is_loggedIn' => 1,
+            'is_admin' => $is_admin,
+        ));
+    ?>
+</header>
 
-    <div class="content row">
-        <div class="col-sm-3 text-center">
-            <div id="profile-area">
-                <div class="list-unstyled">
-                    <li><?php echo h($login_user['yourname']); ?><li>
-                    <br>
-                    <li><?php echo h($departments[$login_user['department_id']]); ?></li>
-                    <br>
-                    <table class="table table-bordered">
-                        <th>定期区間</th>
-                        <th><?php echo h($login_user['pass_from_station']); ?></th>
-                        <th><?php echo h($login_user['pass_to_station']); ?></th>
-                    </table>
-                </div>
-                <div class="row mb-2">
-                    <div class="col-sm-8 offset-sm-2">
-                        <?php echo $this->Html->link('申請を追加', array(
+<div class="text-center">
+    <?php echo $this->Session->flash(); ?>
+</div>
+
+<div class="content row">
+    <div class="col-sm-3">
+        <div class="profile-area" class="list-unstyled">
+            <h5 class="mr-2" style="display: inline"><b><?php echo h($login_user['yourname']); ?></b></h5>
+            <?php echo h($departments[$login_user['department_id']]); ?>
+            <hr>
+            <table class="table table-bordered text-center">
+                <th>定期区間</th>
+                <th><?php echo h($login_user['pass_from_station']); ?></th>
+                <th><?php echo h($login_user['pass_to_station']); ?></th>
+            </table>
+            <div class="row mb-2 text-center">
+                <div class="col-sm-8 offset-sm-2">
+                    <?php echo $this->Html->link('<i class="fas fa-plus-circle"></i> 申請を追加', array(
                                 'controller' => 'requestdetails',
                                 'action' => 'add',
                                 $login_user_id,
-                                ), array('class' => 'myset'));
-                        ?>
-                    </div>
+                            ),
+                            array(
+                                'class' => 'btn btn-purple',
+                                'escape' => false,
+                            ));
+                    ?>
                 </div>
-                <a href='#' class="caution small show-modal btn-no-request">
-                    申請が無い月を確定する
-                </a>
             </div>
-        </div>
-        <div class="col-sm-9">
-            <div id="requests-area">
-                <h4>申請一覧</h4>
-                <ul class="list-group">
-                    <?php foreach($group_by_month as $each_month_request) : ?>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <div>
-                            <?php
-                                $print_date = $each_month_request['group_by_month']['date'];
-                                $print_date = date('Y年m月', strtotime($print_date));
-                                $year_name = $each_month_request['group_by_month']['date'];
-                            ?>
-                            <?php
-                                if(!$each_month_request['group_by_month']['is_no_request']) {
-                                    echo $this->Html->link($print_date, array(
-                                                                                'controller' => 'requestdetails',
-                                                                                'action' => "/index/$login_user_id/$year_name/",
-                                                                            ), ['class' => 'myset']);
-                                } else {
-                                    echo $this->Html->link($print_date, '#', array('class' => 'myset'));
-                                }
-
-                                if($each_month_request['group_by_month']['is_confirm'] == true) {
-                                    echo $this->element('confirm_badge');
-                                }
-                            ?>
-                            </div>
-                            <div class="pull-right">
-                                <?php
-                                    if(!$each_month_request['group_by_month']['is_no_request']) {
-                                        echo '¥ ' . number_format($each_month_request['group_by_month']['total_cost']) ;
-                                        echo $this->Html->link($each_month_request['group_by_month']['count']. '件',
-                                                array(
-                                                        'controller' => 'requestdetails',
-                                                        'action' => "/index/$login_user_id/$year_name/",
-                                                    ), ['class' => 'myset ml-sm-2']);
-                                    } else {
-                                        echo '¥ 0';
-                                        echo $this->Html->link('0件', '#', array('class' => 'myset ml-sm-2'));
-                                    }
-                                ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+            <div class="text-center">
+                <a href='#' class="small show-modal note">申請が無い月を確定する</a>
             </div>
         </div>
     </div>
 
-    <footer class="footer"></footer>
+    <div class="col-sm-9">
+        <div id="requests-area">
+            <h4>申請一覧</h4>
+            <ul class="list-group">
+                <?php foreach($group_by_month as $each_month_request) : ?>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                        <?php
+                            $print_date = $each_month_request['monthly_requests']['date'];
+                            $print_date = date('Y年m月', strtotime($print_date));
+                            $year_name = $each_month_request['monthly_requests']['date'];
+                        ?>
+                        <?php
+                            if(!$each_month_request['monthly_requests']['is_no_request']) {
+                                echo $this->Html->link($print_date, array(
+                                    'controller' => 'requestdetails',
+                                    'action' => "/index/$login_user_id/$year_name/",
+                                    ),
+                                    array('class' => 'note mr-2')
+                                );
+                            } else {
+                                echo $this->Html->link($print_date, '#', array('class' => 'note mr-2'));
+                            }
+
+                            if($each_month_request['monthly_requests']['is_confirm'] == true) {
+                                echo $this->element('confirm_badge');
+                            }
+                        ?>
+                        </div>
+                        <div class="pull-right">
+                            <?php
+                                if(!$each_month_request['monthly_requests']['is_no_request']) {
+                                    echo '¥ ' . number_format($each_month_request['monthly_requests']['total_cost']) ;
+                                    echo $this->Html->link($each_month_request['monthly_requests']['count']. '件',
+                                            array(
+                                                    'controller' => 'requestdetails',
+                                                    'action' => "/index/$login_user_id/$year_name/",
+                                                ),
+                                            array('class' => 'note ml-sm-2'));
+                                } else {
+                                    echo '¥ 0';
+                                    echo $this->Html->link('0件', '#', array('class' => 'note ml-sm-2'));
+                                }
+                            ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <!--モーダルウィンドウ-->
     <div id="modal_window" class="modal_window text-center">
@@ -124,16 +115,14 @@
                 </div>
             </div>
             <p>申請を確定してもよろしいですか？</p>
+            <button class="btn">キャンセル</button>
             <?php
-                echo $this->Html->link('<button type="button" class="btn btn-myset" id="no_request">確定</button>',
-                                        '#', ['escape' => false]);
+                echo $this->Html->link('<button type="button" class="btn btn-black-green" id="no_request">確定</button>',
+                                        '#', array('escape' => false));
             ?>
-            <button class="btn .page-link.text-dark.d-inline-block">キャンセル</button>
         </div>
     </div>
     <!---->
 
     <?php echo $this->Html->css('modal'); ?>
     <?php echo $this->Html->script('modal'); ?>
-</body>
-</html>

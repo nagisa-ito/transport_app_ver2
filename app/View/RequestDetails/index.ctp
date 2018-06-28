@@ -1,85 +1,60 @@
+<?php echo $this->Html->css('user_index'); ?>
+
 <header>
-    <div class="row">
-        <div class="col-sm-9">
-            <?php
-                if($this->params['admin']) {
-                    echo $this->element('admin_badge');
-                }
-            ?>
-            <h4 style="display: inline">交通費精算表</h4>
-        </div>
-        <div class="col-sm-3 text-right">
-            <?php
-                if($this->params['admin']) {
-                    echo $this->element('admin_back_to_user_lists');
-                    echo $this->Html->link('<button class="btn">Back</button>',
-                                                      array('controller' => 'users', 'action' => 'user_requests', $login_user_id),
-                                                      array('escape' => false));
-                } else {
-                    echo $this->Html->link('<button class="btn">Back</button>',
-                                                      array('controller' => 'users', 'action' => 'index', $login_user_id),
-                                                      array('escape' => false));
-                }
-            ?>
-        </div>
+    <?php
+        echo $this->element('admin_header', array(
+            'title' => '交通費精算表',
+            'is_loggedIn' => 1,
+            'is_admin' => $is_admin,
+        ));
+    ?>
 </header>
 
-    <div class="text-center">
-        <?php echo $this->Session->flash(); ?>
-    </div>
+<div class="text-center">
+    <?php echo $this->Session->flash(); ?>
+</div>
 
-    <div class="content row">
-        <div class="col-sm-3 text-center">
-            <div id="profile-area">
-                <div class="list-unstyled">
-                    <li><?php echo h($login_user['yourname']); ?><li>
-                    <br>
-                    <li><?php echo h($departments[$login_user['department_id']]); ?></li>
-                    <br>
-                    <table class="table table-bordered">
-                        <th>定期区間</th>
-                        <th><?php echo h($login_user['pass_from_station']); ?></th>
-                        <th><?php echo h($login_user['pass_to_station']); ?></th>
-                    </table>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-8 offset-sm-2">
-                        <?php echo $this->Html->link('<button class="btn btn-myset btn-block">申請を追加</button>',
-                                                      array( 'action' => 'add', $login_user['id']),
-                                                      array('escape' => false));
-                        ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <?php echo $this->Html->link('<div><button type="button" class="btn btn-danger">申請を確定する</button></div>', '#',
-                                array(  'class' => 'confirm',
-                                        'data-year_month' => $year_month,
-                                        'data-user_id' => $login_user_id,
-                                        'escape' => false));
-                        ?>
-                    </div>
-                </div>
+<div class="content row">
+    <div class="col-sm-3">
+    <div class="profile-area list-unstyled">
+        <h5 class="mr-2" style="display: inline"><b><?php echo h($login_user['yourname']); ?></b></h5>
+        <?php echo h($departments[$login_user['department_id']]); ?>
+        <hr>
+        <table class="table table-bordered text-center">
+            <th>定期区間</th>
+            <th><?php echo h($login_user['pass_from_station']); ?></th>
+            <th><?php echo h($login_user['pass_to_station']); ?></th>
+        </table>
+        <div class="row mb-2 text-center">
+            <div class="col-sm-8 offset-sm-2">
+                <?php echo $this->Html->link('<i class="fas fa-plus-circle"></i> 申請を追加', array(
+                            'controller' => 'requestdetails',
+                            'action' => 'add',
+                            $login_user_id,
+                        ),
+                        array(
+                            'class' => 'btn btn-purple',
+                            'escape' => false,
+                        ));
+                ?>
             </div>
         </div>
+    </div>
+</div>
 
     <!--右の要素-->
     <div class="col-sm-9">
-        <div id="total_cost_area" class="row">
-            <div class="col-sm-6">
-                <div>
-                    <h4 style="display: inline">
-                        <?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分
-                        <span class="align-top"><?php echo $this->element('confirm_badge'); ?></span>
-                    </h4>
-                </div>
-                <br>
-                <div><h5>合計金額</h5></div>
+        <div id="total_cost_area">
+            <div class="strong_str table-cell pr-2">
+                <b><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</b>
             </div>
-            <div class="col-sm-6">
-                <div id="myStat"></div>
+            <div class="table-cell">
+                <?php echo $this->element('confirm_badge'); ?>
             </div>
+            <div class="strong_str mt-3">合計金額</div>
+            <h1 class="text-right numerals"><b id="total_cost"><?php echo '¥ ' . $total_cost; ?></b></h1>
         </div>
+        
         <div id="request-details-area">
         <table class="table">
             <thead class="thead">
@@ -122,19 +97,23 @@
                         <td>
                             <?php
                                 //編集・削除を実行
-                                echo $this->Html->link('<div><button type="button" class="btn btn-myset btn-sm mb-2 btn-block"><i class="fas fa-edit mr-1"></i>編集</button></div>',
-                                                        array(  'action' => 'edit',
-                                                                $each_user_request_detail['RequestDetail']['id'],
-                                                                $login_user_id,
-                                                                $year_month ),
-                                                        array('escape' => false));
-                                echo $this->Html->link('<div><button type="button" class="btn btn-danger btn-sm btn-block"><i class="fas fa-trash-alt mr-1"></i>削除</button></div>', '#',
-                                                        array(  'class' => 'delete',
-                                                                'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
-                                                                'data-user_id' => $login_user_id,
-                                                                'data-year_month' => $year_month,
-                                                                'escape' => false));
-
+                                echo $this->Html->link('<i class="fas fa-edit"></i>', array(
+                                        'action' => 'edit',
+                                        $each_user_request_detail['RequestDetail']['id'],
+                                        $login_user_id,
+                                        $year_month,
+                                    ),
+                                    array(
+                                        'escape' => false,
+                                        'class' => 'btn btn-purple mr-1',
+                                ));
+                                echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#', array(
+                                    'class' => 'delete btn btn-purple',
+                                    'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
+                                    'data-user_id' => $login_user_id,
+                                    'data-year_month' => $year_month,
+                                    'escape' => false,
+                                ));
                             ?>
                         </td>
                     </tr>
@@ -145,8 +124,6 @@
     </div>
     </div>
 </table>
-
-<footer></footer>
 
 <?php $total_cost = '¥' . number_format($total_cost);?>
 <script>
