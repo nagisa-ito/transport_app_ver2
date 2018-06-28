@@ -49,7 +49,11 @@
                 <b><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</b>
             </div>
             <div class="table-cell">
-                <?php echo $this->element('confirm_badge'); ?>
+                <?php
+                    if($is_confirm) {
+                        echo $this->element('confirm_badge');
+                    }
+                ?>
             </div>
             <div class="strong_str mt-3">合計金額</div>
             <h1 class="text-right numerals"><b id="total_cost"><?php echo '¥ ' . $total_cost; ?></b></h1>

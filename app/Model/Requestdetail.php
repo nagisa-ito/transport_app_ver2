@@ -60,7 +60,7 @@
                                 AND DATE_FORMAT(request_details.date, '%Y-%m') = confirm_months.year_month
                                 WHERE DATE_FORMAT(request_details.date, '%Y-%m') = '$search_year_month'
                             )AS confirm_requests
-                            GROUP BY confirm_requests.date
+                            GROUP BY DATE_FORMAT(confirm_requests.date, '%Y-%m')
                         )AS monthly_request_costs
                     )AS monthly_requests
                     ON users.id = monthly_requests.user_id
@@ -70,6 +70,7 @@
             ";
             $result = $this->query($sql);
             $result = Hash::extract($result, '{n}.{s}');
+            debug($result);
             return $result;
         }
 
@@ -81,23 +82,20 @@
                 SELECT *
                 FROM
                 (
-                    SELECT confirm_months.user_id, confirm_months.year_month as date, confirm_months.is_confirm,
-                    confirm_months.is_no_request,monthly_request_details.count, monthly_request_details.total_cost
-                    FROM confirm_months
-                    LEFT OUTER JOIN
+                    SELECT monthly_costs.*, confirm_months.is_confirm, confirm_months.is_no_request
+                    FROM
                     (
-                        SELECT user_id, DATE_FORMAT(date, '%Y-%m') as date, COUNT(*) as count, sum(cost) as total_cost
+                        SELECT user_id, DATE_FORMAT(date, '%Y-%m') as date, COUNT(*) as count, SUM(cost) as total_cost
                         FROM request_details
                         WHERE is_delete != 1
                         AND user_id = $login_user_id
-                        GROUP BY date
-                    )
-                    AS monthly_request_details
-                    ON monthly_request_details.date = confirm_months.year_month
-                )
-                AS monthly_requests
-                WHERE monthly_requests.user_id
-                ORDER BY monthly_requests.date DESC
+                        GROUP BY DATE_FORMAT(date, '%Y-%m')
+                    )AS monthly_costs
+                    LEFT OUTER JOIN confirm_months
+                    ON monthly_costs.user_id = confirm_months.user_id
+                    AND monthly_costs.date = confirm_months.year_month
+                )AS monthly_request_status
+                ORDER BY monthly_request_status.date DESC
             ";
             $group_by_month = $this->query($sql);
             

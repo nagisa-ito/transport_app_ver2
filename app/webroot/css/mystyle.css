@@ -201,8 +201,8 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 .badge-confirm {
 	display: inline-block;
     font-size: 12px;
-    color: #f8f4e6 !important;
-    background-color: #2f2725;
+    color: white !important;
+    background-color: #22e89f;
     padding: 5px 10px;
     border-radius: 3px;
 }

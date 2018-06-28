@@ -53,12 +53,12 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <div>
                         <?php
-                            $print_date = $each_month_request['monthly_requests']['date'];
+                            $print_date = $each_month_request['monthly_request_status']['date'];
                             $print_date = date('Y年m月', strtotime($print_date));
-                            $year_name = $each_month_request['monthly_requests']['date'];
+                            $year_name = $each_month_request['monthly_request_status']['date'];
                         ?>
                         <?php
-                            if(!$each_month_request['monthly_requests']['is_no_request']) {
+                            if(!$each_month_request['monthly_request_status']['is_no_request']) {
                                 echo $this->Html->link($print_date, array(
                                     'controller' => 'requestdetails',
                                     'action' => "/index/$login_user_id/$year_name/",
@@ -69,16 +69,16 @@
                                 echo $this->Html->link($print_date, '#', array('class' => 'note mr-2'));
                             }
 
-                            if($each_month_request['monthly_requests']['is_confirm'] == true) {
+                            if($each_month_request['monthly_request_status']['is_confirm'] == true) {
                                 echo $this->element('confirm_badge');
                             }
                         ?>
                         </div>
                         <div class="pull-right">
                             <?php
-                                if(!$each_month_request['monthly_requests']['is_no_request']) {
-                                    echo '¥ ' . number_format($each_month_request['monthly_requests']['total_cost']) ;
-                                    echo $this->Html->link($each_month_request['monthly_requests']['count']. '件',
+                                if(!$each_month_request['monthly_request_status']['is_no_request']) {
+                                    echo '¥ ' . number_format($each_month_request['monthly_request_status']['total_cost']) ;
+                                    echo $this->Html->link($each_month_request['monthly_request_status']['count']. '件',
                                             array(
                                                     'controller' => 'requestdetails',
                                                     'action' => "/index/$login_user_id/$year_name/",
