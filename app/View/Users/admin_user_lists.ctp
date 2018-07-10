@@ -63,7 +63,7 @@
                 <?php foreach($each_user_monthly_costs as $user_monthly_cost) : ?>
                     <li class="list-group-item" style="display: inline-block;">
                         <?php
-                            echo $this->Html->link($user_monthly_cost['yourname'], array(
+                            echo $this->Html->link($user_monthly_cost['username'], array(
                                 'controller' => 'users',
                                 'action' => 'admin_user_requests',
                                 $user_monthly_cost['id'],
@@ -75,10 +75,8 @@
                             }
                         ?>
                         <span class="float-right">
-                            <?php
-                                $cost =  empty($user_monthly_cost['total_cost']) ? 0 : $user_monthly_cost['total_cost'];
-                                echo '¥' . number_format($cost);
-                            ?>
+                            <?php echo '¥' . number_format($user_monthly_cost['total_cost']); ?>
+                            <?php echo '(' . $user_monthly_cost['req_count'] . '件)'; ?>
                         </span>
                     </li>
                 <?php endforeach; ?>
@@ -98,4 +96,3 @@
     </div>
 </div>
 
-<footer class="footer"></footer>
