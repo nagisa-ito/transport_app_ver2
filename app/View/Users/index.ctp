@@ -40,7 +40,9 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href='#' class="small show-modal note">申請が無い月を確定する</a>
+                <a href='#' class="small show-modal note">
+                    <i class="fas fa-question mr-1"></i>申請が無い場合
+                </a>
             </div>
         </div>
     </div>
@@ -99,7 +101,7 @@
     <!--モーダルウィンドウ-->
     <div id="modal_window" class="modal_window text-center">
         <a href='#' class="modal_window_close"></a>
-        <h1>確定したい月を選択してください :</h1>
+        <h1>申請のない月を選択してください :</h1>
         <div class="modal_window_contents">
             <div class="row">
                 <div class="col-sm-6 offset-sm-3">
@@ -114,11 +116,17 @@
                     ?>
                 </div>
             </div>
-            <p>申請を確定してもよろしいですか？</p>
+            <p>
+                確定してもよろしいですか？ 
+                <span class="note small"><i class="fas fa-exclamation-triangle"></i>取り消しは出来ません</span>
+            </p>
             <button class="btn">キャンセル</button>
             <?php
-                echo $this->Html->link('<button type="button" class="btn btn-black-green" id="no_request">確定</button>',
-                                        '#', array('escape' => false));
+                echo $this->Html->link('確定','#', array(
+                                            'escape' => false,
+                                            'class' => 'btn btn-black-green',
+                                            'id' => 'no_request',
+                                        ));
             ?>
         </div>
     </div>
