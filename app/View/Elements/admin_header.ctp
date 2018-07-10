@@ -47,6 +47,16 @@
                             'escape' => false,
                         ));
                 }
+                echo $this->Html->link('<i class="fas fa-external-link-alt mr-1"></i>区間マスタ',
+                        array(
+                            'controller' => 'sections',
+                            'action' => 'index',
+                        ),
+                        array(
+                            'class' => 'btn-black-pink float-right small mr-2',
+                            'target' => '_blank',
+                            'escape' => false,
+                        ));
             }
         ?>
         <?php if($is_loggedIn) : ?>

@@ -11,8 +11,9 @@ $(function() {
             $.post('/transport_expense_app/requestdetails/delete/'
                     + $(this).data('request_id') + '/' + $(this).data('user_id') + '/' + $(this).data('year_month') ,{},
                 function(response) {
+                    var total_cost = '¥ ' + String(response.total_cost).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' ); 
                     $('#request_'+response.request_id).fadeOut();
-                    $('#total_cost').html(response.total_cost);
+                    $('#total_cost').html(total_cost);
             }, "json");
         }
         return false;
@@ -21,13 +22,12 @@ $(function() {
 
 //申請確定ボタン
 $(function() {
-    $('a.confirm').click(function(e) {
+    $('#confirm_button').click(function(e) {
         if(confirm('確定してもよろしいですか？')) {
-            $.post('/transport_expense_app/confirmmonths/add/'
-                + $(this).data('year_month') + '/' + $(this).data('user_id'), {},
+            $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id, {},
             function(response) {
                 confirm('確定しました。');
-                $('.confirm_state').show();
+                location.reload();
             }, "json");
         }
         return false;

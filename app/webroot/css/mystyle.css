@@ -95,8 +95,10 @@ header {
     transition: 0.3s;
 }
 
-.note {
+.note,
+.note:hover {
     color: #9a87be;
+    text-decoration: none;
 }
 
 .decor {
@@ -122,9 +124,9 @@ header {
     background-color: #6c5c96;
     color: #fff !important;
     border-radius: 3px;
-    padding: 5px 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     transition: 0.3s;
+    min-width: 32px;
 }
 
 .btn-white {
@@ -215,33 +217,34 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 }
 
 #login_title {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 #request-details-area {
-	background: rgba(255, 255, 255, 0.7);
-	margin: 30px 30px 0px 0px;
-	padding: 25px;
-	border-radius: 10px;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30px 30px 0px 0px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    font-size: 14px;
 }
 
 #total_cost_area {
-	background: rgba(255, 255, 255, 0.7);
-	margin: 30px 30px 0px 0px;
-	padding: 25px;
-	border-radius: 10px;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30px 30px 0px 0px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
 }
 
 #add_account_contents {
-	background-color: #fff;
-	margin: 20px;
-	padding: 40px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 40px;
 }
 
 #add_account_form {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #add-request-form {
@@ -258,4 +261,12 @@ text.timer { display: none; }
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.pagenage_area {
+    background-color: #fff !important;
+}
+.edit,
+.delete {
+    font-size: 12px;
+    padding: 5px 9px;
 }

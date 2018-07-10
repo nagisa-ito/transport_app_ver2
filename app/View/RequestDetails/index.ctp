@@ -1,4 +1,8 @@
 <?php echo $this->Html->css('user_index'); ?>
+<script>
+    var year_month = "<?php echo $year_month; ?>";
+    var user_id = "<?php echo $login_user_id; ?>";
+</script>
 
 <header>
     <?php
@@ -27,7 +31,8 @@
         </table>
         <div class="row mb-2 text-center">
             <div class="col-sm-8 offset-sm-2">
-                <?php echo $this->Html->link('<i class="fas fa-plus-circle"></i> 申請を追加', array(
+                <?php
+                    echo $this->Html->link('<i class="fas fa-plus-circle"></i> 申請を追加', array(
                             'controller' => 'requestdetails',
                             'action' => 'add',
                             $login_user_id,
@@ -52,11 +57,18 @@
                 <?php
                     if($is_confirm) {
                         echo $this->element('confirm_badge');
+                    } else {
+                        echo $this->Html->link('<i class="fas fa-clipboard-check mr-1"></i>確定する', '#',
+                                    array(
+                                        'class' => 'btn-black-green small',
+                                        'id' => 'confirm_button',
+                                        'escape' => false,
+                        ));
                     }
                 ?>
             </div>
             <div class="strong_str mt-3">合計金額</div>
-            <h1 class="text-right numerals"><b id="total_cost"><?php echo '¥ ' . $total_cost; ?></b></h1>
+            <h1 class="text-right numerals"><b id="total_cost"><?php echo '¥ ' . number_format($total_cost); ?></b></h1>
         </div>
         
         <div id="request-details-area">
@@ -101,7 +113,7 @@
                         <td>
                             <?php
                                 //編集・削除を実行
-                                echo $this->Html->link('<i class="fas fa-edit"></i>', array(
+                                echo $this->Html->link('<i class="fas fa-pen"></i>', array(
                                         'action' => 'edit',
                                         $each_user_request_detail['RequestDetail']['id'],
                                         $login_user_id,
@@ -109,10 +121,10 @@
                                     ),
                                     array(
                                         'escape' => false,
-                                        'class' => 'btn btn-purple mr-1',
+                                        'class' => 'btn btn-purple mr-1 edit mb-1',
                                 ));
                                 echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#', array(
-                                    'class' => 'delete btn btn-purple',
+                                    'class' => 'delete btn btn-purple mb-1',
                                     'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
                                     'data-user_id' => $login_user_id,
                                     'data-year_month' => $year_month,
