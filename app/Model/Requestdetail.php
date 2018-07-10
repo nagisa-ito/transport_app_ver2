@@ -30,47 +30,61 @@
         {
             //各月、各ユーザごとの合計費用を抽出するためのsql文
             $sql = "
-                SELECT *
+            SELECT
+                all_users_monthly_requests.*,
+                IFNULL(confirm_months.is_confirm, 0) as is_confirm
+            FROM
+            (
+                SELECT
+                    users.id,
+                    users.yourname as username,
+                    IFNULL(monthly_requests.date, '$search_year_month') as date,
+                    IFNULL(monthly_requests.req_count, 0) as req_count,
+                    IFNULL(monthly_requests.total_cost, 0) as total_cost
                 FROM
                 (
-                    SELECT users.id as id, users.yourname, users.department_id, monthly_requests.date,
-                        monthly_requests.count, monthly_requests.total_cost, monthly_requests.is_confirm,
-                        monthly_requests.is_no_request
-                    FROM users
-                    LEFT OUTER JOIN
-                    (
-                        SELECT *
-                        FROM
-                        (
-                            SELECT confirm_requests.user_id, DATE_FORMAT(confirm_requests.date, '%Y-%m') as date,
-                                COUNT(*) as count, SUM(cost) as total_cost, confirm_requests.is_confirm,
-                                confirm_requests.is_no_request
-                            FROM
-                            (
-                                SELECT request_details.*, confirm_months.is_confirm, confirm_months.is_no_request
-                                FROM
-                                (
-                                    SELECT request_details.id, request_details.user_id, request_details.date, request_details.cost
-                                    FROM request_details
-                                    WHERE is_delete != 1
-                                    AND user_id IN($user_ids)
-                                )AS request_details
-                                LEFT OUTER JOIN confirm_months
-                                ON request_details.user_id = confirm_months.user_id
-                                AND DATE_FORMAT(request_details.date, '%Y-%m') = confirm_months.year_month
-                                WHERE DATE_FORMAT(request_details.date, '%Y-%m') = '$search_year_month'
-                            )AS confirm_requests
-                            GROUP BY DATE_FORMAT(confirm_requests.date, '%Y-%m')
-                        )AS monthly_request_costs
-                    )AS monthly_requests
-                    ON users.id = monthly_requests.user_id
-                    WHERE users.id IN($user_ids)
-                    AND users.role != 'admin'
-                )AS monthly_request_users
+                    SELECT
+                        users.id as user_id,
+                        DATE_FORMAT(date, '%Y-%m') as date,
+                        COUNT(request_details.id) as req_count,
+                        SUM(cost) as total_cost
+                    FROM
+                        users
+                    LEFT JOIN
+                        request_details
+                    ON
+                        users.id = request_details.user_id
+                    WHERE
+                        request_details.is_delete != 1
+                    AND
+                        DATE_FORMAT(date, '%Y-%m') = '$search_year_month'
+                    GROUP BY
+                        users.id, DATE_FORMAT(date, '%Y-%m')
+                    )
+                AS
+                    monthly_requests
+                RIGHT JOIN
+                    users
+                ON
+                    users.id = monthly_requests.user_id
+                WHERE
+                    users.role != 'admin'
+                AND
+                    users.id IN ($user_ids)
+            )
+            AS
+                all_users_monthly_requests
+            LEFT JOIN
+                confirm_months
+            ON
+                all_users_monthly_requests.id = confirm_months.user_id
+            AND
+                all_users_monthly_requests.date = confirm_months.year_month
+            ORDER BY id ASC
             ";
+            $sql = "SELECT * FROM ($sql) AS all_users_monthly_requests";
             $result = $this->query($sql);
             $result = Hash::extract($result, '{n}.{s}');
-
             return $result;
         }
 
