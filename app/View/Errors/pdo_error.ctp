@@ -1,7 +1,13 @@
 <header>
-    <h4>Database Error</h4>
+    <?php
+        echo $this->element('admin_header', array(
+            'title' => '交通費精算表',
+            'is_loggedIn' => 1,
+            'is_admin' => 1,
+        ));
+    ?>
 </header>
 
-<div class="content" style="color: white">条件に合致したデータベースが存在しません。</div>
+<div class="content p-2">Database Error! ユーザー一覧からやり直してください。</div>
 
-<footer></footer>
+
