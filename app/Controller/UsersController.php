@@ -50,7 +50,7 @@
                 $login_user = Hash::extract($login_user, '{n}.{s}');
                 $this->set('login_user', $login_user[0]);
             }
-            $group_by_month = $this->RequestDetail->getGroupByMonth($login_user_id);
+            $group_by_month = $this->RequestDetail->getMonthlyRequests($login_user_id);
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
             $this->set(compact('departments', 'group_by_month', 'login_user_id', 'is_admin'));
@@ -127,23 +127,12 @@
             $user_ids = $this->User->getUserIdsByDepartmentId($department_id);
             $user_ids = implode(',', $user_ids);
 
-            $csv_output_data = $this->RequestDetail->getCsvDownloadTotalCost($user_ids, $date);
-            $season_ticket = $this->RequestDetail->getCsvDownloadSeasonTicket($user_ids, $date, 1, 'season_ticket');
-            $season_ticket = Hash::extract($season_ticket, '{n}.season_ticket.total_cost');
-            $NOT_season_ticket = $this->RequestDetail->getCsvDownloadSeasonTicket($user_ids, $date, 0, 'NOT_season_ticket');
-            $NOT_season_ticket = Hash::extract($NOT_season_ticket, '{n}.NOT_season_ticket.total_cost');
-
-            foreach($season_ticket as $key => $value) {
-                $csv_output_data[$key]['season_ticket'] = $value;
-                $csv_output_data[$key]['NOT_season_ticket'] = $NOT_season_ticket[$key];
-            }
-
-            $data = $this->RequestDetail->sortCsvOutputColumn($csv_output_data);
-
             if($department_id != 7) {
                 $this->Department->id = $department_id;
                 $department .= $this->Department->field('department_name');
             }
+
+            $data = $this->RequestDetail->getOutputCsvData($user_ids, $date);
 
             $print_date = str_replace('-', '_', $date);
             $filename = "交通費" . $department . "_" . $print_date;
