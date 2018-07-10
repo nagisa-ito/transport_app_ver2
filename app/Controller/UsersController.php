@@ -4,7 +4,6 @@
     {
         public $helpers = array('Html', 'Form', 'Csv');
         public $uses = array('RequestDetail', 'User', 'Department');
-        public $each_user_monthly_costs = array();
 
         public function beforeFilter()
         {
@@ -106,9 +105,8 @@
             $user_ids = implode(',', $users);
 
             //各月、各ユーザごとの合計費用を抽出する
-            $this->each_user_monthly_costs = $this->RequestDetail->getEachUserMonthlyCost($user_ids, $search_year_month);
-            $each_user_monthly_costs = $this->each_user_monthly_costs;
-
+            $each_user_monthly_costs = $this->RequestDetail->getEachUserMonthlyCost($user_ids, $search_year_month);
+            
             $this->set(compact('department_id_list', 'department_id','search_year_month'));
             $this->set(compact('each_user_monthly_costs'));
         }
