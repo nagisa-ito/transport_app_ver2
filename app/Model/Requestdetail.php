@@ -89,43 +89,60 @@
         }
 
         //申請を月ごとに分けてカウントする
-        public function getGroupByMonth($login_user_id)
+        public function getMonthlyRequests($login_user_id)
         {
             $this->unbindModel(array('hasOne' => array('Transportation')));
             $sql = "
-                SELECT *
+                SELECT
+                    user_id,
+                    date,
+                    IFNULL(MAX(req_count), 0) AS req_count,
+                    IFNULL(MAX(total_cost), 0) AS total_cost,
+                    is_confirm
                 FROM
                 (
-                    SELECT monthly_costs.*, confirm_months.is_confirm, confirm_months.is_no_request
-                    FROM
                     (
-                        SELECT user_id, DATE_FORMAT(date, '%Y-%m') as date, COUNT(*) as count, SUM(cost) as total_cost
-                        FROM request_details
-                        WHERE is_delete != 1
-                        AND user_id = $login_user_id
-                        GROUP BY DATE_FORMAT(date, '%Y-%m')
-                    )AS monthly_costs
-                    LEFT OUTER JOIN confirm_months
-                    ON monthly_costs.user_id = confirm_months.user_id
-                    AND monthly_costs.date = confirm_months.year_month
-                )AS monthly_request_status
-                ORDER BY monthly_request_status.date DESC
+                        SELECT
+                            request_details.user_id,
+                            DATE_FORMAT(request_details.date, '%Y-%m') as date,
+                            COUNT(request_details.id) as req_count,
+                            SUM(request_details.cost) as total_cost,
+                            IFNULL(confirm_months.is_confirm, 0) as is_confirm
+                        FROM
+                            request_details
+                        LEFT JOIN
+                            confirm_months
+                        ON
+                            confirm_months.user_id = request_details.user_id
+                        AND
+                            confirm_months.year_month = DATE_FORMAT(request_details.date, '%Y-%m')
+                        WHERE
+                            request_details.is_delete != 1
+                        GROUP BY
+                            request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')
+                    )
+                    UNION ALL
+                    (
+                        SELECT
+                            user_id,
+                            confirm_months.year_month,
+                            NULL,
+                            NULL,
+                            is_confirm
+                        FROM
+                            confirm_months
+                    )
+                )
+                AS
+                    monthly_requests
+                WHERE
+                    user_id = 1
+                GROUP BY
+                    monthly_requests.date
             ";
-            $group_by_month = $this->query($sql);
-            
-            $sql = "
-                SELECT *
-                FROM
-                (
-                    SELECT user_id, `year_month` as date, is_confirm, is_no_request
-                    FROM confirm_months
-                    WHERE user_id = $login_user_id
-                    AND is_no_request = 1
-                ) AS monthly_request_status
-            ";
-            $no_request_month = $this->query($sql);
-            $result = $this->mergeArrayAndSortByDate($group_by_month, $no_request_month);
-
+            $sql = "SELECT * FROM ($sql) AS monthly_requests ORDER BY date DESC";
+            $result = $this->query($sql);
+            $result = Hash::extract($result, '{n}.{s}');
             return $result;
         }
 
@@ -252,18 +269,6 @@
             }
             
             return $sorted_data;
-        }
-        
-        public function mergeArrayAndSortByDate($array_A, $array_B) {
-            $result = array_merge($array_A, $array_B);
-            $result = Hash::extract($result, '{n}.{s}');
-            
-            foreach($result as $key => $value) {
-                $sort[$key] = $value['date'];
-            }
-            array_multisort($sort, SORT_DESC, $result);
-            
-            return $result;
         }
     }
 

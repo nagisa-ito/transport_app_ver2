@@ -57,20 +57,19 @@
                         <?php
                             $print_date = $each_month_request['date'];
                             $print_date = date('Y年m月', strtotime($print_date));
-                            $year_name = $each_month_request['date'];
-                        ?>
-                        <?php
-                            if(!$each_month_request['is_no_request']) {
-                                echo $this->Html->link($print_date, array(
-                                    'controller' => 'requestdetails',
-                                    'action' => "/index/$login_user_id/$year_name/",
-                                    ),
-                                    array('class' => 'note mr-2')
-                                );
+                            $url = array(
+                                    'controller' => 'request_details',
+                                    'action' => 'index',
+                                    $login_user_id,
+                                    $each_month_request['date'],
+                            );
+                            $param = array('class' => 'note mr-2');
+                            
+                            if($each_month_request['req_count'] != 0) {
+                                echo $this->Html->link($print_date, $url, $param);
                             } else {
-                                echo $this->Html->link($print_date, '#', array('class' => 'note mr-2'));
+                                echo $this->Html->link($print_date, '#', $param);
                             }
-
                             if($each_month_request['is_confirm'] == true) {
                                 echo $this->element('confirm_badge');
                             }
@@ -78,17 +77,12 @@
                         </div>
                         <div class="pull-right">
                             <?php
-                                if(!$each_month_request['is_no_request']) {
-                                    echo '¥ ' . number_format($each_month_request['total_cost']) ;
-                                    echo $this->Html->link($each_month_request['count']. '件',
-                                            array(
-                                                    'controller' => 'requestdetails',
-                                                    'action' => "/index/$login_user_id/$year_name/",
-                                                ),
-                                            array('class' => 'note ml-sm-2'));
+                                $param = array('class' => 'note ml-sm-2');
+                                echo '¥' . number_format($each_month_request['total_cost']);
+                                if($each_month_request['req_count'] != 0) {
+                                    echo $this->Html->link($each_month_request['req_count']. '件', $url, $param);
                                 } else {
-                                    echo '¥ 0';
-                                    echo $this->Html->link('0件', '#', array('class' => 'note ml-sm-2'));
+                                    echo $this->Html->link($each_month_request['req_count']. '件', '#', $param);
                                 }
                             ?>
                     </li>
