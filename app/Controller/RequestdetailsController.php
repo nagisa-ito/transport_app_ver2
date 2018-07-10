@@ -4,7 +4,7 @@
         //helperという機能を使うための合言葉のようなもの
         public $helpers = array('Html', 'Form');
         public $oneway_or_round = array('往復' => '往復', '片道' => '片道');
-        public $uses = array('RequestDetail', 'User', 'Company', 'Department', 'TravelSection', 'ConfirmMonth');
+        public $uses = array('RequestDetail', 'User', 'Department', 'TravelSection', 'ConfirmMonth', 'Section');
         
         public function beforeFilter()
         {
@@ -57,7 +57,7 @@
             $column_names = array(
                 '申請id',
                 '日付',
-                'クライアント名',
+                '訪問先',
                 '交通手段',
                 '区間',
                 '費用',
@@ -206,25 +206,25 @@
 
         private function getAutocompleteContents()
         {
-            $companies = $this->Company->find('list', array('fields' => 'name'));
-            $companies = json_encode($companies);
+            $sections = $this->Section->find('list', array('fields' => 'goal'));
+            $sections = json_encode($sections);
 
-            $from_stations = $this->Company->find('list', array('fields' => 'from'));
-            $to_stations = $this->Company->find('list', array('fields' => 'to'));
+            $from_stations = $this->Section->find('list', array('fields' => 'from'));
+            $to_stations = $this->Section->find('list', array('fields' => 'to'));
             $stations = array_values(array_unique(array_merge_recursive($from_stations, $to_stations)));
             $stations = json_encode($stations);
 
-            $this->set(compact('companies', 'stations'));
+            $this->set(compact('sections', 'stations'));
         }
 
         public function search_travel_section($name = null)
         {
             //ajax処理
             if($this->request->is('ajax')) {
-                $travel_section = $this->Company->find('first', array(
-                    'conditions' => array('name' => $name),
+                $travel_section = $this->Section->find('first', array(
+                    'conditions' => array('goal' => $name),
                 ));
-                //$travel_section = Hash::extract($travel_section, '{n}.{s}');
+
                 $this->autoRender = false;
                 $this->autoLayout = false;
                 $response = $travel_section;

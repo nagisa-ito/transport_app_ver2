@@ -1,7 +1,7 @@
 <?php echo $this->Html->css('user_index'); ?>
 
 <script type="text/javascript">
-    var companies = <?php echo $companies; ?>;
+    var sections = <?php echo $sections; ?>;
     var stations = <?php echo $stations; ?>;
 </script>
 
@@ -76,7 +76,7 @@
                         'options' => $oneway_or_round,
                         'label' => '往復or片道',
                         'selected' => '片道',
-                        'id' => 'RequestDetailOnewayOrRound',
+                        'id' => 'set_oneway_or_round_edit',
                      ));
                      echo $this->Form->input('RequestDetail.overview', array(
                         'label' => array('text' => '備考'),
@@ -88,7 +88,7 @@
                         echo $this->Form->button(__('編集'), ['class' => 'btn btn-purple mr-1']);
                         echo $this->Form->end();
                     ?>
-                    <a href="history.back()" class="btn btn-white">キャンセル</a>
+                    <button type="button" onclick="history.back()" class="btn btn-white">キャンセル</button>
                 </div>
             </div>
         </div>

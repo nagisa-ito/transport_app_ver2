@@ -1,7 +1,7 @@
 <?php echo $this->Html->css('checkbox'); ?>
 
 <script type="text/javascript">
-    var companies = <?php echo $companies; ?>;
+    var sections = <?php echo $sections; ?>;
     var stations = <?php echo $stations; ?>;
 </script>
 
@@ -33,7 +33,7 @@
                     'class' => 'form-control',
                 ));
                 echo $this->Form->input('RequestDetail.client', array(
-                    'label'       => array('text' => 'クライアント名'),
+                    'label'       => array('text' => '訪問先'),
                     'placeholder' => '訪問先が無い場合は空欄',
                     'class'       => 'form-control',
                     'id'          => 'company_autocomplete',
@@ -78,7 +78,7 @@
                     'options' => $oneway_or_round,
                     'label' => '往復or片道',
                     'selected' => '片道',
-                    'id' => 'RequestDetailOnewayOrRound',
+                    'id' => 'set_oneway_or_round_add',
                  ));
                  echo $this->Form->input('RequestDetail.overview', array(
                     'label' => array('text' => '備考'),
