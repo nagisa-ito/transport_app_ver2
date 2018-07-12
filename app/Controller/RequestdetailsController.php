@@ -109,7 +109,6 @@
 
         public function delete($delete_request_id = null, $login_user_id = null, $year_month = null)
         {
-            $this->log('delete開始');
             $this->set('login_user',$this->Auth->user());
             if ($this->request->is('get')) {
                 throw new MethodNotAllowedException();
@@ -117,15 +116,15 @@
 
             //ajax処理
             if($this->request->is('ajax')) {
-                    $this->RequestDetail->id = $delete_request_id;
-                    $this->RequestDetail->saveField('is_delete', true);
-                    $this->autoRender = false;
-                    $this->autoLayout = false;
-                    $total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
-                    $response = array('request_id' => $delete_request_id, 'user_id' => $login_user_id, 'total_cost' => $total_cost);
-                    $this->header('Content-Type: application/json');
-                    echo json_encode($response);
-                    exit();
+                $this->RequestDetail->id = $delete_request_id;
+                $this->RequestDetail->saveField('is_delete', true);
+                $this->autoRender = false;
+                $this->autoLayout = false;
+                $total_cost = $this->ReCalcTotalCost($login_user_id, $year_month);
+                $response = array('request_id' => $delete_request_id, 'user_id' => $login_user_id, 'total_cost' => $total_cost);
+                $this->header('Content-Type: application/json');
+                echo json_encode($response);
+                exit();
             }
 
             if ($this->RequestDetail->delete($delete_request_id)) {
