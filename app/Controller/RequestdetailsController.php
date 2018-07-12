@@ -206,7 +206,7 @@
 
         private function getAutocompleteContents()
         {
-            $sections = $this->Section->find('list', array('fields' => 'goal'));
+            $sections = $this->Section->find('list', array('fields' => 'name'));
             $sections = json_encode($sections);
 
             $from_stations = $this->Section->find('list', array('fields' => 'from'));
@@ -222,7 +222,7 @@
             //ajax処理
             if($this->request->is('ajax')) {
                 $travel_section = $this->Section->find('first', array(
-                    'conditions' => array('goal' => $name),
+                    'conditions' => array('name' => $name),
                 ));
 
                 $this->autoRender = false;
