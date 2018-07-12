@@ -248,23 +248,21 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 }
 
 #add-request-form {
-	background-color: #fff;
-	padding: 25px;
-	margin: 20px;
+    background-color: #fff;
+    padding: 25px;
+    margin: 20px;
 }
 
 text.timer { display: none; }
 
 .height-middle {
     position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
-.pagenage_area {
-    background-color: #fff !important;
-}
+
 .edit,
 .delete {
     font-size: 12px;

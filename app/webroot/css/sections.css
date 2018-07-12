@@ -1,11 +1,50 @@
 #pagenate_area {
     background: #fff;
-    padding: 0 0.5em;
     border-left: solid 5px #6c5c96;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .075);
+    height: 56px;
+    line-height: 56px;
+    margin-top: 20px;
 }
 
 #output_area {
     background: #fff;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .075);
+}
+
+.prev,
+.next,
+.numbers {
+    background: #fff;
+    padding: 8px 13px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+}
+
+#filter_section_detail,
+#add_section_detail {
+    background: #fff;
+    padding: 30px 20px;
+    margin-top: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+    display: none;
+}
+
+.prev > a,
+.next > a,
+.numbers > a {
+    color: #353535;
+}
+
+.current.numbers {
+    background: #6c5c96;
+    color: #fff;
+}
+
+.section_detail > td > a {
+    color: rgba(0,0,0,.5);
+    visibility: hidden;
+}
+
+.section_detail:hover > td > a {
+    visibility: visible;
 }

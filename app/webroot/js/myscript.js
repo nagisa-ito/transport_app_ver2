@@ -23,7 +23,7 @@ $(function() {
 //申請確定ボタン
 $(function() {
     $('#confirm_button').click(function(e) {
-        if(confirm('確定してもよろしいですか？')) {
+        if(confirm('確定してもよろしいですか？取消はできません。')) {
             $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id, {},
             function(response) {
                 confirm('確定しました。');
@@ -78,5 +78,15 @@ $(function() {
     var $output = $('#output2');
     $input.on('change', function(event) {
     $output.text($input.val());
+    });
+});
+
+$(function() {
+    $('#add_section').click(function() {
+        $('#add_section_detail').fadeToggle();
+    });
+    
+    $('#filter_section').click(function() {
+        $('#filter_section_detail').fadeToggle();
     });
 });
