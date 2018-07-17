@@ -119,7 +119,9 @@
                         WHERE
                             request_details.is_delete != 1
                         GROUP BY
-                            request_details.user_id, DATE_FORMAT(request_details.date, '%Y-%m')
+                            request_details.user_id,
+                            DATE_FORMAT(request_details.date, '%Y-%m'),
+                            is_confirm
                     )
                     UNION ALL
                     (
@@ -138,7 +140,8 @@
                 WHERE
                     user_id = $login_user_id
                 GROUP BY
-                    monthly_requests.date
+                    monthly_requests.date,
+                    is_confirm
             ";
             $sql = "SELECT * FROM ($sql) AS monthly_requests ORDER BY date DESC";
             $result = $this->query($sql);
