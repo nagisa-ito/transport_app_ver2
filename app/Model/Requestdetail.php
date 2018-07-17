@@ -140,7 +140,7 @@
                 WHERE
                     user_id = $login_user_id
                 GROUP BY
-                    monthly_requests.date,
+                    date,
                     is_confirm
             ";
             $sql = "SELECT * FROM ($sql) AS monthly_requests ORDER BY date DESC";
