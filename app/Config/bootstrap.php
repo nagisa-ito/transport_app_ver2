@@ -109,4 +109,3 @@ CakeLog::config('error', array(
 ));
 
 CakePlugin::load('BoostCake');
-CakePlugin::load('DebugKit');

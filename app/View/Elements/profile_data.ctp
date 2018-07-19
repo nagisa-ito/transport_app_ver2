@@ -25,7 +25,7 @@
             <div class="row mb-2 text-center">
                 <div class="col-sm-8 offset-sm-2">
                     <?php echo $this->Html->link('<i class="fas fa-plus-circle"></i> 申請を追加', array(
-                                'controller' => 'requestdetails',
+                                'controller' => 'request_details',
                                 'action' => 'add',
                                 $login_user_id,
                             ),

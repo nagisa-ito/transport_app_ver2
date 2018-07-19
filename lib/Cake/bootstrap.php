@@ -147,6 +147,7 @@ App::uses('CakePlugin', 'Core');
 App::uses('Cache', 'Cache');
 App::uses('Object', 'Core');
 App::uses('Multibyte', 'I18n');
+App::uses('DebugMemory', 'DebugKit.Lib');
 
 /**
  * Full URL prefix

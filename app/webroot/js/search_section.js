@@ -1,6 +1,6 @@
 $(function() {
     $('#search_travel_section').click(function(e) {
-        $.post('/transport_expense_app/requestdetails/search_travel_section/'
+        $.post('/transportation_expenses_app_v2/request_details/search_travel_section/'
                 + $('#company_autocomplete').val(), {},
             function(response) {
                 if(!$.isEmptyObject(response)) {

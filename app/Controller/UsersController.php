@@ -3,7 +3,7 @@
     class UsersController extends AppController
     {
         public $helpers = array('Html', 'Form', 'Csv');
-        public $uses = array('RequestDetail', 'User', 'Department');
+        public $uses = array('User', 'Department');
 
         public function beforeFilter()
         {
@@ -49,7 +49,7 @@
                 $login_user = Hash::extract($login_user, '{n}.{s}');
                 $this->set('login_user', $login_user[0]);
             }
-            $group_by_month = $this->RequestDetail->getMonthlyRequests($login_user_id);
+            $group_by_month = $this->User->getMonthlyRequests($login_user_id);
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
             $this->set(compact('departments', 'group_by_month', 'login_user_id', 'is_admin'));
@@ -105,7 +105,7 @@
             $user_ids = implode(',', $users);
 
             //各月、各ユーザごとの合計費用を抽出する
-            $each_user_monthly_costs = $this->RequestDetail->getEachUserMonthlyCost($user_ids, $search_year_month);
+            $each_user_monthly_costs = $this->User->getEachUserMonthlyCost($user_ids, $search_year_month);
             
             $this->set(compact('department_id_list', 'department_id','search_year_month'));
             $this->set(compact('each_user_monthly_costs'));
@@ -130,7 +130,7 @@
                 $department .= $this->Department->field('department_name');
             }
 
-            $data = $this->RequestDetail->getOutputCsvData($user_ids, $date);
+            $data = $this->User->getOutputCsvData($user_ids, $date);
 
             $print_date = str_replace('-', '_', $date);
             $filename = "交通費" . $department . "_" . $print_date;
