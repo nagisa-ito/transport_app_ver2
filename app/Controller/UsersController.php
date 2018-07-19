@@ -69,6 +69,14 @@
             }
         }
 
+        public function edit($user_id, $is_admin = 0)
+        {
+            $this->User->id = $user_id;
+            $this->request->data = $this->User->read();
+            $this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
+            $this->set(compact('is_admin'));
+        }
+        
         public function admin_login()
         {
             $this->login();
@@ -86,7 +94,12 @@
 
             $departments = $this->Department->find('list', array('fields' => 'department_name'));
             $this->set(compact('departments', 'users'));
-
+        }
+    
+        public function admin_edit($user_id)
+        {
+            $this->edit($user_id, 1);
+            $this->render('edit');
         }
 
         public function admin_user_lists($department_id = null, $search_year_month = null)

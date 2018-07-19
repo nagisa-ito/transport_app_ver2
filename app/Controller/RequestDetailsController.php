@@ -139,9 +139,6 @@
             $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
             $this->set(compact('login_user_id', 'is_admin'));
 
-            //Transportationモデルとの連携を一時的に解除
-            $this->RequestDetail->unbindModel(array('hasOne' => array('Transportation')));
-
             $this->RequestDetail->id = $edit_request_id;
             if($this->request->is('get')) {
                 $this->request->data = $this->RequestDetail->read();
