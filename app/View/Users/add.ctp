@@ -44,6 +44,7 @@
                     'options' => $department_id_list,
                     'label' => array('text' => '部署を選択')
                 ));
+                echo $this->Form->hidden('role', array('default' => 0));
                 echo $this->Form->input('pass_from_station', array(
                     'label' => array('text' => '定期区間'),
                     'placeholder' => '乗車駅',

@@ -25,7 +25,7 @@
     <div class="col-sm-9">
         <div id="total_cost_area">
             <div class="strong_str table-cell pr-2">
-                <b><?php echo date('Y年m月', strtotime($each_user_request_details[0]['RequestDetail']['date']));?>分</b>
+                <b><?php echo date('Y年m月', strtotime($year_month));?>分</b>
             </div>
             <div class="table-cell">
                 <?php
@@ -63,33 +63,30 @@
             </thead>
             <!--一覧をループで表示-->
             <tbody>
-            <?php foreach ($each_user_request_details as $each_user_request_detail) : ?>
-                <?php //削除フラグが1だったら表示しない
-                    if($each_user_request_detail['RequestDetail']['is_delete']) { continue; }
-                ?>
-                    <tr id="request_<?php echo h($each_user_request_detail['RequestDetail']['id']); ?>">
-                        <th scope="row"><?php echo h($each_user_request_detail['RequestDetail']['id']); ?></th>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['date'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['client'])?></td>
-                        <td><?php echo h($each_user_request_detail['Transportation']['transportation_name'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['from_station'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['to_station'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['cost'])?></td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['oneway_or_round'])?></td>
+            <?php foreach ($requests as $request) : ?>
+                    <tr id="request_<?php echo h($request['id']); ?>">
+                        <th scope="row"><?php echo h($request['id']); ?></th>
+                        <td><?php echo h($request['date'])?></td>
+                        <td><?php echo h($request['client'])?></td>
+                        <td><?php echo h($request['transportation_name'])?></td>
+                        <td><?php echo h($request['from_station'])?></td>
+                        <td><?php echo h($request['to_station'])?></td>
+                        <td><?php echo h($request['cost'])?></td>
+                        <td><?php echo h($request['oneway_or_round'])?></td>
                         <td>
                             <?php
                                 echo $request_state =
-                                    $each_user_request_detail['RequestDetail']['is_season_ticket']
+                                    $request['is_season_ticket']
                                     ? '定期代' : '営業交通費';
                             ?>
                         </td>
-                        <td><?php echo h($each_user_request_detail['RequestDetail']['overview'])?></td>
+                        <td><?php echo h($request['overview'])?></td>
                         <td>
                             <?php
                                 //編集・削除を実行
                                 echo $this->Html->link('<i class="fas fa-pen"></i>', array(
                                         'action' => 'edit',
-                                        $each_user_request_detail['RequestDetail']['id'],
+                                        $request['id'],
                                         $login_user_id,
                                         $year_month,
                                     ),
@@ -99,7 +96,7 @@
                                 ));
                                 echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#', array(
                                     'class' => 'delete btn btn-purple mb-1',
-                                    'data-request_id' => $each_user_request_detail['RequestDetail']['id'],
+                                    'data-request_id' => $request['id'],
                                     'data-user_id' => $login_user_id,
                                     'data-year_month' => $year_month,
                                     'escape' => false,
@@ -121,4 +118,3 @@
     var year_month2 = '<?php echo $year_month; ?>';
 </script>
 
-<?php echo $this->Html->script('detailsscript'); ?>

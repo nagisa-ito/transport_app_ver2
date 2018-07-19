@@ -8,7 +8,7 @@ $(function() {
     $('a.delete').click(function(e) {
         if (confirm('削除しますか？')) {
                             /* /deleteアクションへのパス/削除する申請のid/現在のユーザのid/ */
-            $.post('/transport_expense_app/requestdetails/delete/'
+            $.post('/transportation_expenses_app_v2/request_details/delete/'
                     + $(this).data('request_id') + '/' + $(this).data('user_id') + '/' + $(this).data('year_month') ,{},
                 function(response) {
                     var total_cost = '¥ ' + String(response.total_cost).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,' ); 
@@ -24,7 +24,7 @@ $(function() {
 $(function() {
     $('#confirm_button').click(function(e) {
         if(confirm('確定してもよろしいですか？取消はできません。')) {
-            $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id, {},
+            $.post('/transportation_expenses_app_v2/confirm_months/add/' + year_month + '/' + user_id, {},
             function(response) {
                 confirm('確定しました。');
                 location.reload();
@@ -38,7 +38,7 @@ $(function() {
     $('#no_request').click(function(e) {
         var year_month = $('#no_request_month').val();
         var user_id = $('#no_request_user_id').val();
-        $.post('/transport_expense_app/confirmmonths/add/' + year_month + '/' + user_id + '/1', {},
+        $.post('/transportation_expenses_app_v2/confirm_months/add/' + year_month + '/' + user_id + '/1', {},
             function(response) {
                 confirm('確定しました。');
                 location.reload();

@@ -81,7 +81,6 @@ class AppController extends Controller {
             ),
             'authorize' => array('Controller') //認証
         ),
-        'DebugKit.Toolbar',
     );
 
     //誰かが他の人の申請を編集したり削除したりするのを防ぐように、アプリケーションをセキュアにする。
