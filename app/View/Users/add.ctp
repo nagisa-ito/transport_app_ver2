@@ -20,7 +20,7 @@
             <?php
                 echo $this->Form->create('User', array('class' => 'form_inline'));
                 echo $this->Form->input('username', array(
-                    'label' => array('text' => 'id'),
+                    'label' => array('text' => 'ユーザーid'),
                     'placeholder' => '(firstname)_(lastname)',
                     'class' => 'form-control',
                 ));
