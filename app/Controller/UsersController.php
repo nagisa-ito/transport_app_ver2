@@ -80,6 +80,7 @@
         public function admin_login()
         {
             $this->login();
+            $this->render('login');
         }
 
         public function admin_logout()
