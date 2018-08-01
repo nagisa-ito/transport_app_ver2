@@ -195,8 +195,8 @@
                     departments.department_name,
                     users.yourname,
                     IFNULL(requests.req_count, 0) as req_count,
-                    IFNULL(requests.regular, 0) as regular,
                     IFNULL(requests.not_regular, 0) as not_regular,
+                    IFNULL(requests.regular, 0) as regular,
                     IFNULL(requests.total_cost, 0) as total_cost
                 FROM
                     (
