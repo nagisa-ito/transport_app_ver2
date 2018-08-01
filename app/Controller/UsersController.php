@@ -145,10 +145,12 @@
             }
 
             $data = $this->User->getOutputCsvData($user_ids, $date);
+            mb_convert_variables('SJIS', 'UTF-8', $data);
 
             $print_date = str_replace('-', '_', $date);
             $filename = "交通費" . $department . "_" . $print_date;
             $header = array('社員id', '部署', '名前', '件数', '営業交通費', '定期代', '合計金額');
+            mb_convert_variables('SJIS', 'UTF-8', $header);
             $this->set(compact('filename', 'header', 'data'));
         }
 
