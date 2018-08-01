@@ -1,5 +1,15 @@
 <?php echo $this->Html->css('sections'); ?>
 
+<header>
+    <?php
+        echo $this->element('admin_header', array(
+            'title' => '交通費精算表',
+            'is_loggedIn' => 1,
+            'is_admin' => $is_admin,
+        ));
+    ?>
+</header>
+
 <div class="text-center">
     <?php echo $this->Session->flash(); ?>
 </div>

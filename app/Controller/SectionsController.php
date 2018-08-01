@@ -33,11 +33,13 @@
             $this->Paginator->settings = $this->paginate;
             $sections = $this->Paginator->paginate('Section', $conditions);
             $this->set(compact('sections'));
+            $this->set($is_admin, 0);
         }
         
         public function admin_index()
         {
             $this->index();
+            $this->set($is_admin, 1);
             $this->render('index');
         }
         
