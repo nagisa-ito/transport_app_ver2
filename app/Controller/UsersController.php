@@ -72,9 +72,18 @@
         public function edit($user_id, $is_admin = 0)
         {
             $this->User->id = $user_id;
-            $this->request->data = $this->User->read();
+            if($this->request->is('get')) {
+                $this->request->data = $this->User->read();
+            } else {
+                if($this->User->save($this->request->data)) {
+                    $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-success']);
+                } else {
+                    $this->Session->setFlash('Failed!', 'default', ['class' => 'alert alert-danger']);
+                }
+            }
+
             $this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
-            $this->set(compact('is_admin'));
+            $this->set(compact('is_admin', 'user'));
         }
         
         public function admin_login()
