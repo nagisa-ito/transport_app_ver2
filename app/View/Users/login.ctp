@@ -37,7 +37,20 @@
                     ));
                     echo $this->Form->end();
                 ?>
-                <?php echo $this->Html->link(__('Create an Account'), array('action' => 'add'), array('class' => 'note small')); ?>
+                <?php
+                    echo $this->Html->link(__('Create an Account'),
+                            array('action' => 'add'),
+                            array('class' => 'note small')
+                        );
+                ?>
+                <br>
+                <?php
+                    echo $this->Html->link('Forgot your password?',
+                            array('action' => 'reset_passwd'),
+                            array('class' => 'note small')
+                    );
+                ?>
+                
         </div>
     </div>
 
