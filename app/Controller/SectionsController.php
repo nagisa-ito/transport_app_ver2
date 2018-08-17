@@ -17,7 +17,7 @@
                 $this->response->disableCache();
         }
         
-        public function index()
+        public function index($is_admin = 0)
         {
             $conditions = array();
             
@@ -32,8 +32,7 @@
             }
             $this->Paginator->settings = $this->paginate;
             $sections = $this->Paginator->paginate('Section', $conditions);
-            $this->set(compact('sections'));
-            $this->set($is_admin, 0);
+            $this->set(compact('sections', 'is_admin'));
         }
         
         public function admin_index()
