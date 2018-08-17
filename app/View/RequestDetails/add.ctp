@@ -66,7 +66,7 @@
                     'id' => 'cost',
                 ));
             ?>
-            <div class="small note mb-2 text-right">定期を考慮した金額を、片道の料金で入力してください</div>
+            <div class="small note mb-2 text-right">定期区間を含む場合は実際に払った金額を入力</div>
             <label for="checkbox" class="check_css">定期</label>
             <input type="hidden" name="data[RequestDetail][is_season_ticket]" id="checkbox_" value="0">
             <input type="checkbox" name="data[RequestDetail][is_season_ticket]" id="checkbox" value="1">
