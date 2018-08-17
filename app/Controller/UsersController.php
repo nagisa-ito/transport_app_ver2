@@ -167,37 +167,61 @@
             $this->set(compact('filename', 'header', 'data'));
         }
 
-        public function reset_passwd()
+        public function reset_passwd($someone = null)
         {
-            if(isset($this->request->data['Token']['mail_address'])) {
-                $someone = $this->User->find('first', array(
-                    'conditions' => array('User.username' => $this->request->data['Token']['mail_address'])
-                ));
-                debug($someone);
-                if(isset($someone['User'])) {
-                    try {
-                        $email = new CakeEmail('smtp');
-                        $email->to('nagisa.ito@e-grant.net')
-                              ->emailFormat('html')
-                              ->template('mail_template')
-                              ->viewVars(array(
-                                'name' => $someone['yourname'],
-                                'password' => $someone['username'],
-                              ))
-                              ->subject('test')
-                              ->send();
-                    } catch(Exception $e) {
-                        debug($e->getMessage());
-                    }
-                } else {
-                    $this->Session->setFlash('メールアドレスが存在しません。',
+            $someone = $this->existsUser($this->request->data['Token']['mail_address']);
+            
+            if($someone) {
+                $password = $this->random();
+                if(!$this->saveNewPassword($someone['User']['id'], $password)) {
+                    throw new Exception('パスワードのリセットに失敗しました');
+                }
+
+                try {
+                    $email = new CakeEmail('smtp');
+                    $email->to('nagisa.ito@e-grant.net')
+                          ->emailFormat('html')
+                          ->template('mail_template')
+                          ->viewVars(array(
+                            'name' => $someone['User']['yourname'],
+                            'password' => $password,
+                          ))
+                          ->subject('[交通費管理アプリ] パスワードをリセットしました')
+                          ->send();
+                } catch(Exception $e) {
+                    $this->log($e->getMessage());
+                }
+
+            } else {
+                $this->Session->setFlash('メールアドレスが存在しません。',
                                                 'default',
                                                 ['class' => 'alert alert-danger']
-                    );
-                }
+                );
             }
         }
 
+        private function saveNewPassword($id, $password)
+        {
+            $this->User->id = $id;
+            $this->request->data = $this->User->read();
+            $this->request->data['User']['password'] = $password;
+            $this->request->data['User']['password_confirm'] = $password;
+            
+            return $this->User->save($this->request->data) ? true : false;
+        }
+        
+        private function existsUser($address)
+        {
+            $someone = $this->User->find('first', array(
+                'conditions' => array('User.username' => $address)
+            ));
+            return empty($someone) ? false : $someone;
+        }
+        
+        private function random($length = 10)
+        {
+            return substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, $length);
+        }
     }
 
 ?>
