@@ -1,4 +1,5 @@
 <?php
+    App::uses('CakeEmail', 'Network/Email');
 
     class UsersController extends AppController
     {
@@ -28,7 +29,10 @@
                         $this->redirect($this->Auth->redirect());
                     }
                 } else {
-                    $this->Session->setFlash('Invalid username or password, try again', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('Invalid username or password, try again',
+                                                'default',
+                                                ['class' => 'alert alert-warning']
+                                            );
                 }
             }
         }
@@ -161,6 +165,37 @@
             $header = array('社員id', '部署', '名前', '件数', '営業交通費', '定期代', '合計金額');
             mb_convert_variables('SJIS', 'UTF-8', $header);
             $this->set(compact('filename', 'header', 'data'));
+        }
+
+        public function reset_passwd()
+        {
+            if(isset($this->request->data['Token']['mail_address'])) {
+                $someone = $this->User->find('first', array(
+                    'conditions' => array('User.username' => $this->request->data['Token']['mail_address'])
+                ));
+                debug($someone);
+                if(isset($someone['User'])) {
+                    try {
+                        $email = new CakeEmail('smtp');
+                        $email->to('nagisa.ito@e-grant.net')
+                              ->emailFormat('html')
+                              ->template('mail_template')
+                              ->viewVars(array(
+                                'name' => $someone['yourname'],
+                                'password' => $someone['username'],
+                              ))
+                              ->subject('test')
+                              ->send();
+                    } catch(Exception $e) {
+                        debug($e->getMessage());
+                    }
+                } else {
+                    $this->Session->setFlash('メールアドレスが存在しません。',
+                                                'default',
+                                                ['class' => 'alert alert-danger']
+                    );
+                }
+            }
         }
 
     }
