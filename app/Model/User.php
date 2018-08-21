@@ -17,7 +17,10 @@
                     'message' => 'パスワードが一致していません'
                 ),
             ),
-            'password_confirm' => array('rule' => 'notEmpty', 'message' => 'パスワードが一致していません'),
+            'password_confirm' => array(
+                'rule' => 'notEmpty',
+                'message' => '入力は必須です。'
+            ),
             'yourname'  => array('rule' => 'notEmpty'),
             'pass_from_station' => array('rule' => 'alphaNumeric'),
             'pass_to_station' => array('rule' => 'alphaNumeric')
@@ -30,7 +33,8 @@
 
             if(isset($this->data[$this->alias]['password'])) {
                 $passwordHasher = new SimplePasswordHasher();
-                $this->data[$this->alias]['password'] = $passwordHasher->Hash($this->data[$this->alias]['password']);
+                $this->data[$this->alias]['password'] =
+                    $passwordHasher->Hash($this->data[$this->alias]['password']);
             }
 
             return true;
