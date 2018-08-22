@@ -176,9 +176,10 @@
                 if(!$this->saveNewPassword($someone['User']['id'], $password)) {
                     throw new Exception('パスワードのリセットに失敗しました');
                 }
-
+ 
                 try {
-                    $email = new CakeEmail('smtp');
+                    $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
+                    $email = new CakeEmail($mode);
                     $email->to('nagisa.ito@e-grant.net')
                           ->emailFormat('html')
                           ->template('mail_template')
@@ -190,13 +191,11 @@
                           ->send();
                 } catch(Exception $e) {
                     $this->log($e->getMessage());
-                }
-
-            } else {
-                $this->Session->setFlash('メールアドレスが存在しません。',
+                    $this->Session->setFlash('メールアドレスが存在しません。',
                                                 'default',
                                                 ['class' => 'alert alert-danger']
-                );
+                    );
+                }
             }
         }
 
