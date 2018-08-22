@@ -178,12 +178,8 @@
                 }
  
                 try {
-<<<<<<< HEAD
-                    $email = new CakeEmail('sakura');
-=======
                     $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
                     $email = new CakeEmail($mode);
->>>>>>> 5d9316c140e63d0a5671cd53385e1fec85fde867
                     $email->to('nagisa.ito@e-grant.net')
                           ->emailFormat('html')
                           ->template('mail_template')
