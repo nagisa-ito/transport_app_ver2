@@ -1,4 +1,5 @@
 <?php
+    App::uses('CakeEmail', 'Network/Email');
 
     class UsersController extends AppController
     {
@@ -28,7 +29,10 @@
                         $this->redirect($this->Auth->redirect());
                     }
                 } else {
-                    $this->Session->setFlash('Invalid username or password, try again', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('Invalid username or password, try again',
+                                                'default',
+                                                ['class' => 'alert alert-warning']
+                                            );
                 }
             }
         }
@@ -72,9 +76,18 @@
         public function edit($user_id, $is_admin = 0)
         {
             $this->User->id = $user_id;
-            $this->request->data = $this->User->read();
+            if($this->request->is('get')) {
+                $this->request->data = $this->User->read();
+            } else {
+                if($this->User->save($this->request->data)) {
+                    $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-success']);
+                } else {
+                    $this->Session->setFlash('Failed!', 'default', ['class' => 'alert alert-danger']);
+                }
+            }
+
             $this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
-            $this->set(compact('is_admin'));
+            $this->set(compact('is_admin', 'user'));
         }
         
         public function admin_login()
@@ -154,6 +167,61 @@
             $this->set(compact('filename', 'header', 'data'));
         }
 
+        public function reset_passwd($someone = null)
+        {
+            $someone = $this->existsUser($this->request->data['Token']['mail_address']);
+            
+            if($someone) {
+                $password = $this->random();
+                if(!$this->saveNewPassword($someone['User']['id'], $password)) {
+                    throw new Exception('パスワードのリセットに失敗しました');
+                }
+
+                try {
+                    $email = new CakeEmail('sakura');
+                    $email->to('nagisa.ito@e-grant.net')
+                          ->emailFormat('html')
+                          ->template('mail_template')
+                          ->viewVars(array(
+                            'name' => $someone['User']['yourname'],
+                            'password' => $password,
+                          ))
+                          ->subject('[交通費管理アプリ] パスワードをリセットしました')
+                          ->send();
+                } catch(Exception $e) {
+                    $this->log($e->getMessage());
+                }
+
+            } else {
+                $this->Session->setFlash('メールアドレスが存在しません。',
+                                                'default',
+                                                ['class' => 'alert alert-danger']
+                );
+            }
+        }
+
+        private function saveNewPassword($id, $password)
+        {
+            $this->User->id = $id;
+            $this->request->data = $this->User->read();
+            $this->request->data['User']['password'] = $password;
+            $this->request->data['User']['password_confirm'] = $password;
+            
+            return $this->User->save($this->request->data) ? true : false;
+        }
+        
+        private function existsUser($address)
+        {
+            $someone = $this->User->find('first', array(
+                'conditions' => array('User.username' => $address)
+            ));
+            return empty($someone) ? false : $someone;
+        }
+        
+        private function random($length = 10)
+        {
+            return substr(str_shuffle('1234567890abcdefghijklmnopqrstuvwxyz'), 0, $length);
+        }
     }
 
 ?>
