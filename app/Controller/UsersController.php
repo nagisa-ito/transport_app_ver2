@@ -178,7 +178,7 @@
                 }
 
                 try {
-                    $email = new CakeEmail('smtp');
+                    $email = new CakeEmail('sakura');
                     $email->to('nagisa.ito@e-grant.net')
                           ->emailFormat('html')
                           ->template('mail_template')
