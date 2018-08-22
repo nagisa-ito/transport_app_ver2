@@ -91,14 +91,4 @@ class EmailConfig {
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
-    
-    public $gmail = array(
-        'host' => 'ssl://smtp.gmail.com',
-        'port' => 465,
-        'username' => 'ngs.s1220128@gmail.com',
-        'password' => 'Hizamaru7g3110u',
-        'transport' => 'Smtp',
-        'tls' => true,
-    );
-
 }
