@@ -176,9 +176,10 @@
                 if(!$this->saveNewPassword($someone['User']['id'], $password)) {
                     throw new Exception('パスワードのリセットに失敗しました');
                 }
-
+ 
                 try {
-                    $email = new CakeEmail('sakura');
+                    $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
+                    $email = new CakeEmail($mode);
                     $email->to('nagisa.ito@e-grant.net')
                           ->emailFormat('html')
                           ->template('mail_template')
