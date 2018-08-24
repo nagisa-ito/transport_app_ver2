@@ -191,13 +191,11 @@
                           ->send();
                 } catch(Exception $e) {
                     $this->log($e->getMessage());
-                }
-
-            } else {
-                $this->Session->setFlash('メールアドレスが存在しません。',
+                    $this->Session->setFlash('メールアドレスが存在しません。',
                                                 'default',
                                                 ['class' => 'alert alert-danger']
-                );
+                    );
+                }
             }
         }
 
