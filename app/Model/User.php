@@ -33,7 +33,8 @@
 
             if(isset($this->data[$this->alias]['password'])) {
                 $passwordHasher = new SimplePasswordHasher();
-                $this->data[$this->alias]['password'] = $passwordHasher->Hash($this->data[$this->alias]['password']);
+                $this->data[$this->alias]['password'] =
+                    $passwordHasher->Hash($this->data[$this->alias]['password']);
             }
 
             return true;
