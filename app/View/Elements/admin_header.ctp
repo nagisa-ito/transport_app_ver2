@@ -4,7 +4,7 @@
         <i class="fas fa-subway fa-2x header-icon"></i>
         <div class="display-cell pl-2">
             <?php
-                if($is_admin) {
+                if($this->params['admin']) {
                     echo $this->element('admin_badge');
                 }
             ?>
@@ -25,7 +25,7 @@
                                         'class' => 'btn-black-pink float-right small ml-2',
                                         'escape' => false,
                 ));
-                if($is_admin) {
+                if($this->params['admin']) {
                     echo $this->Html->link('<i class="fas fa-users mr-1"></i>ユーザー一覧',
                                     array(
                                         'controller' => 'users',
