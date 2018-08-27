@@ -38,14 +38,14 @@
                     echo $this->Form->end();
                 ?>
                 <?php
-                    echo $this->Html->link(__('Create an Account'),
+                    echo $this->Html->link(__('新規登録'),
                             array('action' => 'add'),
                             array('class' => 'note small')
                         );
                 ?>
                 <br>
                 <?php
-                    echo $this->Html->link('Forgot your password?',
+                    echo $this->Html->link('パスワードを忘れた場合',
                             array('action' => 'reset_passwd'),
                             array('class' => 'note small')
                     );
