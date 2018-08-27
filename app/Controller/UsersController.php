@@ -169,28 +169,38 @@
 
         public function reset_passwd($someone = null)
         {
-            $someone = $this->existsUser($this->request->data['Token']['mail_address']);
-            
-            if($someone) {
-                $password = $this->random();
-                if(!$this->saveNewPassword($someone['User']['id'], $password)) {
-                    throw new Exception('パスワードのリセットに失敗しました');
-                }
- 
-                try {
-                    $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
-                    $email = new CakeEmail($mode);
-                    $email->to('nagisa.ito@e-grant.net')
-                          ->emailFormat('html')
-                          ->template('mail_template')
-                          ->viewVars(array(
-                            'name' => $someone['User']['yourname'],
-                            'password' => $password,
-                          ))
-                          ->subject('[交通費管理アプリ] パスワードをリセットしました')
-                          ->send();
-                } catch(Exception $e) {
-                    $this->log($e->getMessage());
+            if(isset($this->request->data)) {
+                $someone = $this->existsUser($this->request->data['Token']['mail_address']);
+                if($someone) {
+                    //パスワード変更
+                    $password = $this->random();
+                    if(!$this->saveNewPassword($someone['User']['id'], $password)) {
+                        $this->Session->setFlash('パスワードのリセットに失敗しました。',
+                                                'default',
+                                                ['class' => 'alert alert-danger']
+                        );
+                    }
+                    // メール送信
+                    try {
+                        $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
+                        $email = new CakeEmail($mode);
+                        $email->to($this->request->data['Token']['mail_address'])
+                              ->emailFormat('html')
+                              ->template('mail_template')
+                              ->viewVars(array(
+                                'name' => $someone['User']['yourname'],
+                                'password' => $password,
+                              ))
+                              ->subject('[交通費管理アプリ] パスワードをリセットしました')
+                              ->send();
+                    } catch(Exception $e) {
+                        $this->log($e->getMessage());
+                        $this->Session->setFlash('メールの送信に失敗しました。',
+                                                'default',
+                                                ['class' => 'alert alert-danger']
+                        );
+                    }
+                } else {
                     $this->Session->setFlash('メールアドレスが存在しません。',
                                                 'default',
                                                 ['class' => 'alert alert-danger']
