@@ -15,24 +15,34 @@
 
         public function login()
         {
-            //フォームにデータがあった場合のみログイン処理を行い、指定のページへリダイレクトする。
-            if($this->request->is('post')) {
+            $admin_param = array(
+                'admin' => true,
+                'controller' => 'users',
+                'action' => 'user_lists',
+            );
+            
+            // 既にログインしている場合
+            if($this->Auth->loggedIn()) {
+                if($this->Auth->user('role') == 'admin') {
+                    $this->redirect($admin_param);
+                } else {
+                    $this->redirect($this->Auth->redirect());
+                }
+            }
+            
+            // フォームからデータが送られてきた場合
+            if(!empty($this->request->data)) {
                 if($this->Auth->login()) {
-                    $role = $this->Auth->user('role');
-                    if(isset($role) && $role === 'admin'){
-                        $this->redirect(array(
-                            'admin' => true,
-                            'controller' => 'users',
-                            'action' => 'user_lists',
-                        ));
+                    if($this->Auth->user('role') == 'admin') {
+                        $this->redirect($admin_param);
                     } else {
                         $this->redirect($this->Auth->redirect());
                     }
                 } else {
-                    $this->Session->setFlash('Invalid username or password, try again',
+                    $this->Session->setFlash('メールアドレスまたはパスワードが違います。',
                                                 'default',
                                                 ['class' => 'alert alert-warning']
-                                            );
+                    );
                 }
             }
         }
