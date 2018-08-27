@@ -169,6 +169,8 @@
 
         public function reset_passwd($someone = null)
         {
+	    $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
+
             if(isset($this->request->data)) {
                 $someone = $this->existsUser($this->request->data['Token']['mail_address']);
                 if($someone) {
@@ -184,7 +186,7 @@
                     try {
                         $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
                         $email = new CakeEmail($mode);
-                        $email->to($this->request->data['Token']['mail_address'])
+                        $email->to($someone['User']['username'])
                               ->emailFormat('html')
                               ->template('mail_template')
                               ->viewVars(array(
