@@ -169,9 +169,9 @@
 
         public function reset_passwd($someone = null)
         {
-	    $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
+            $mode = $_SERVER['APP_ENV'] == "development" ? 'smtp' : 'sakura';
 
-            if(isset($this->request->data)) {
+            if(!empty($this->request->data)) {
                 $someone = $this->existsUser($this->request->data['Token']['mail_address']);
                 if($someone) {
                     //パスワード変更
