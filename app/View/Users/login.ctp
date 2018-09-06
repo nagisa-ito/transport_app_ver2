@@ -24,12 +24,12 @@
                     echo $this->Form->create('User', array('class' => 'form-group'));
                     echo $this->Form->input('username', array(
                         'label' => array('text' => ''),
-                        'placeholder' => 'id',
+                        'placeholder' => 'メールアドレス',
                         'class' => 'form-control',
                     ));
                     echo $this->Form->input('password', array(
                         'label' => array('text' => ''),
-                        'placeholder' => 'password',
+                        'placeholder' => 'パスワード',
                         'class' => 'form-control',
                     ));
                     echo $this->Form->button(__('Sign In'), array(
