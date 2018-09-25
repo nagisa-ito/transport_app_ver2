@@ -205,6 +205,11 @@
                               ))
                               ->subject('[交通費管理アプリ] パスワードをリセットしました')
                               ->send();
+                        $this->Session->setFlash('パスワード変更のメールを送信しました。メールを確認してください。',
+                                                'default',
+                                                ['class' => 'alert alert-success']
+                        );
+                        $this->redirect(array('action' => 'login'));
                     } catch(Exception $e) {
                         $this->log($e->getMessage());
                         $this->Session->setFlash('メールの送信に失敗しました。',
