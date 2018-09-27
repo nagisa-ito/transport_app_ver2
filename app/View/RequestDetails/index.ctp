@@ -77,7 +77,7 @@
                             <?php
                                 echo $request_state =
                                     $request['is_season_ticket']
-                                    ? '定期代' : '営業交通費';
+                                    ? '通勤費' : '営業交通費';
                             ?>
                         </td>
                         <td><?php echo h($request['overview'])?></td>
