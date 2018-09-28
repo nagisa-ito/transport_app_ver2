@@ -36,48 +36,96 @@
                 '日付',
                 '訪問先',
                 '交通手段',
-                '区間',
+                '利用区間',
                 '費用',
-                '状態',
-                '',
+                '経路',
+                '分類',
                 '備考',
             );
             $this->set(compact('column_names', 'total_cost', 'is_admin', 'is_confirm', 'requests', 'year_month'));
         }
 
-        public function add($login_user_id = null, $year_month = null, $is_admin = 0)
+        public function admin_index($login_user_id, $year_month)
         {
-            $this->getAutocompleteContents();
-            $this->set('login_user',$this->Auth->user());
-            $this->set('oneway_or_round', $this->oneway_or_round);
-            $this->set(compact('login_user_id', 'is_admin'));
-            $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
+            $this->index($login_user_id, $year_month, 1);
+            $this->render('index');
+        }
+ 
+        /**
+         * 申請追加用メソッド。
+         * @param access_user_id adminユーザーでログインした時に、どのユーザーの申請を見ているかのid
+         * @param year_month
+         */
+        public function add($user_id = null, $year_month = null, $request_id = null)
+        {
+            $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+            $this->set(compact('user_id', 'transportations'));
 
+            // 訪問先補完用メソッド呼び出し
+            $this->getAutocompleteContents();
+
+            // 保存
             if($this->request->is('post')){
+                // 成功
                 if($this->RequestDetail->save($this->request->data)){
+                    // 登録した月の一覧にリダイレクトするため、yyyy-mmを抽出する
                     $ymd = Hash::get($this->request->data, 'RequestDetail.date');
                     preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
 
-                    $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
+                    // リダイレクト先オプション
+                    $redirect_destination = array(
+                        'controller' => 'request_details',
+                        'action' => isset($this->request->data['add_repeat']) ? 'add' : 'index',
+                        $user_id,
+                        $year_month[0],
+                    );
 
-                    if($this->params['admin']){
-                        if(isset($this->request->data['add'])){
-                            $this->redirect(array('controller' => 'request_details', 'action' => "index", $login_user_id, $year_month[0]));
-                        } else {
-                            $this->redirect(array('controller' => 'request_details', 'action' => "add", $login_user_id));
-                        }
-                    } else {
-                        if(isset($this->request->data['add'])){
-                            $this->redirect(array('controller' => 'request_details', 'action' => "index" ,$login_user_id, $year_month[0]));
-                        } else {
-                            $this->redirect(array('controller' => 'request_details', 'action' => "add", $login_user_id));
-                        }
-                    }
+                    $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-warning']);
+                    $this->redirect($redirect_destination);
 
+                // 失敗
                 } else {
-                    $this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-warning']);
                 }
             }
+        }
+
+        public function admin_add($user_id = null, $year_month = null)
+        {
+            $this->add($user_id, $year_month, 1);
+            $this->render('add');
+        }
+
+        public function edit($user_id, $year_month, $request_id)
+        {
+            // 区間マスタ情報保管用
+            $this->getAutocompleteContents();
+    
+            $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+            $this->set(compact('user_id', 'transportations'));
+
+            $this->RequestDetail->id = $request_id;
+            if ($this->request->is('get')) {
+                $this->request->data = $this->RequestDetail->read();
+            // 変更を保存
+            } else {
+                if ($this->RequestDetail->save($this->request->data)) {
+                    $this->Session->setFlash('変更を保存しました。', 'default', ['class' => 'alert alert-success']);
+                    $this->redirect(array(
+                        'action' =>  'index',
+                        $user_id,
+                        $year_month
+                    ));
+                } else {
+                    $this->Session->setFlash('変更に失敗しました。', 'default', ['class' => 'alert alert-warning']);
+                }
+            }
+        }
+
+        public function admin_edit($user_id, $year_month, $request_id)
+        {
+            $this->edit($user_id, $year_month, $request_id);
+            $this->render('edit');
         }
 
         public function delete($delete_request_id = null, $login_user_id = null, $year_month = null)
@@ -110,6 +158,10 @@
             }
         }
 
+        public function admin_delete($delete_request_id = null, $login_user_id = null, $year_month = null){
+            $this->delete($delete_request_id, $login_user_id, $year_month);
+        }
+
         //deleteした時のtotal_cost再計算用関数
         private function ReCalcTotalCost($login_user_id = null, $year_month = null) {
             //指定のuser_idとyear_monthのパラメータ指定
@@ -126,51 +178,6 @@
             ));
             $total_cost = Hash::extract($total_cost, '{n}.{n}');
             return number_format($total_cost[0]['sum(cost)']);
-        }
-
-        public function edit($edit_request_id = null, $login_user_id = null, $year_month = null, $is_admin = 0)
-        {
-            $this->getAutocompleteContents();
-            $this->set('login_user',$this->Auth->user());
-            //色々と変数をセット
-            $this->set('oneway_or_round', $this->oneway_or_round);
-            $this->loadModel('Transportation');
-            $this->set('transportation_id_list', $this->Transportation->find('list', array( 'fields' => 'transportation_name')));
-            $this->set(compact('login_user_id', 'is_admin'));
-
-            $this->RequestDetail->id = $edit_request_id;
-            if($this->request->is('get')) {
-                $this->request->data = $this->RequestDetail->read();
-            } else {
-                if($this->RequestDetail->save($this->request->data)){
-                    $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
-                    $this->redirect(array('action' => "index/$login_user_id/$year_month"));
-                } else {
-                    $this->Session->setFlash('Failed!', 'default', ['class' => 'alert alert-warning']);
-                }
-            }
-        }
-
-        public function admin_index($login_user_id, $year_month)
-        {
-            $this->index($login_user_id, $year_month, 1);
-            $this->render('index');
-        }
-
-        public function admin_edit($edit_request_id = null, $login_user_id = null, $year_month = null)
-        {
-            $this->edit($edit_request_id, $login_user_id, $year_month, 1);
-            $this->render('edit');
-        }
-
-        public function admin_add($login_user_id = null, $year_month = null)
-        {
-            $this->add($login_user_id, $year_month, 1);
-            $this->render('add');
-        }
-
-        public function admin_delete($delete_request_id = null, $login_user_id = null, $year_month = null){
-            $this->delete($delete_request_id, $login_user_id, $year_month);
         }
 
         private function getAutocompleteContents()
