@@ -9,7 +9,7 @@
         echo $this->element('admin_header', array(
             'title' => '交通費精算表',
             'is_loggedIn' => 1,
-            'is_admin' => $is_admin,
+            'is_admin' => $this->params['admin'],
         ));
     ?>
 </header>
@@ -72,12 +72,16 @@
                         <td><?php echo h($request['from_station'])?></td>
                         <td><?php echo h($request['to_station'])?></td>
                         <td><?php echo h($request['cost'])?></td>
-                        <td><?php echo h($request['oneway_or_round'])?></td>
                         <td>
                             <?php
-                                echo $request_state =
-                                    $request['is_season_ticket']
-                                    ? '通勤費' : '営業交通費';
+                                $state = Configure::read('oneway_or_round');
+                                echo $state[$request['oneway_or_round']];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                                $state = Configure::read('trans_category');
+                                echo $state[$request['trans_type']];
                             ?>
                         </td>
                         <td><?php echo h($request['overview'])?></td>
@@ -86,9 +90,9 @@
                                 //編集・削除を実行
                                 echo $this->Html->link('<i class="fas fa-pen"></i>', array(
                                         'action' => 'edit',
-                                        $request['id'],
                                         $login_user_id,
                                         $year_month,
+                                        $request['id'],
                                     ),
                                     array(
                                         'escape' => false,
