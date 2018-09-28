@@ -172,7 +172,7 @@
 
             $print_date = str_replace('-', '_', $date);
             $filename = "交通費" . $department . "_" . $print_date;
-            $header = array('社員id', '部署', '名前', '件数', '営業交通費', '通勤費', '合計金額');
+            $header = array('社員id', '部署', '名前', '件数', '通勤費', '定期代', '営業交通費', '合計金額');
             mb_convert_variables('SJIS', 'UTF-8', $header);
             $this->set(compact('filename', 'header', 'data'));
         }
