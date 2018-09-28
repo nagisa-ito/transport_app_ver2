@@ -109,3 +109,6 @@ CakeLog::config('error', array(
 ));
 
 CakePlugin::load('BoostCake');
+
+// 定数定義用ファイルを読み込み
+Configure::load('constants');
