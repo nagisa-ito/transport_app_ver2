@@ -3,9 +3,8 @@
     class RequestDetailsController extends AppController {
         //helperという機能を使うための合言葉のようなもの
         public $helpers = array('Html', 'Form');
-        public $oneway_or_round = array('往復' => '往復', '片道' => '片道');
         public $uses = array('RequestDetail', 'User', 'Department', 'ConfirmMonth', 'Section', 'Transportation');
-        
+
         public function beforeFilter()
         {
             parent::beforeFilter();
