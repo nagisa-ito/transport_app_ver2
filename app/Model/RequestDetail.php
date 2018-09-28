@@ -25,7 +25,7 @@
                         request_details.to_station,
                         request_details.cost,
                         request_details.oneway_or_round,
-                        request_details.is_season_ticket,
+                        request_details.trans_type,
                         request_details.overview
                     FROM
                         request_details

@@ -199,16 +199,18 @@
                     departments.department_name,
                     users.yourname,
                     IFNULL(requests.req_count, 0) as req_count,
-                    IFNULL(requests.not_regular, 0) as not_regular,
+                    IFNULL(requests.commutation, 0) as commutation,
                     IFNULL(requests.regular, 0) as regular,
+                    IFNULL(requests.sales, 0) as sales,
                     IFNULL(requests.total_cost, 0) as total_cost
                 FROM
                     (
                         SELECT
                             users.id as user_id,
                             COUNT(request_details.id) as req_count,
-                            SUM(IF(request_details.is_season_ticket = 1, request_details.cost, 0)) as regular,
-                            SUM(IF(request_details.is_season_ticket = 0, request_details.cost, 0)) as not_regular,
+                            SUM(IF(request_details.trans_type = 0, request_details.cost, 0)) as commutation,
+                            SUM(IF(request_details.trans_type = 1, request_details.cost, 0)) as regular,
+                            SUM(IF(request_details.trans_type = 2, request_details.cost, 0)) as sales,
                             SUM(request_details.cost) as total_cost
                         FROM
                             users
