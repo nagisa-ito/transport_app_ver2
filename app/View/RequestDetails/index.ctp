@@ -51,7 +51,7 @@
             <tr>
                 <?php foreach ($column_names as $key => $column_name) : ?>
                     <?php
-                        if($key != 4){
+                        if($key != 6){
                             echo '<th scope="col">' . h($column_name) . '</th>';
                         } else {
                             echo '<th scope="col" colspan="2">' . h($column_name) . '</th>';
@@ -67,23 +67,23 @@
                     <tr id="request_<?php echo h($request['id']); ?>">
                         <th scope="row"><?php echo h($request['id']); ?></th>
                         <td><?php echo h($request['date'])?></td>
-                        <td><?php echo h($request['client'])?></td>
-                        <td><?php echo h($request['transportation_name'])?></td>
-                        <td><?php echo h($request['from_station'])?></td>
-                        <td><?php echo h($request['to_station'])?></td>
-                        <td><?php echo h($request['cost'])?></td>
-                        <td>
-                            <?php
-                                $state = Configure::read('oneway_or_round');
-                                echo $state[$request['oneway_or_round']];
-                            ?>
-                        </td>
                         <td>
                             <?php
                                 $state = Configure::read('trans_category');
                                 echo $state[$request['trans_type']];
                             ?>
                         </td>
+                        <td>
+                            <?php
+                                $state = Configure::read('oneway_or_round');
+                                echo $state[$request['oneway_or_round']];
+                            ?>
+                        </td>
+                        <td><?php echo h($request['transportation_name'])?></td>
+                        <td><?php echo h($request['client'])?></td>
+                        <td><?php echo h($request['from_station'])?></td>
+                        <td><?php echo h($request['to_station'])?></td>
+                        <td><?php echo h($request['cost'])?></td>
                         <td><?php echo h($request['overview'])?></td>
                         <td>
                             <?php
