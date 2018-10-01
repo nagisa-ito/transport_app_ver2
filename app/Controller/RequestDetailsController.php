@@ -34,12 +34,12 @@
             $column_names = array(
                 '申請id',
                 '日付',
-                '訪問先',
+                '分類',
+                '経路',
                 '交通手段',
+                '訪問先',
                 '利用区間',
                 '費用',
-                '経路',
-                '分類',
                 '備考',
             );
             $this->set(compact('column_names', 'total_cost', 'is_admin', 'is_confirm', 'requests', 'year_month'));
