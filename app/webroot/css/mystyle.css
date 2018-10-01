@@ -276,3 +276,27 @@ text.timer { display: none; }
     border-radius: 50%;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
 }
+
+.parent {
+    position: relative;
+}
+
+.parent p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    width: 100px;
+    text-align: center;/*一応BOX内の文字も中央寄せ*/
+}
+
+.white-str {
+    color: white;
+}
+
+.black-round {
+    background: black;
+    border-radius: 2px;
+}
