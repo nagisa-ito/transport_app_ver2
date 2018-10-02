@@ -6,7 +6,10 @@
     {
         //バリデーション
         public $validate = array(
-            'username' => array('rule' => 'notEmpty'),
+            'username' => array(
+                'rule' => 'isUnique',
+                'message' => 'すでに使用されているメールアドレスです。'
+            ),
             'password' => array(
                 array(
                     'rule' => array('minLength', '7'),

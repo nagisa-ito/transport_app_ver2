@@ -75,10 +75,10 @@
 
             if($this->request->is('post')){
                 if($this->User->save($this->request->data)){
-                    $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('登録に成功しました。', 'default', ['class' => 'alert alert-warning']);
                     $this->redirect(array('action' => 'login'));
                 } else {
-                    $this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('登録に失敗しました。', 'default', ['class' => 'alert alert-danger']);
                 }
             }
         }
