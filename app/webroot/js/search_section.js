@@ -43,29 +43,29 @@ $(function() {
 });
 
 //往復であればフォームの値を2倍にする
-$(function() {
-    $('#set_oneway_or_round_add').change(function() {
-        var str = $('#set_oneway_or_round_add option:selected').text();
-        var cost = $('#cost').val();
+// $(function() {
+//     $('#set_oneway_or_round_add').change(function() {
+//         var str = $('#set_oneway_or_round_add option:selected').text();
+//         var cost = $('#cost').val();
 
-        if(str == '往復') {
-            $('#cost').val(cost*2);
-        } else {
-            $('#cost').empty();
-            $('#cost').val(cost/2);
-        }
-    }).change();
-});
+//         if(str == '往復') {
+//             $('#cost').val(cost*2);
+//         } else {
+//             $('#cost').empty();
+//             $('#cost').val(cost/2);
+//         }
+//     }).change();
+// });
 
-$(function() {
-    var edit_cost = $('#cost').val();
-    $('#set_oneway_or_round_edit').change(function() {
-        str = $('#set_oneway_or_round_edit option:selected').text();
-        if(str == '往復') {
-            $('#cost').val(edit_cost*2);
-        } else {
-            $('#cost').empty();
-            $('#cost').val(edit_cost);
-        }
-    }).change();
-});
+// $(function() {
+//     var edit_cost = $('#cost').val();
+//     $('#set_oneway_or_round_edit').change(function() {
+//         str = $('#set_oneway_or_round_edit option:selected').text();
+//         if(str == '往復') {
+//             $('#cost').val(edit_cost*2);
+//         } else {
+//             $('#cost').empty();
+//             $('#cost').val(edit_cost);
+//         }
+//     }).change();
+// });
