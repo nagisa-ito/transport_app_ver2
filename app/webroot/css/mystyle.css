@@ -191,8 +191,14 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 }
 
 .error-message {
-	color: red;
-	text-align: right;
+	color: #ff359a;
+    text-align: right;
+    font-size: 13px;
+}
+
+.form-error {
+    border-color: #ff359a;
+    background-color: #f7deea;
 }
 
 .caution {
