@@ -80,12 +80,12 @@
                         $year_month[0],
                     );
 
-                    $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-success']);
                     $this->redirect($redirect_destination);
 
                 // 失敗
                 } else {
-                    $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-warning']);
+                    $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-danger']);
                 }
             }
         }
