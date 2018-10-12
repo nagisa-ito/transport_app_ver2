@@ -59,7 +59,7 @@
                             echo '<th scope="col" colspan="2">' . h($column_name) . '</th>';
                         }
                     ?>
-                    <?php if (!$is_confirm): ?>
+                    <?php if (!$is_confirm || $this->params['admin']): ?>
                         <th scope="col">操作</th>
                     <?php endif; ?>
                 </tr>
@@ -89,7 +89,8 @@
                         <td><?php echo h($request['to_station'])?></td>
                         <td><?php echo h($request['cost'])?></td>
                         <td><?php echo h($request['overview'])?></td>
-                        <?php if (!$is_confirm): ?>
+                        <!-- 未確定または管理者ユーザーのとき -->
+                        <?php if (!$is_confirm || $this->params['admin']) : ?>
                             <td>
                                 <?php
                                     //編集・削除を実行
