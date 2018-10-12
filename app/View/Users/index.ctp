@@ -25,22 +25,19 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <div>
                         <?php
-                            $print_date = $each_month_request['date'];
-                            $print_date = date('Y年m月', strtotime($print_date));
+                            $print_date = date('Y年m月', strtotime($each_month_request['date']));
                             $url = array(
                                     'controller' => 'request_details',
                                     'action' => 'index',
                                     $login_user_id,
                                     $each_month_request['date'],
                             );
-                            $param = array('class' => 'note mr-2');
-                            
-                            if($each_month_request['req_count'] != 0) {
-                                echo $this->Html->link($print_date, $url, $param);
-                            } else {
-                                echo $this->Html->link($print_date, '#', $param);
-                            }
-                            if($each_month_request['is_confirm'] == true) {
+
+                            //月ごとの詳細へのリンク
+                            echo $this->Html->link($print_date, $url, array('class' => 'note mr-2'));
+
+                            // 確定済みの場合
+                            if ($each_month_request['is_confirm'] == true) {
                                 echo $this->element('confirm_badge');
                             }
                         ?>

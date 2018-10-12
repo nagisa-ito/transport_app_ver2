@@ -47,23 +47,27 @@
         
         <div id="request-details-area">
         <table class="table">
+
             <thead class="thead">
-            <tr>
-                <?php foreach ($column_names as $key => $column_name) : ?>
+                <tr>
                     <?php
-                        if($key != 6){
-                            echo '<th scope="col">' . h($column_name) . '</th>';
-                        } else {
+                        foreach ($column_names as $column_name) {
+                            if($column_name != '利用区間') {
+                                echo '<th scope="col">' . h($column_name) . '</th>';
+                                continue;
+                            }
                             echo '<th scope="col" colspan="2">' . h($column_name) . '</th>';
                         }
                     ?>
-                <?php endforeach; ?>
-                <th scope="col">操作</th>
-            </tr>
+                    <?php if (!$is_confirm): ?>
+                        <th scope="col">操作</th>
+                    <?php endif; ?>
+                </tr>
             </thead>
+
             <!--一覧をループで表示-->
             <tbody>
-            <?php foreach ($requests as $request) : ?>
+                <?php foreach ($requests as $request) : ?>
                     <tr id="request_<?php echo h($request['id']); ?>">
                         <th scope="row"><?php echo h($request['id']); ?></th>
                         <td><?php echo h($request['date'])?></td>
@@ -85,28 +89,35 @@
                         <td><?php echo h($request['to_station'])?></td>
                         <td><?php echo h($request['cost'])?></td>
                         <td><?php echo h($request['overview'])?></td>
-                        <td>
-                            <?php
-                                //編集・削除を実行
-                                echo $this->Html->link('<i class="fas fa-pen"></i>', array(
-                                        'action' => 'edit',
-                                        $login_user_id,
-                                        $year_month,
-                                        $request['id'],
-                                    ),
-                                    array(
+                        <?php if (!$is_confirm): ?>
+                            <td>
+                                <?php
+                                    //編集・削除を実行
+                                    echo $this->Html->link('<i class="fas fa-pen"></i>',
+                                        array(
+                                            'action' => 'edit',
+                                            $login_user_id,
+                                            $year_month,
+                                            $request['id'],
+                                        ),
+                                        array(
                                         'escape' => false,
                                         'class' => 'btn btn-purple mr-1 edit mb-1',
-                                ));
-                                echo $this->Html->link('<i class="fas fa-trash-alt"></i>', '#', array(
-                                    'class' => 'delete btn btn-purple mb-1',
-                                    'data-request_id' => $request['id'],
-                                    'data-user_id' => $login_user_id,
-                                    'data-year_month' => $year_month,
-                                    'escape' => false,
-                                ));
-                            ?>
-                        </td>
+                                        )
+                                    );
+                                    echo $this->Html->link('<i class="fas fa-trash-alt"></i>',
+                                        '#',
+                                        array(
+                                            'class' => 'delete btn btn-purple mb-1',
+                                            'data-request_id' => $request['id'],
+                                            'data-user_id' => $login_user_id,
+                                            'data-year_month' => $year_month,
+                                            'escape' => false,
+                                        )
+                                    );
+                                ?>
+                            </td>
+                        <?php endif; ?>
                     </tr>
             <?php endforeach; ?>
             </tbody>
