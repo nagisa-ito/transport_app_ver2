@@ -1,5 +1,5 @@
 <?php
-    echo $this->Form->create();
+    echo $this->Form->create('RequestDetail', array('novalidate' => true));
     echo $this->Form->hidden('user_id', array('default' => $user_id));
     echo $this->Form->input('date', array(
         'type'  => 'text',

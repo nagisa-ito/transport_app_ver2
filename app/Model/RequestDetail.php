@@ -1,14 +1,53 @@
 <?php
-    App::uses('AppModel', 'Model');
+    App::uses('AppModel', 'Model', 'ConfirmMonth');
 
     class RequestDetail extends AppModel
     {
         public $validate = array(
-            'date' => array('rule' => 'notEmpty'),
-            'from_station' => array('rule' => 'notEmpty'),
-            'to_station' => array('rule' => 'notEmpty'),
-            'cost' => array('rule' => 'naturalNumber'),
+            'date' => array(
+                'notEmpty' => array(
+                    'rule' => 'notEmpty',
+                    'message' => '日付を入力してください',
+                ),
+                'notConfirm' => array(
+                    'rule' => 'validateConfirmMonth',
+                    'message' => '確定後のため申請が追加できません。管理者に直接依頼してください。')
+            ),
+            'from_station' => array(
+                'rule' => 'notEmpty',
+                'message' => '出発駅を入力してください'
+            ),
+            'to_station' => array(
+                'rule' => 'notEmpty',
+                'message' => '到着駅を入力してください'
+            ),
+            'cost' => array(
+                'notEmpty' => array(
+                    'rule' => 'notEmpty',
+                    'message' => '費用を入力してください'
+                ),
+                'naturalNumber' => array(
+                    'rule' => 'naturalNumber',
+                    'message' => '数字を入力してください'
+                ),
+            )
         );
+
+        public function validateConfirmMonth($check)
+        {
+            $this->ConfirmMonth = ClassRegistry::init('ConfirmMonth');
+
+            // adminユーザーの場合は確定してようが追加できる
+            if (AuthComponent::user('role') == 'admin') {
+                return true;
+            }
+            
+            // それ以外は未確定か確認する
+            $user_id = AuthComponent::user('id');
+            $checkdate = date('Y-m', strtotime($check['date']));
+
+            return !$this->ConfirmMonth->isConfirmMonth($checkdate, $user_id);
+        }
         
         public function getRequests($user_id =  null, $year_month = null)
         {
