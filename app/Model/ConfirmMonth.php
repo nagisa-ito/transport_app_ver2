@@ -1,6 +1,13 @@
 <?php
 
     class ConfirmMonth extends AppModel {
+
+        /*
+         * @param $date    YYYY-mm
+         * @param $user_id ユーザーid
+         * そのユーザーがその月に申請した内容が、確定してあるか確認する。
+         * @return boolean
+         */
         public function isConfirmMonth($date, $user_id)
         {
             $is_confirm = $this->find('all', array(

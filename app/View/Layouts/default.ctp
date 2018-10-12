@@ -32,7 +32,7 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
         // jQuery CDN
         echo $this->Html->script('//code.jquery.com/jquery-3.2.1.min.js');
 
-        // Twitter Bootstrap 3.0 CDN
+        // Twitter Bootstrap 4.0 CDN
         echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
         echo $this->Html->script('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js');
     
@@ -47,10 +47,6 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
         echo $this->Html->css('bootstrap-datepicker.min');
         echo $this->Html->script('bootstrap-datepicker.min');
         echo $this->Html->script('bootstrap-datepicker.ja.min');
-    
-        //circriful
-        echo $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css');
-        echo $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.min.js');
 
         //google fonts
         echo $this->Html->css('https://fonts.googleapis.com/css?family=Lora');
