@@ -44,8 +44,19 @@
             <div class="strong_str mt-3">合計金額</div>
             <h1 class="text-right numerals"><b id="total_cost"><?php echo '¥ ' . number_format($total_cost); ?></b></h1>
         </div>
-        
+
         <div id="request-details-area">
+            <?php
+                if ($this->params['admin']) {
+                    echo $this->Html->link('<i class="fas fa-download"></i> CSVダウンロード', array(
+                        'controller' => 'request_details',
+                        'action' => "admin_requestdetail_csv_download",
+                        $login_user_id,
+                        $year_month,
+                    ),
+                    array('class' => 'btn btn-green float-right', 'escape' => false));
+                }
+            ?>
         <table class="table">
             <thead class="thead">
             <tr>
