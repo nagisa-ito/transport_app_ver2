@@ -58,16 +58,53 @@
                 FROM
                     request_details
                 WHERE
-                    user_id = $user_id
+                    user_id = {$user_id}
                 AND
                     is_delete != 1
                 AND
-                    DATE_FORMAT(date, '%Y-%m') = '$year_month'
+                    DATE_FORMAT(date, '%Y-%m') = '{$year_month}'
             ";
 
             $result = $this->query($sql);
             $result = Hash::extract($result, '{n}.{n}.{s}');
             return $result[0];
+        }
+
+        /*
+         * 各ユーザーのcsv出力項目(集計結果)を返す。
+         * @param $user_id ユーザーid
+         * @param $year_month YYYY-mm
+         * @return array
+         */
+        public function getEachStatusTotalCost($user_id, $year_month)
+        {
+            $trans_type = Configure::read('trans_category');
+            $sql = "
+                SELECT 
+                    IFNULL(SUM(cost), 0) as total_cost
+                FROM
+                    request_details
+                WHERE
+                    user_id = {$user_id}
+                AND
+                    is_delete != 1
+                AND
+                    DATE_FORMAT(date, '%Y-%m') = '{$year_month}'
+            ";
+
+            $cost = function($state) use ($sql) {
+                $sql .= "AND trans_type = {$state}";
+                $result = $this->query($sql);
+                $result = Hash::get($result, "0.0.total_cost");
+                return $result;
+            };
+
+            foreach (array_keys($trans_type) as $state) {
+                $each_costs[$state] = $cost($state);
+            }
+            $each_costs[] = array_sum($each_costs);
+
+            return $each_costs;
         }
 
     }

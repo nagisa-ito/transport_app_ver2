@@ -214,30 +214,49 @@
         {
             $this->layout = false;
 
+            // SJIS変換用クロージャ
+            $convert = function($convert_data) {
+                mb_convert_variables('SJIS', 'UTF-8', $convert_data);
+            };
+
+            // ヘッダーの情報
+            $cost_head = array(
+                '通勤費', '定期代', '営業交通費', '合計',
+            );
             $head = array(
                 'id', '日付', '分類', '経路', '交通手段', '訪問先',
                 '出発駅', '到着駅', '費用', '備考',
             );
-            mb_convert_variables('SJIS', 'UTF-8', $head);
 
+            // 各申請を取得
             $requests = $this->RequestDetail->getRequests($user_id, $year_month);
-            $data = $this->sortRequestDataStructure($requests);
-            mb_convert_variables('SJIS', 'UTF-8', $data);
+            $requests = $this->sortRequestDataStructure($requests);
 
+            // 申請の合計を取得
+            $total_costs = $this->RequestDetail->getEachStatusTotalCost($user_id, $year_month);
+
+            // ユーザー情報処理
             $username = $this->User->find('first', array(
                 'conditions' => array('User.id' => $user_id),
                 'fields' => array('User.yourname'),
             ));
             $username = Hash::get($username, 'User.yourname');
 
+            // 文字コード変換
+            $convert($cost_head);
+            $convert($head);
+            $convert($requests);
+            $convert($total_costs);
+
             $filename = $year_month . '-' . $username;
-            $this->set(compact('head', 'data', 'filename'));
+            $this->set(compact('head', 'requests', 'filename'));
+            $this->set(compact('total_costs', 'cost_head'));
         }
 
         /*
          * findしてきたデータの構造を、出力したいカラムの順番に並び替える。
          * @param $requests 取得したデータ
-         * return $data ソート後のデータ
+         * @return $data ソート後のデータ
          */
         protected function sortRequestDataStructure($requests)
         {
