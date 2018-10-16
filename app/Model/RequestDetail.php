@@ -3,6 +3,8 @@
 
     class RequestDetail extends AppModel
     {
+        public $helpers = array('Html', 'Form', 'Csv');
+
         public $validate = array(
             'date' => array('rule' => 'notEmpty'),
             'from_station' => array('rule' => 'notEmpty'),
