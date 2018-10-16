@@ -210,4 +210,54 @@
             }
         }
 
+        public function admin_requestdetail_csv_download($user_id, $year_month)
+        {
+            $this->layout = false;
+
+            $head = array(
+                'id', '日付', '分類', '経路', '交通手段', '訪問先',
+                '出発駅', '到着駅', '費用', '備考',
+            );
+            mb_convert_variables('SJIS', 'UTF-8', $head);
+
+            $requests = $this->RequestDetail->getRequests($user_id, $year_month);
+            $data = $this->sortRequestDataStructure($requests);
+            mb_convert_variables('SJIS', 'UTF-8', $data);
+
+            $username = $this->User->find('first', array(
+                'conditions' => array('User.id' => $user_id),
+                'fields' => array('User.yourname'),
+            ));
+            $username = Hash::get($username, 'User.yourname');
+
+            $filename = $year_month . '-' . $username;
+            $this->set(compact('head', 'data', 'filename'));
+        }
+
+        /*
+         * findしてきたデータの構造を、出力したいカラムの順番に並び替える。
+         * @param $requests 取得したデータ
+         * return $data ソート後のデータ
+         */
+        protected function sortRequestDataStructure($requests)
+        {
+            $keys = array(
+                'id', 'date', 'trans_type', 'oneway_or_round', 'transportation_name',
+                'client', 'from_station', 'to_station', 'cost', 'overview',
+            );
+            $order = array_fill_keys($keys, null);
+
+            $trans_category = Configure::read('trans_category');
+            $oneway_or_round = Configure::read('oneway_or_round');
+            foreach ($requests as $request) {
+                // 数字で管理しているレコードを日本語表記にする
+                $request['trans_type'] = $trans_category[$request['trans_type']];
+                $request['oneway_or_round'] = $oneway_or_round[$request['oneway_or_round']];
+
+                // 表示用配列に格納
+                $data[] = array_replace($order, $request);
+            }
+
+            return $data;
+        }
     }
