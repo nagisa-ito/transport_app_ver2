@@ -1,5 +1,5 @@
 <?php
-    echo $this->Form->create('RequestDetail', array('novalidate' => true));
+    echo $this->Form->create('RequestDetail');
     echo $this->Form->hidden('user_id', array('default' => $user_id));
     echo $this->Form->input('date', array(
         'type'  => 'text',
@@ -66,17 +66,17 @@
 
 <?php
     echo $this->Form->input('from_station',  array(
-        'div' => array('class' => 'form-row'),
-        'class'       => 'form-control col-11',
-        'id'          => 'from_station_autocomplete',
-        'label' => array(
-            'text' => '出発駅',
-            'class' => 'col-1 mb-0 small black-label',
+        'div'            => array('class' => 'form-row'),
+        'class'          => 'form-control col-11',
+        'id'             => 'from_station_autocomplete',
+        'label'          => array(
+            'text'       => '出発駅',
+            'class'      => 'col-1 mb-0 small black-label',
         ),
-        'error' => array(
+        'error'          => array(
             'attributes' => array(
-                'wrap' => 'div',
-                'class' => 'error-message text-right col-12'
+                'wrap'   => 'div',
+                'class'  => 'error-message text-right col-12'
             )
         ),
     ));
@@ -87,21 +87,21 @@
 </div>
 
 <?php
-        echo $this->Form->input('to_station',  array(
-            'div' => array('class' => 'form-row'),
-            'class'       => 'form-control col-11',
-            'id'          => 'to_station_autocomplete',
-            'label' => array(
-                'text' => '到着駅',
-                'class' => 'col-1 mb-0 small black-label',
-            ),
-            'error' => array(
-                'attributes' => array(
-                    'wrap' => 'div',
-                    'class' => 'error-message text-right col-12'
-                )
-            ),
-        ));
+    echo $this->Form->input('to_station',  array(
+        'div'            => array('class' => 'form-row'),
+        'class'          => 'form-control col-11',
+        'id'             => 'to_station_autocomplete',
+        'label'          => array(
+            'text'       => '到着駅',
+            'class'      => 'col-1 mb-0 small black-label',
+        ),
+        'error'          => array(
+            'attributes' => array(
+                'wrap'   => 'div',
+                'class'  => 'error-message text-right col-12'
+            )
+        ),
+    ));
     ?>
 
 <?php
