@@ -83,7 +83,7 @@
 ?>
 
 <div class="form-row">
-    <div class="col-1 text-center"><i class="fas fa-angle-double-down"></i></div>
+    <div class="col-1 text-center"><i class="fas fa-angle-double-down fa-lg"></i></div>
 </div>
 
 <?php
