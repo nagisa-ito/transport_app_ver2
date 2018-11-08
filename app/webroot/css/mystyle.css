@@ -288,26 +288,17 @@ text.timer { display: none; }
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
 }
 
-.parent {
-    position: relative;
+label.black-label {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+    align-items: center; /* 縦方向中央揃え */
+    -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+    justify-content: center; /* 横方向中央揃え */
 }
 
-.parent p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform : translate(-50%,-50%);
-    transform : translate(-50%,-50%);
-    width: 100px;
-    text-align: center;/*一応BOX内の文字も中央寄せ*/
-}
-
-.white-str {
-    color: white;
-}
-
-.black-round {
+.black-label {
     background: black;
     border-radius: 2px;
+    color: white;
 }

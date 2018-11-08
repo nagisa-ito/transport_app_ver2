@@ -63,39 +63,46 @@
 </div>
 
 <p>利用区間</p>
+
+<?php
+    echo $this->Form->input('from_station',  array(
+        'div' => array('class' => 'form-row'),
+        'class'       => 'form-control col-11',
+        'id'          => 'from_station_autocomplete',
+        'label' => array(
+            'text' => '出発駅',
+            'class' => 'col-1 mb-0 small black-label',
+        ),
+        'error' => array(
+            'attributes' => array(
+                'wrap' => 'div',
+                'class' => 'error-message text-right col-12'
+            )
+        ),
+    ));
+?>
+
 <div class="form-row">
-    <div class="col-sm-1 parent black-round">
-        <p class="small white-str">出発駅</p>
-    </div>
-    <?php
-        echo $this->Form->input('from_station',  array(
-            'div' => array(
-                'class' => 'col-sm-11 pl-0',
-            ),
-            'label' => false,
-            'class'       => 'form-control',
-            'id'          => 'from_station_autocomplete',
-        ));
-    ?>
+    <div class="col-1 text-center"><i class="fas fa-angle-double-down"></i></div>
 </div>
 
-<div class="col-sm-1"><i class="fas fa-angle-double-down"></i></div>
-
-<div class="form-row mb-3">
-    <div class="col-sm-1 parent black-round">
-        <p class="small white-str">到着駅</p>
-    </div>
-    <?php
-        echo $this->Form->input('to_station', array(
-            'div' => array(
-                'class' => 'col-sm-11 pl-0',
+<?php
+        echo $this->Form->input('to_station',  array(
+            'div' => array('class' => 'form-row'),
+            'class'       => 'form-control col-11',
+            'id'          => 'to_station_autocomplete',
+            'label' => array(
+                'text' => '到着駅',
+                'class' => 'col-1 mb-0 small black-label',
             ),
-            'label' => false,
-            'class'       => 'form-control',
-            'id'    => 'to_station_autocomplete',
+            'error' => array(
+                'attributes' => array(
+                    'wrap' => 'div',
+                    'class' => 'error-message text-right col-12'
+                )
+            ),
         ));
     ?>
-</div>
 
 <?php
     echo $this->Form->input('cost', array(
