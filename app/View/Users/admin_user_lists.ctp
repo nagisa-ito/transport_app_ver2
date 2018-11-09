@@ -49,17 +49,37 @@
                 </div>
                 <div class="col-sm-2 outer_select_button">
                     <?php
-                        echo $this->Form->button('<i class="fas fa-search"></i> 検索', array(
-                            'class' => 'btn btn-green',
-                            'escape' => false,
-                        ));
+                        echo $this->Form->button(
+                            '<i class="fas fa-search"></i> 検索',
+                            array(
+                                'class' => 'btn btn-green',
+                                'escape' => false,
+                            )
+                        );
                         echo $this->Form->end();
                     ?>
                 </div>
             </div>
             
             <span class="heading">ユーザー一覧:</span>
-            <ul class="list-group contents">
+            <div class='contents text-right'>
+                 <?php
+                    echo $this->Html->link(
+                        '<i class="fas fa-download"></i> CSVダウンロード',
+                        array(
+                            'controller' => 'users',
+                            'action' => "admin_csv_download",
+                            $department_id,
+                            $search_year_month,
+                        ),
+                        array(
+                            'class' => 'btn btn-green small',
+                            'escape' => false
+                        )
+                    );
+                ?>
+            </div>
+            <ul class="list-group contents mb-4">
                 <?php foreach($each_user_monthly_costs as $user_monthly_cost) : ?>
                     <li class="list-group-item" style="display: inline-block;">
                         <?php
@@ -81,17 +101,6 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <div class='contents text-right mb-4'>
-                 <?php
-                    echo $this->Html->link('<i class="fas fa-download"></i> CSVダウンロード', array(
-                        'controller' => 'users',
-                        'action' => "admin_csv_download",
-                        $department_id,
-                        $search_year_month,
-                    ),
-                    array('class' => 'btn btn-green', 'escape' => false));
-                ?>
-            </div>
         </div>
     </div>
 </div>

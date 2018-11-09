@@ -302,3 +302,8 @@ label.black-label {
     border-radius: 2px;
     color: white;
 }
+
+.small {
+    font-size: 80% !important; 
+    font-weight: 400 !important;
+}
