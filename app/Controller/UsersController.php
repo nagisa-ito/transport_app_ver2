@@ -172,27 +172,61 @@ class UsersController extends AppController
         $this->render('index');
     }
 
+    /**
+     * csvファイルに出力
+     * @param $department_id (7: 全部署)
+     * @param $date (Y-m)
+     */
     public function admin_csv_download($department_id, $date)
     {
-        $department = '_';
         $this->layout = false;
 
+        $department_name = '全部署';
+        $top = array('項目名', '合計');
+
+        // ファイル名、ヘッダ設定
+        // 部署の指定があった場合は部署名を上書き
+        if ($department_id != 7) {
+            $this->Department->id = $department_id;
+            $department_name = $this->Department->field('department_name');
+        }
+        $output_date = date('Y年m月', strtotime($date));
+        $filename = "交通費_{$department_name}_{$output_date}";
+        $header = array('項目名', '立替経費(営業交通費)', '非課税通勤費(定期代)', '合計');
+
+        // 指定した部署のユーザーid一覧を取得
         $user_ids = $this->User->getUserIdsByDepartmentId($department_id);
         $user_ids = implode(',', $user_ids);
 
-        if ($department_id != 7) {
-            $this->Department->id = $department_id;
-            $department .= $this->Department->field('department_name');
-        }
-
+        // 上記で取得したユーザーの申請一覧を抽出
         $data = $this->User->getOutputCsvData($user_ids, $date);
-        mb_convert_variables('SJIS', 'UTF-8', $data);
 
-        $print_date = str_replace('-', '_', $date);
-        $filename = "交通費" . $department . "_" . $print_date;
-        $header = array('社員id', '部署', '名前', '件数', '通勤費', '定期代', '営業交通費', '合計金額');
+        // 全体の合計
+        $total_for_appointment = array(
+            '立替経費(営業交通費)',
+            array_sum(array_column($data, 'for_appointment')),
+        );
+        $total_for_go_work = array(
+            '非課税交通費(定期代)',
+            array_sum(array_column($data, 'for_go_work')),
+        );
+        $sorted_data = call_user_func_array('array_map', array_merge(array(null), $data));
+
+        // SJIS変換
+        mb_convert_variables('SJIS', 'UTF-8', $sorted_data);
         mb_convert_variables('SJIS', 'UTF-8', $header);
-        $this->set(compact('filename', 'header', 'data'));
+        mb_convert_variables('SJIS', 'UTF-8', $total_for_appointment);
+        mb_convert_variables('SJIS', 'UTF-8', $total_for_go_work);
+        mb_convert_variables('SJIS', 'UTF-8', $top);
+
+        $this->set(compact(
+            'filename',
+            'header',
+            'sorted_data',
+            'total_for_appointment',
+            'total_for_go_work',
+            'top'
+        ));
     }
 
     public function reset_passwd($someone = null)
