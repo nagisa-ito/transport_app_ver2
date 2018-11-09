@@ -53,15 +53,21 @@ class User extends AppModel
         }
     }
     
-    public function getUserIdsByDepartmentId($department_id) {
+    /**
+     * 指定された部署に所属するユーザー一覧を取得する。
+     *
+     * @param $department_id 部署id
+     * case7 :  全部署指定、その時のみパラメータ指定なし
+     * @return $user_ids ユーザーid一覧
+     */
+    public function getUserIdsByDepartmentId($department_id)
+    {
         $param = array();
-        $param['fields'] = array('id');
-        if($department_id != 7) {
+        if ($department_id != 7) {
             $param['conditions'] = array('department_id' => $department_id);
         }
         $user_ids = $this->find('all', $param);
         $user_ids = Hash::extract($user_ids, '{n}.User.id');
-        
         return $user_ids;
     }
 
@@ -196,55 +202,45 @@ class User extends AppModel
     */
     public function getOutputCsvData($user_ids, $date)
     {
-        $sql = "
+        $query = "
             SELECT
-                users.id,
-                departments.department_name,
-                users.yourname,
-                IFNULL(requests.req_count, 0) as req_count,
-                IFNULL(requests.commutation, 0) as commutation,
-                IFNULL(requests.regular, 0) as regular,
-                IFNULL(requests.sales, 0) as sales,
-                IFNULL(requests.total_cost, 0) as total_cost
+                *
             FROM
+            (
+                SELECT
+                    users.yourname,
+                    IFNULL(requests.for_appointment, 0) as for_appointment,
+                    IFNULL(requests.for_go_work, 0) as for_go_work,
+                    IFNULL(requests.total_cost, 0) as total_cost
+                FROM
                 (
                     SELECT
-                        users.id as user_id,
-                        COUNT(request_details.id) as req_count,
-                        SUM(IF(request_details.trans_type = 0, request_details.cost, 0)) as commutation,
-                        SUM(IF(request_details.trans_type = 1, request_details.cost, 0)) as regular,
-                        SUM(IF(request_details.trans_type = 2, request_details.cost, 0)) as sales,
+                        user_id,
+                        SUM(IF(request_details.trans_type = 2, request_details.cost, 0)) as for_appointment,
+                        SUM(IF(request_details.trans_type != 2, request_details.cost, 0)) as for_go_work,
                         SUM(request_details.cost) as total_cost
                     FROM
-                        users
-                    LEFT JOIN
                         request_details
-                    ON
-                        users.id = request_details.user_id
                     WHERE
                         request_details.is_delete != 1
                     AND
-                        DATE_FORMAT(request_details.date, '%Y-%m') = '$date'
+                        DATE_FORMAT(request_details.date, '%Y-%m') = '{$date}'
                     GROUP BY
-                        DATE_FORMAT(request_details.date, '%Y-%m'), users.id
-                )
-            AS
-                requests
-            RIGHT JOIN
-                users
-            ON
-                users.id = requests.user_id
-            LEFT JOIN
-                departments
-            ON
-                users.department_id = departments.id
-            WHERE
-                users.role != 'admin'
-            AND
-                users.id IN($user_ids)
+                        user_id
+                ) AS requests
+                RIGHT JOIN
+                    users
+                ON
+                    users.id = requests.user_id
+                WHERE
+                    users.role != 'admin'
+                AND
+                    users.id IN ({$user_ids})
+                ORDER BY
+                    users.department_id
+            ) AS data
         ";
-        $sql = "SELECT * FROM ($sql) AS data";
-        $result = $this->query($sql);
+        $result = $this->query($query);
         $result = Hash::extract($result, '{n}.{s}');
         return $result;
     }
