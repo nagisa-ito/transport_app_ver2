@@ -56,6 +56,7 @@
                         array(
                             'class' => 'btn-black-pink float-right small mr-2',
                             'escape' => false,
+                            'target' => '_blank',
                         ));
             }
         ?>
