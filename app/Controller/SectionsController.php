@@ -19,10 +19,17 @@ class SectionsController extends AppController
     public function index()
     {
         $conditions = array();
-        
+
+        // 表示する区間マスタ一覧のユーザーidを指定
+        $user_id = $this->Session->read('User.id');
+        $this->paginate = array('conditions' => array('Section.user_id' => $user_id));
+
+        // 保存
         if ($this->request->is('post')) {
+            $this->request->data['Section']['user_id'] = $user_id;
             $this->add($this->request->data);
         } elseif ($this->request->query('search_word')) {
+            // 検索
             $search_words = mb_convert_kana($this->request->query['search_word'], "s");
             $search_words = explode(' ', $search_words);
             foreach ($search_words as $word) {
@@ -31,6 +38,7 @@ class SectionsController extends AppController
         }
         $this->Paginator->settings = $this->paginate;
         $sections = $this->Paginator->paginate('Section', $conditions);
+
         $this->set(compact('sections'));
     }
     
@@ -48,10 +56,10 @@ class SectionsController extends AppController
     public function add()
     {
         if ($this->Section->save($this->request->data)) {
-            $this->Session->setFlash('Success!', 'default', ['class' => 'alert alert-warning']);
+            $this->Session->setFlash('保存に成功しました', 'default', ['class' => 'alert alert-success']);
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash('failed!', 'default', ['class' => 'alert alert-warning']);
+            $this->Session->setFlash('保存に失敗しました', 'default', ['class' => 'alert alert-danger']);
         }
     }
     

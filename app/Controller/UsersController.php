@@ -32,6 +32,9 @@ class UsersController extends AppController
 
         if (!empty($this->request->data)) {
             if ($this->Auth->login()) {
+                // ログイン情報をセッションに保存
+                $this->Session->write('User', $this->Auth->user());
+
                 if ($this->Auth->user('role') == 'admin') {
                     $this->redirect($admin_param);
                 } else {
