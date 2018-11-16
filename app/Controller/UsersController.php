@@ -52,11 +52,22 @@ class UsersController extends AppController
 
     public function logout()
     {
+        $this->Session->destroy();
         $this->redirect($this->Auth->logout());
     }
 
     public function index($login_user_id = null, $is_admin = 0)
     {
+        // 管理者がユーザーの定期や申請情報を確認できるように、
+        // adminユーザーがこのページに来た時に閲覧したユーザーの情報をセッションに保存する。
+        if ($this->Session->read('User.role') === 'admin') {
+            $this->Session->delete('AccessUser');
+            $access_user = $this->User->find('first', array(
+                'conditions' => array('User.id' => $login_user_id)
+            ));
+            $this->Session->write('AccessUser', $access_user);
+        }
+
         if (!isset($login_user_id)) {
             $login_user_id = $this->Auth->user('id');
             $this->set('login_user', $this->Auth->user());

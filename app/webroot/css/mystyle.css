@@ -307,3 +307,11 @@ label.black-label {
     font-size: 80% !important; 
     font-weight: 400 !important;
 }
+
+.panel_left_side {
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30px 0px 0px 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+}
