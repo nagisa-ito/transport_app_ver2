@@ -18,8 +18,11 @@
 </div>
 
 <div class="content row">
-    <div class="col-sm-6 offset-sm-3">
-        <div class="form_contents mt-4">
+    <?php echo $this->element('profile_data'); ?>
+
+    <div class="col-sm-7">
+        <?php echo $this->element('request_description_panel'); ?>
+        <div class="form_contents panel_right_side">
            <?php
                 echo $this->element('input_request', array(
                     'user_id' => $user_id,

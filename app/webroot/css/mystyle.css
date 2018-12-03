@@ -171,7 +171,9 @@ div.input.text, div.input.password, div.input.select, div.input.date, div.input.
 .form_contents {
 	background: white;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
-    padding: 30px;
+    margin: 30px 0px 0px 0px;
+    padding: 25px;
+    border-radius: 10px;
 }
 
 .admin_contents {
@@ -311,6 +313,14 @@ label.black-label {
 .panel_left_side {
     background: rgba(255, 255, 255, 0.7);
     margin: 30px 0px 0px 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+}
+
+.panel_right_side {
+    background: rgba(255, 255, 255, 0.7);
+    margin: 30px 30px 0px 0px;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
