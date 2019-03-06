@@ -63,7 +63,8 @@ class User extends AppModel
     public function getUserIdsByDepartmentId($department_id)
     {
         $param = array();
-        if ($department_id != 7) {
+        // 0: 全てのユーザーを表示
+        if ($department_id != 0) {
             $param['conditions'] = array('department_id' => $department_id);
         }
         $user_ids = $this->find('all', $param);

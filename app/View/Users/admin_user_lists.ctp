@@ -39,7 +39,7 @@
                 <div class="col-sm-5">
                     <?php
                         echo $this->Form->input('department_id', array(
-                            'options' => $department_id_list,
+                            'options' => $departments,
                             'label' => false,
                             'label' => '部署',
                             'class' => 'form-control',

@@ -160,10 +160,10 @@ class UsersController extends AppController
 
     public function admin_user_lists($department_id = null, $search_year_month = null)
     {
-        $department_id = 7;
         $search_year_month = date('Y-m');
-        $department_id_list = $this->Department->find('list', array( 'fields' => 'department_name'));
-        array_push($department_id_list, '全て');
+        $departments = $this->Department->find('list', array( 'fields' => 'department_name'));
+        $departments[0] = '全て';
+        ksort($departments);
 
         if ($this->request->is('post')) {
             $department_id = $this->request->data['User']['department_id'];
@@ -171,12 +171,17 @@ class UsersController extends AppController
         }
 
         $users = $this->User->getUserIdsByDepartmentId($department_id);
-        $user_ids = implode(',', $users);
 
-        //各月、各ユーザごとの合計費用を抽出する
-        $each_user_monthly_costs = $this->User->getEachUserMonthlyCost($user_ids, $search_year_month);
+        if (!empty($users)) {
+            $user_ids = implode(',', $users);
+            //各月、各ユーザごとの合計費用を抽出する
+            $each_user_monthly_costs = $this->User->getEachUserMonthlyCost($user_ids, $search_year_month);
+        } else {
+            // 対象のユーザーがいない
+            $each_user_monthly_costs = array();
+        }
         
-        $this->set(compact('department_id_list', 'department_id', 'search_year_month'));
+        $this->set(compact('departments', 'department_id', 'search_year_month'));
         $this->set(compact('each_user_monthly_costs'));
     }
 
