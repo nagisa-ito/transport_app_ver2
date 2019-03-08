@@ -154,35 +154,65 @@ class UsersController extends AppController
 
     public function admin_edit($user_id)
     {
-        $this->edit($user_id, 1);
-        $this->render('edit');
+        $this->User->id = $user_id;
+        if ($this->request->is('get')) {
+            $this->request->data = $this->User->read();
+        } else {
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(
+                    '編集に成功しました。',
+                    'default',
+                    array('class' => 'alert alert-success')
+                );
+            } else {
+                $this->Session->setFlash(
+                    '編集に失敗しました。',
+                    'default',
+                    array('class' => 'alert alert-danger')
+                );
+            }
+        }
+
+        $this->set('department_id_list', $this->Department->find('list', array( 'fields' => 'department_name')));
+        $this->set(compact('user'));
     }
 
+    const DEPARTMENTS_ALL = 0;
+    const ENROLLMENT = 1; // ステータス: 在籍
+    const ENROLLMENT_NOT = 2; // ステータス: 退社
     public function admin_user_lists($department_id = null, $search_year_month = null)
     {
-        $search_year_month = date('Y-m');
+        // 部署選択項目設定
         $departments = $this->Department->find('list', array( 'fields' => 'department_name'));
-        $departments[0] = '全て';
+        $departments[self::DEPARTMENTS_ALL] = '全て';
         ksort($departments);
 
+        // 各検索条件をセット
+        $user_ids = array();
         if ($this->request->is('post')) {
             $department_id = $this->request->data['User']['department_id'];
+            $status = $this->request->data['User']['status'];
             $search_year_month = $this->request->data['User']['date'];
+        } else {
+            // 初回表示条件
+            $search_year_month = date('Y-m');
+            $department_id = self::DEPARTMENTS_ALL;
+            $status = self::ENROLLMENT;
         }
 
-        $users = $this->User->getUserIdsByDepartmentId($department_id);
+        // 対象のユーザーを検索
+        $user_ids = $this->User->getUserIdsByDepartmentId($department_id, $status);
 
-        if (!empty($users)) {
-            $user_ids = implode(',', $users);
+        if (!empty($user_ids)) {
             //各月、各ユーザごとの合計費用を抽出する
+            $user_ids = implode(',', $user_ids);
             $each_user_monthly_costs = $this->User->getEachUserMonthlyCost($user_ids, $search_year_month);
         } else {
-            // 対象のユーザーがいない
             $each_user_monthly_costs = array();
         }
-        
+
         $this->set(compact('departments', 'department_id', 'search_year_month'));
-        $this->set(compact('each_user_monthly_costs'));
+        $this->set(compact('each_user_monthly_costs', 'status'));
     }
 
     public function admin_user_requests($user_id)
@@ -196,7 +226,7 @@ class UsersController extends AppController
      * @param $department_id (7: 全部署)
      * @param $date (Y-m)
      */
-    public function admin_csv_download($department_id, $date)
+    public function admin_csv_download($department_id, $date, $status)
     {
         $this->layout = false;
 
@@ -214,7 +244,7 @@ class UsersController extends AppController
         $header = array('項目名', '立替経費(営業交通費)', '非課税通勤費(定期代)', '合計');
 
         // 指定した部署のユーザーid一覧を取得
-        $user_ids = $this->User->getUserIdsByDepartmentId($department_id);
+        $user_ids = $this->User->getUserIdsByDepartmentId($department_id, $status);
         $user_ids = implode(',', $user_ids);
 
         // 上記で取得したユーザーの申請一覧を抽出

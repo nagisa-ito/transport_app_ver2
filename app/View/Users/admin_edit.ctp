@@ -3,6 +3,7 @@
         echo $this->element('admin_header', array(
             'title' => 'プロフィール編集',
             'is_loggedIn' => 1,
+            'is_admin' => $this->params['admin'],
         ));
     ?>
 </header>
@@ -20,19 +21,6 @@
                 echo $this->Form->input('User.username', array(
                     'label' => array('text' => 'メールアドレス'),
                     'class' => 'form-control',
-                ));
-                echo $this->Form->input('User.password', array(
-                    'label' => array('text' => 'パスワード'),
-                    'placeholder' => '７文字以上',
-                    'class' => 'form-control',
-                    'value' => '',
-                ));
-                echo $this->Form->input('User.password_confirm', array(
-                    'label' => array('text' => 'パスワード(確認用)'),
-                    'placeholder' => '同じパスワードを入力',
-                    'class' => 'form-control',
-                    'type' => 'password',
-                    'value' => '',
                 ));
                 echo $this->Form->input('User.yourname', array(
                     'label' => array('text' => 'ユーザー名'),
@@ -56,6 +44,17 @@
                 ));
             ?>
             <p class="small note text-right">定期がない場合、「なし」と登録してください</p>
+            <?php
+                echo $this->Form->input('User.status', array(
+                    'label' => array('text' => 'ステータス'),
+                    'options' => array(
+                        1 => '在籍',
+                        2 => '退社済',
+                    ),
+                    'class' => 'form-control',
+                ));
+            ?>
+            <p class="small note text-right">ユーザー一覧で表示したくない場合はステータスを変更してください</p>
             <div class="row">
                 <div class="col-sm-12">
                     <a class="btn btn-white float-right" onclick="history.back()" >キャンセル</a>

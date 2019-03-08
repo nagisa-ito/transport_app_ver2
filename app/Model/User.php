@@ -60,13 +60,17 @@ class User extends AppModel
      * case7 :  全部署指定、その時のみパラメータ指定なし
      * @return $user_ids ユーザーid一覧
      */
-    public function getUserIdsByDepartmentId($department_id)
+    public function getUserIdsByDepartmentId($department_id, $status)
     {
-        $param = array();
-        // 0: 全てのユーザーを表示
         if ($department_id != 0) {
-            $param['conditions'] = array('department_id' => $department_id);
+            $param['conditions'] = array(
+                'department_id' => $department_id,
+                'status' => $status,
+            );
+        } else {
+            $param['conditions'] = array('status' => $status);
         }
+
         $user_ids = $this->find('all', $param);
         $user_ids = Hash::extract($user_ids, '{n}.User.id');
         return $user_ids;

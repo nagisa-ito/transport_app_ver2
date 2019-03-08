@@ -51,7 +51,7 @@
                         array(
                             'controller' => 'sections',
                             'action' => 'index',
-                            $is_admin,
+                            $this->params['admin'],
                         ),
                         array(
                             'class' => 'btn-black-pink float-right small mr-2',

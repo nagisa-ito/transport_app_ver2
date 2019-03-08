@@ -19,7 +19,7 @@
         <div class="list-group" id="user_list">
             <span class="heading">検索条件:</span>
             <div class="row contents">
-                <div class="col-sm-5">
+                <div class="col-sm-3">
                     <?php
                         echo $this->Form->create('User', array(
                             'url'   => array('action' => "user_lists/$department_id"),
@@ -36,7 +36,7 @@
                         ));
                     ?>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-3">
                     <?php
                         echo $this->Form->input('department_id', array(
                             'options' => $departments,
@@ -47,7 +47,17 @@
                         ));
                     ?>
                 </div>
-                <div class="col-sm-2 outer_select_button">
+                <div class="col-sm-3">
+                    <?php
+                        echo $this->Form->input('status', array(
+                            'options' => array(1 => '在籍', 2 => '退社済'),
+                            'label' => false,
+                            'label' => 'ステータス',
+                            'class' => 'form-control',
+                        ));
+                    ?>
+                </div>
+                <div class="col-sm-3 outer_select_button">
                     <?php
                         echo $this->Form->button(
                             '<i class="fas fa-search"></i> 検索',
@@ -63,20 +73,23 @@
             
             <span class="heading">ユーザー一覧:</span>
             <div class='contents text-right'>
-                 <?php
-                    echo $this->Html->link(
-                        '<i class="fas fa-download"></i> CSVダウンロード',
-                        array(
-                            'controller' => 'users',
-                            'action' => "admin_csv_download",
-                            $department_id,
-                            $search_year_month,
-                        ),
-                        array(
-                            'class' => 'btn btn-green small',
-                            'escape' => false
-                        )
-                    );
+                <?php
+                    if (!empty($each_user_monthly_costs)) {
+                        echo $this->Html->link(
+                            '<i class="fas fa-download"></i> CSVダウンロード',
+                            array(
+                                'controller' => 'users',
+                                'action' => "admin_csv_download",
+                                $department_id,
+                                $search_year_month,
+                                $status,
+                            ),
+                            array(
+                                'class' => 'btn btn-green small',
+                                'escape' => false
+                            )
+                        );
+                    }
                 ?>
             </div>
             <ul class="list-group contents mb-4">
