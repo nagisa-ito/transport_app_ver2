@@ -68,21 +68,15 @@ class UsersController extends AppController
             $this->Session->write('AccessUser', $access_user);
         }
 
-        if (!isset($login_user_id)) {
-            $login_user_id = $this->Auth->user('id');
-            $this->set('login_user', $this->Auth->user());
-        } else {
-            $login_user = $this->User->find('all', array('conditions' => array('id' => $login_user_id)));
-            $login_user = Hash::extract($login_user, '{n}.{s}');
-            $this->set('login_user', $login_user[0]);
-        }
 
         // 月ごとの申請を抽出
-        $group_by_month = $this->User->getMonthlyRequests($login_user_id);
+        $group_by_month = $this->User->getMonthlyRequests($this->Auth->user('id'));
 
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
-        $this->set(compact('departments', 'group_by_month', 'login_user_id', 'is_admin'));
+        $this->set('login_user', $this->Auth->user());
+        $this->set('login_user_id', $this->Auth->user('id'));
+        $this->set(compact('departments', 'group_by_month', 'is_admin'));
     }
 
     public function add()
