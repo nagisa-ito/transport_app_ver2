@@ -77,7 +77,7 @@ class User extends AppModel
     }
 
 
-    public function getMonthlyRequests($login_user_id)
+    public function getMonthlyRequests($view_user_id)
     {
         $sql = "
             SELECT
@@ -125,7 +125,7 @@ class User extends AppModel
             AS
                 monthly_requests
             WHERE
-                user_id = $login_user_id
+                user_id = {$view_user_id}
             GROUP BY
                 date,
                 is_confirm

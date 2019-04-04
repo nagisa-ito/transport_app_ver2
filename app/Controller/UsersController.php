@@ -56,26 +56,30 @@ class UsersController extends AppController
         $this->redirect($this->Auth->logout());
     }
 
-    public function index($login_user_id = null, $is_admin = 0)
+    /**
+     * 申請一覧表示
+     * @param int $view_user_id ビューで表示されるユーザーid
+     * @param boolean $is_admin adminか否か
+     */
+    public function index($view_user_id = null, $is_admin = 0)
     {
         // 管理者がユーザーの定期や申請情報を確認できるように、
         // adminユーザーがこのページに来た時に閲覧したユーザーの情報をセッションに保存する。
         if ($this->Session->read('User.role') === 'admin') {
             $this->Session->delete('AccessUser');
             $access_user = $this->User->find('first', array(
-                'conditions' => array('User.id' => $login_user_id)
+                'conditions' => array('User.id' => $view_user_id)
             ));
             $this->Session->write('AccessUser', $access_user);
         }
 
-
         // 月ごとの申請を抽出
-        $group_by_month = $this->User->getMonthlyRequests($this->Auth->user('id'));
+        $group_by_month = $this->User->getMonthlyRequests($view_user_id);
 
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
         $this->set('login_user', $this->Auth->user());
-        $this->set('login_user_id', $this->Auth->user('id'));
+        $this->set('view_user_id', $view_user_id);
         $this->set(compact('departments', 'group_by_month', 'is_admin'));
     }
 
