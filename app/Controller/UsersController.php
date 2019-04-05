@@ -15,31 +15,26 @@ class UsersController extends AppController
 
     public function login()
     {
-        $admin_param = array(
-            'admin' => true,
-            'controller' => 'users',
-            'action' => 'user_lists',
-        );
-        
         // 既にログインしている場合に自動的にページ遷移する
         if ($this->Auth->loggedIn()) {
-            if ($this->Auth->user('role') == 'admin') {
-                $this->redirect($admin_param);
-            } else {
-                $this->redirect($this->Auth->redirect());
-            }
+            $this->redirect($this->Session->read('redirect_param'));
         }
 
         if (!empty($this->request->data)) {
             if ($this->Auth->login()) {
-                // ログイン情報をセッションに保存
-                $this->Session->write('User', $this->Auth->user());
-
+                // リダイレクト先パラメタを指定
                 if ($this->Auth->user('role') == 'admin') {
-                    $this->redirect($admin_param);
+                    $redirect_param = array(
+                        'admin'      => true,
+                        'controller' => 'users',
+                        'action'     => 'user_lists',
+                    );
                 } else {
-                    $this->redirect($this->Auth->redirect());
+                    $redirect_param = $this->Auth->redirect(); 
                 }
+                $this->Session->write('redirect_param', $redirect_param);
+                $this->Session->write('User', $this->Auth->user());
+                $this->redirect($redirect_param);
             } else {
                 $this->Session->setFlash(
                     'メールアドレスまたはパスワードが違います。',
@@ -63,8 +58,10 @@ class UsersController extends AppController
      */
     public function index($view_user_id = null, $is_admin = 0)
     {
-        // 管理者がユーザーの定期や申請情報を確認できるように、
-        // adminユーザーがこのページに来た時に閲覧したユーザーの情報をセッションに保存する。
+        if (!$view_user_id) {
+            $view_user_id = $this->Session->read('User.id');
+        }
+
         if ($this->Session->read('User.role') === 'admin') {
             $this->Session->delete('AccessUser');
             $access_user = $this->User->find('first', array(
@@ -75,7 +72,6 @@ class UsersController extends AppController
 
         // 月ごとの申請を抽出
         $group_by_month = $this->User->getMonthlyRequests($view_user_id);
-
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
         $this->set('login_user', $this->Auth->user());
