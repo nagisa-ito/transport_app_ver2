@@ -2,4 +2,4 @@ config.php
 app/tmp/logs/
 app/Config/database.php
 app/Config/email.php
-
+node_modules/

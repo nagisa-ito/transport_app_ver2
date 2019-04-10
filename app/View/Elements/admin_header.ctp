@@ -62,7 +62,7 @@
         ?>
         <?php if($is_loggedIn) : ?>
             <a href='javascript: history.back()' class="btn-black-green float-right small mr-2">
-                <i class="fas fa-backspace mr-1"></i>戻る
+                <i class="fas fa-arrow-left mr-1"></i>戻る
             </a>
         <?php endif; ?>
      </div>

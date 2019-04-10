@@ -22,36 +22,31 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
 <html>
 <head>
     <?php echo $this->Html->charset(); ?>
-   <title>
+    <title>
         <?php echo $cakeDescription ?>:
         <?php echo $title_for_layout; ?>
-   </title>
+    </title>
+    <script type="text/javascript" src=""></script>
     <?php
         echo $this->Html->meta('icon');
 
-        // jQuery CDN
-        echo $this->Html->script('//code.jquery.com/jquery-3.2.1.min.js');
+        // jQuery and jQueryUI
+        echo $this->Html->script('jquery/jquery.min.js');
+        echo $this->Html->script('jquery/jquery-ui.min.js');
+        echo $this->Html->css('jquery/jquery-ui.min.css');
 
-        // Twitter Bootstrap 4.0 CDN
-        echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
-        echo $this->Html->script('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js');
-    
-        //jQuery UI
-        echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js');
-        echo $this->Html->css('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');
-    
+        // Twitter Bootstrap 4.0 and Datepicker
+        echo $this->Html->script('bootstrap/bootstrap.min.js');
+        echo $this->Html->css('bootstrap/bootstrap.min.css');
+        echo $this->Html->css('bootstrap/bootstrap-datepicker.min');
+        echo $this->Html->script('bootstrap/bootstrap-datepicker.min');
+        echo $this->Html->script('bootstrap/bootstrap-datepicker.ja.min');
+
         //font awesome
-        echo $this->Html->css('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
-    
-        //datepicker
-        echo $this->Html->css('bootstrap-datepicker.min');
-        echo $this->Html->script('bootstrap-datepicker.min');
-        echo $this->Html->script('bootstrap-datepicker.ja.min');
+        echo $this->Html->css('font-awesome/all.min.css');
 
-        //google fonts
-        echo $this->Html->css('https://fonts.googleapis.com/css?family=Lora');
-        echo $this->Html->css('https://use.fontawesome.com/releases/v5.0.6/css/all.css');
-        echo $this->Html->css('https://fonts.googleapis.com/css?family=Fugaz+One');
+        // fonts
+        echo $this->Html->css('webfonts.css');
 
         echo $this->fetch('meta');
         echo $this->fetch('css');
@@ -69,6 +64,5 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
 
 <?php echo $this->Html->css('mystyle'); ?>
 <?php echo $this->Html->script('myscript'); ?>
-
 </body>
 </html>
