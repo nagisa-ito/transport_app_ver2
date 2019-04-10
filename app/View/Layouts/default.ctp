@@ -48,6 +48,8 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
         // fonts
         echo $this->Html->css('webfonts.css');
 
+        echo $this->Html->css('mystyle');
+
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -61,8 +63,6 @@ $cakeDescription = __d('cake_dev', '交通費精算アプリ');
         </div>
     </div>
     <?php echo $this->element('sql_dump'); ?>
-
-<?php echo $this->Html->css('mystyle'); ?>
-<?php echo $this->Html->script('myscript'); ?>
+    <?php echo $this->Html->script('myscript'); ?>
 </body>
 </html>

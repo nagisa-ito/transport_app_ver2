@@ -7,7 +7,7 @@ body {
 header {
     background-color: #fff;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
-    min-height: 50px;
+    height: 52px;
     padding: 0px 20px;
     color: #474a4d;
 }
