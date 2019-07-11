@@ -11,43 +11,43 @@ class RequestDetailsController extends AppController {
         $this->set('departments', $departments);
     }
 
-    public function index($login_user_id = null, $year_month = null, $is_admin = 0)
+    public function index($view_user_id = null, $year_month = null, $is_admin = 0)
     {
-        if (!isset($login_user_id)) {
-            //ログインしたユーザーを変数に格納
-            $login_user_id = $this->Auth->user('id');
-            $this->set('login_user', $this->Auth->user());
-        } else {
-            $login_user = $this->User->find('all', array('conditions' => array('id' => $login_user_id)));
-            $login_user = Hash::extract($login_user, '{n}.{s}');
-            $this->set('login_user', $login_user[0]);
-        }
-
-        $this->set('year_month', $year_month);
-        $this->set('login_user_id', $login_user_id);
-
-        $requests = $this->RequestDetail->getRequests($login_user_id, $year_month);
-        $total_cost = $this->RequestDetail->getTotalCost($login_user_id, $year_month);
-        $is_confirm = $this->ConfirmMonth->isConfirmMonth($year_month, $login_user_id);
-
-        $column_names = array(
-            '申請id',
-            '日付',
-            '分類',
-            '経路',
-            '交通手段',
-            '訪問先',
-            '利用区間',
-            '費用',
-            '備考',
-        );
-        $this->set(compact('column_names', 'total_cost', 'is_admin', 'is_confirm', 'requests', 'year_month'));
+        $user = $this->Auth->user();
+        $this->setValueRequestDetails($user, $user_id['id'], $year_month);
     }
 
-    public function admin_index($login_user_id, $year_month)
+    /**
+     * adminユーザーが一般ユーザーの申請を確認する
+     * @param int $view_user_id 閲覧するユーザーのid
+     * @param string $year_month 年月
+     */
+    public function admin_index($view_user_id, $year_month)
     {
-        $this->index($login_user_id, $year_month, 1);
+        $user = $this->User->find('first', [
+            'conditions' => ['User.id' => $view_user_id],
+        ]);
+        $user = Hash::get($user, 'User');
+
+        $this->setValueRequestDetails($user, $view_user_id, $year_month);
         $this->render('index');
+    }
+
+    private function setValueRequestDetails($user, $view_user_id, $year_month)
+    {
+        $requests = $this->RequestDetail->getRequests($view_user_id, $year_month);
+        $total_cost = $this->RequestDetail->getTotalCost($view_user_id, $year_month);
+        $is_confirm = $this->ConfirmMonth->isConfirmMonth($year_month, $view_user_id);
+        $column_names = Configure::read('column_names_request_details');
+
+        $this->set(compact(
+            'user',
+            'year_month',
+            'requests',
+            'total_cost',
+            'is_confirm',
+            'column_names'
+        ));
     }
 
     /**
@@ -89,9 +89,39 @@ class RequestDetailsController extends AppController {
         }
     }
 
-    public function admin_add($user_id = null, $year_month = null)
+    public function admin_add($view_user_id = null, $year_month = null)
     {
-        $this->add($user_id, $year_month, 1);
+        $user = $this->User->find('first', [
+            'conditions' => ['User.id' => $view_user_id],
+        ]);
+        $user = Hash::get($user, 'User');
+
+        // 訪問先補完用メソッド呼び出し
+        $this->getAutocompleteContents();
+
+        if (!empty($this->request->data)) {
+            if ($this->RequestDetail->save($this->request->data)) {
+                // 登録した月の一覧にリダイレクトするため、yyyy-mmを抽出する
+                $ymd = Hash::get($this->request->data, 'RequestDetail.date');
+                preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
+
+                // リダイレクト先オプション
+                $url = [
+                    'controller' => 'request_details',
+                    'action'     => isset($this->request->data['add_repeat']) ? 'add' : 'index',
+                    $user['id'],
+                    $year_month[0],
+                ];
+                
+                $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-success']);
+                return $this->redirect($url);
+            } else {
+                $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-danger']);
+            }
+        }
+
+        $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+        $this->set(compact('user', 'transportations'));
         $this->render('add');
     }
 
@@ -121,9 +151,30 @@ class RequestDetailsController extends AppController {
         }
     }
 
-    public function admin_edit($user_id, $year_month, $request_id)
+    public function admin_edit($view_user_id, $year_month, $request_id)
     {
-        $this->edit($user_id, $year_month, $request_id);
+        $user = $this->User->find('first', [
+            'conditions' => ['User.id' => $view_user_id],
+        ]);
+        $user = Hash::get($user, 'User');
+
+        $this->RequestDetail->id = $request_id;
+
+        if (!empty($this->request->data)) {
+            if ($this->RequestDetail->save($this->request->data)) {
+                $this->Session->setFlash('変更を保存しました。', 'default', ['class' => 'alert alert-success']);
+                return $this->redirect(['action' =>  'index', $user['id'], $year_month]);
+            }
+            $this->Session->setFlash('変更に失敗しました。', 'default', ['class' => 'alert alert-warning']);
+            return;
+        }
+
+        $this->request->data = $this->RequestDetail->read();
+
+        // 区間マスタ情報保管用
+        $this->getAutocompleteContents();
+        $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+        $this->set(compact('user', 'transportations'));
         $this->render('edit');
     }
 

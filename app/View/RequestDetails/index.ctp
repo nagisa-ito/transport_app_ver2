@@ -1,7 +1,7 @@
 <?php echo $this->Html->css('user_index'); ?>
 <script>
     var year_month = "<?php echo $year_month; ?>";
-    var user_id = "<?php echo $login_user_id; ?>";
+    var user_id = "<?php echo $user['id']; ?>";
 </script>
 
 <header>
@@ -51,7 +51,7 @@
                     echo $this->Html->link('<i class="fas fa-download"></i> CSVダウンロード', array(
                         'controller' => 'request_details',
                         'action' => "admin_requestdetail_csv_download",
-                        $login_user_id,
+                        $user['id'],
                         $year_month,
                     ),
                     array('class' => 'btn btn-green float-right', 'escape' => false));
@@ -108,7 +108,7 @@
                                     echo $this->Html->link('<i class="fas fa-pen"></i>',
                                         array(
                                             'action' => 'edit',
-                                            $login_user_id,
+                                            $user['id'],
                                             $year_month,
                                             $request['id'],
                                         ),
@@ -122,7 +122,7 @@
                                         array(
                                             'class' => 'delete btn btn-purple mb-1',
                                             'data-request_id' => $request['id'],
-                                            'data-user_id' => $login_user_id,
+                                            'data-user_id' => $user['id'],
                                             'data-year_month' => $year_month,
                                             'escape' => false,
                                         )

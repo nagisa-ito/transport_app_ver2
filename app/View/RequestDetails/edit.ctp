@@ -26,7 +26,7 @@
         <div class="form_contents panel_right_side">
             <?php
                 echo $this->element('input_request', array(
-                    'user_id' => $user_id,
+                    'user_id' => $user['id'],
                 ));
             ?>
             <div class="text-right">
