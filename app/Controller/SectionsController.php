@@ -21,24 +21,26 @@ class SectionsController extends AppController
         $conditions = array();
 
         // 表示する区間マスタ一覧のユーザーidを指定
-        $user_id = $this->Session->read('User.id');
-        $this->paginate = array('conditions' => array('Section.user_id' => $user_id));
+        $this->paginate = array('conditions' => array('Section.user_id' => $this->Auth->user('id')));
 
         // 保存
         if ($this->request->is('post')) {
-            $this->request->data['Section']['user_id'] = $user_id;
+            $this->request->data['Section']['user_id'] = $this->Auth->user('id');
             $this->add($this->request->data);
-        } elseif ($this->request->query('search_word')) {
-            // 検索
+            return;
+        }
+
+        // 検索
+        if (!empty($this->request->query('search_word'))) {
             $search_words = mb_convert_kana($this->request->query['search_word'], "s");
             $search_words = explode(' ', $search_words);
             foreach ($search_words as $word) {
                 $conditions[] = array('Section.name LIKE' => "%$word%");
             }
         }
+
         $this->Paginator->settings = $this->paginate;
         $sections = $this->Paginator->paginate('Section', $conditions);
-
         $this->set(compact('sections'));
     }
     
