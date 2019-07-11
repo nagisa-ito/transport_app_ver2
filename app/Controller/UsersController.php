@@ -20,29 +20,25 @@ class UsersController extends AppController
             $this->redirect($this->Session->read('redirect_param'));
         }
 
-        if (!empty($this->request->data)) {
-            if ($this->Auth->login()) {
-                // リダイレクト先パラメタを指定
-                if ($this->Auth->user('role') == 'admin') {
-                    $redirect_param = array(
-                        'admin'      => true,
-                        'controller' => 'users',
-                        'action'     => 'user_lists',
-                    );
-                } else {
-                    $redirect_param = $this->Auth->redirect(); 
-                }
-                $this->Session->write('redirect_param', $redirect_param);
-                $this->Session->write('User', $this->Auth->user());
-                $this->redirect($redirect_param);
+        // ログイン成功
+        if ($this->Auth->login()) {
+            if ($this->Auth->user('role') == 'admin') {
+                $url = [
+                    'admin' => true,
+                    'controller' => 'users',
+                    'action'     => 'user_lists',
+                ];
             } else {
-                $this->Session->setFlash(
-                    'メールアドレスまたはパスワードが違います。',
-                    'default',
-                    array('class' => 'alert alert-warning')
-                );
+                $url = $this->Auth->redirect();
             }
+            return $this->redirect($url);
         }
+
+        $this->Session->setFlash(
+            'メールアドレスまたはパスワードが違います。',
+            'default',
+            ['class' => 'alert alert-danger']
+        );
     }
 
     public function logout()
@@ -59,10 +55,12 @@ class UsersController extends AppController
     public function index($view_user_id = null, $is_admin = 0)
     {
         if (!$view_user_id) {
-            $view_user_id = $this->Session->read('User.id');
+            $view_user_id = $this->Auth->User('id');
         }
 
-        if ($this->Session->read('User.role') === 'admin') {
+        // adminユーザーは全ユーザーの情報を確認できる
+        // そのためindexページにアクセスするたびセッションを書き換える
+        if ($this->params['admin']) {
             $this->Session->delete('AccessUser');
             $access_user = $this->User->find('first', array(
                 'conditions' => array('User.id' => $view_user_id)
@@ -70,13 +68,25 @@ class UsersController extends AppController
             $this->Session->write('AccessUser', $access_user);
         }
 
+        // ユーザー情報表示用
+        $access_user = $this->Session->read('AccessUser.User');
+        $user = isset($access_user) ? $access_user : $this->Auth->User();
+
         // 月ごとの申請を抽出
         $group_by_month = $this->User->getMonthlyRequests($view_user_id);
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
-        $this->set('login_user', $this->Auth->user());
         $this->set('view_user_id', $view_user_id);
-        $this->set(compact('departments', 'group_by_month', 'is_admin'));
+        $this->set(compact('departments', 'group_by_month', 'is_admin', 'user'));
+    }
+
+    public function admin_index()
+    {
+        $users = $this->User->find('all');
+        $users = Hash::extract($users, '{n}.{s}');
+
+        $departments = $this->Department->find('list', array('fields' => 'department_name'));
+        $this->set(compact('departments', 'users'));
     }
 
     public function add()
@@ -137,15 +147,6 @@ class UsersController extends AppController
         $this->logout();
     }
 
-    public function admin_index()
-    {
-        $users = $this->User->find('all');
-        $users = Hash::extract($users, '{n}.{s}');
-
-        $departments = $this->Department->find('list', array('fields' => 'department_name'));
-        $this->set(compact('departments', 'users'));
-    }
-
     public function admin_edit($user_id)
     {
         $this->User->id = $user_id;
@@ -174,6 +175,7 @@ class UsersController extends AppController
     const DEPARTMENTS_ALL = 0;
     const ENROLLMENT = 1; // ステータス: 在籍
     const ENROLLMENT_NOT = 2; // ステータス: 退社
+
     public function admin_user_lists($department_id = null, $search_year_month = null)
     {
         // 部署選択項目設定
@@ -182,36 +184,52 @@ class UsersController extends AppController
         ksort($departments);
 
         // 各検索条件をセット
-        $user_ids = array();
-        if ($this->request->is('post')) {
-            $department_id = $this->request->data['User']['department_id'];
-            $status = $this->request->data['User']['status'];
-            $search_year_month = $this->request->data['User']['date'];
-        } else {
-            // 初回表示条件
-            $search_year_month = date('Y-m');
-            $department_id = self::DEPARTMENTS_ALL;
-            $status = self::ENROLLMENT;
-        }
+        $search_year_month = isset($this->request->data['User']['date']) ?
+            $this->request->data['User']['date'] : date('Y-m', strtotime("-1 month"));
+        $department_id = isset($this->request->data['User']['department_id']) ?
+            $this->request->data['User']['department_id'] : self::DEPARTMENTS_ALL;
+        $status = isset($this->request->data['User']['status']) ?
+            $this->request->data['User']['status'] : self::ENROLLMENT;
 
         // 対象のユーザーを検索
         $user_ids = $this->User->getUserIdsByDepartmentId($department_id, $status);
 
+        //各月、各ユーザごとの合計費用を抽出する
+        $each_user_monthly_costs = array();
         if (!empty($user_ids)) {
-            //各月、各ユーザごとの合計費用を抽出する
             $user_ids = implode(',', $user_ids);
             $each_user_monthly_costs = $this->User->getEachUserMonthlyCost($user_ids, $search_year_month);
-        } else {
-            $each_user_monthly_costs = array();
         }
 
-        $this->set(compact('departments', 'department_id', 'search_year_month'));
-        $this->set(compact('each_user_monthly_costs', 'status'));
+        $this->set(compact(
+            'departments',
+            'department_id',
+            'search_year_month',
+            'each_user_monthly_costs',
+            'status'
+        ));
     }
 
-    public function admin_user_requests($user_id)
+    /**
+     * adminユーザーが一般ユーザーの申請を確認する
+     * @param int $view_user_id 閲覧するユーザーのid
+     */
+    public function admin_user_requests($view_user_id)
     {
-        $this->index($user_id, 1);
+        // adminユーザーは全ユーザーの情報を確認できる
+        // そのためindexページにアクセスするたびセッションを書き換える
+        $this->Session->delete('view_user');
+        $user = $this->User->find('first', [
+            'conditions' => ['User.id' => $view_user_id],
+        ]);
+        $user = Hash::get($user, 'User');
+        $this->Session->write('view_user', $user);
+
+        // 月ごとの申請を抽出
+        $group_by_month = $this->User->getMonthlyRequests($view_user_id);
+        $departments = $this->Department->find('list', array('fields' => 'department_name'));
+
+        $this->set(compact('departments', 'group_by_month', 'user', 'view_user_id'));
         $this->render('index');
     }
 

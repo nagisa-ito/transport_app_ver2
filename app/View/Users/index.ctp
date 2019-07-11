@@ -5,7 +5,7 @@
         echo $this->element('admin_header', array(
             'title' => '交通費精算表',
             'is_loggedIn' => 1,
-            'is_admin' => $is_admin,
+            'is_admin' => $this->params['admin'],
         ));
     ?>
 </header>

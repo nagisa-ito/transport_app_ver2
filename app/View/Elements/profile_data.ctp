@@ -1,9 +1,3 @@
-<?php
-    // ユーザー情報表示用
-    $access_user = $this->Session->read('AccessUser.User');
-    $user = isset($access_user) ? $access_user : $this->Session->read('User');
-?>
-
 <div class="col-sm-3">
     <div class="panel_left_side list-unstyled">
         <div>
