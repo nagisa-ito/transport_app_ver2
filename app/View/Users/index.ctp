@@ -29,7 +29,7 @@
                             $url = array(
                                     'controller' => 'request_details',
                                     'action' => 'index',
-                                    $view_user_id,
+                                    $user['id'],
                                     $each_month_request['date'],
                             );
 
@@ -73,7 +73,7 @@
                                                     'id' => 'no_request_month',
                                                  'class' => 'form-control',
                                                  'value' => date('Y-m')]);
-                        echo $this->Form->hidden('user_id', ['value' => $view_user_id, 'id' => 'no_request_user_id']);
+                        echo $this->Form->hidden('user_id', ['value' => $user['id'], 'id' => 'no_request_user_id']);
                     ?>
                 </div>
             </div>

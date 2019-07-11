@@ -20,6 +20,10 @@ class UsersController extends AppController
             $this->redirect($this->Session->read('redirect_param'));
         }
 
+        if (empty($this->request->data)) {
+            return;
+        }
+
         // ログイン成功
         if ($this->Auth->login()) {
             if ($this->Auth->user('role') == 'admin') {
@@ -52,41 +56,35 @@ class UsersController extends AppController
      * @param int $view_user_id ビューで表示されるユーザーid
      * @param boolean $is_admin adminか否か
      */
-    public function index($view_user_id = null, $is_admin = 0)
+    public function index()
     {
-        if (!$view_user_id) {
-            $view_user_id = $this->Auth->User('id');
-        }
-
-        // adminユーザーは全ユーザーの情報を確認できる
-        // そのためindexページにアクセスするたびセッションを書き換える
-        if ($this->params['admin']) {
-            $this->Session->delete('AccessUser');
-            $access_user = $this->User->find('first', array(
-                'conditions' => array('User.id' => $view_user_id)
-            ));
-            $this->Session->write('AccessUser', $access_user);
-        }
-
-        // ユーザー情報表示用
-        $access_user = $this->Session->read('AccessUser.User');
-        $user = isset($access_user) ? $access_user : $this->Auth->User();
+        $user = $this->Auth->user();
 
         // 月ごとの申請を抽出
-        $group_by_month = $this->User->getMonthlyRequests($view_user_id);
+        $group_by_month = $this->User->getMonthlyRequests($user['id']);
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
 
-        $this->set('view_user_id', $view_user_id);
-        $this->set(compact('departments', 'group_by_month', 'is_admin', 'user'));
+        $this->set(compact('departments', 'group_by_month', 'user'));
     }
 
-    public function admin_index()
+    /**
+     * adminユーザーが一般ユーザーの申請を確認する
+     * @param int $view_user_id 閲覧するユーザーのid
+     */
+    public function admin_user_requests($view_user_id)
     {
-        $users = $this->User->find('all');
-        $users = Hash::extract($users, '{n}.{s}');
+        // adminユーザーは全ユーザーの情報を確認できる
+        $user = $this->User->find('first', [
+            'conditions' => ['User.id' => $view_user_id],
+        ]);
+        $user = Hash::get($user, 'User');
 
+        // 月ごとの申請を抽出
+        $group_by_month = $this->User->getMonthlyRequests($user['id']);
         $departments = $this->Department->find('list', array('fields' => 'department_name'));
-        $this->set(compact('departments', 'users'));
+
+        $this->set(compact('departments', 'group_by_month', 'user'));
+        $this->render('index');
     }
 
     public function add()
@@ -208,29 +206,6 @@ class UsersController extends AppController
             'each_user_monthly_costs',
             'status'
         ));
-    }
-
-    /**
-     * adminユーザーが一般ユーザーの申請を確認する
-     * @param int $view_user_id 閲覧するユーザーのid
-     */
-    public function admin_user_requests($view_user_id)
-    {
-        // adminユーザーは全ユーザーの情報を確認できる
-        // そのためindexページにアクセスするたびセッションを書き換える
-        $this->Session->delete('view_user');
-        $user = $this->User->find('first', [
-            'conditions' => ['User.id' => $view_user_id],
-        ]);
-        $user = Hash::get($user, 'User');
-        $this->Session->write('view_user', $user);
-
-        // 月ごとの申請を抽出
-        $group_by_month = $this->User->getMonthlyRequests($view_user_id);
-        $departments = $this->Department->find('list', array('fields' => 'department_name'));
-
-        $this->set(compact('departments', 'group_by_month', 'user', 'view_user_id'));
-        $this->render('index');
     }
 
     /**

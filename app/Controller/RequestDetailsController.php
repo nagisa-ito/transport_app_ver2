@@ -14,7 +14,7 @@ class RequestDetailsController extends AppController {
     public function index($view_user_id = null, $year_month = null, $is_admin = 0)
     {
         $user = $this->Auth->user();
-        $this->setValueRequestDetails($user, $user_id['id'], $year_month);
+        $this->setValueRequestDetails($user, $user['id'], $year_month);
     }
 
     /**
@@ -52,41 +52,39 @@ class RequestDetailsController extends AppController {
 
     /**
      * 申請追加用メソッド。
-     * @param access_user_id adminユーザーでログインした時に、どのユーザーの申請を見ているかのid
-     * @param year_month
+     * @param $view_user_id adminユーザーでログインした時に、どのユーザーの申請を見ているかのid
+     * @param $year_month
      */
-    public function add($user_id = null, $year_month = null, $request_id = null)
+    public function add($view_user_id = null, $year_month = null, $request_id = null)
     {
-        $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
-        $this->set(compact('user_id', 'transportations'));
+        $user = $this->Auth->user();
 
         // 訪問先補完用メソッド呼び出し
         $this->getAutocompleteContents();
+        $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+        $this->set(compact('user', 'transportations'));
 
-        // 保存
-        if ($this->request->is('post')) {
-            // 成功
-            if ($this->RequestDetail->save($this->request->data)) {
-                // 登録した月の一覧にリダイレクトするため、yyyy-mmを抽出する
-                $ymd = Hash::get($this->request->data, 'RequestDetail.date');
-                preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
-
-                // リダイレクト先オプション
-                $redirect_destination = array(
-                    'controller' => 'request_details',
-                    'action' => isset($this->request->data['add_repeat']) ? 'add' : 'index',
-                    $user_id,
-                    $year_month[0],
-                );
-
-                $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-success']);
-                $this->redirect($redirect_destination);
-
-            // 失敗
-            } else {
-                $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-danger']);
-            }
+        if (empty($this->request->data)) {
+            return;
         }
+
+        if ($this->RequestDetail->save($this->request->data)) {
+            // 登録した月の一覧にリダイレクトするため、yyyy-mmを取得
+            $ymd = Hash::get($this->request->data, 'RequestDetail.date');
+            preg_match('/^[0-9]{4}-[0-9]{2}/', $ymd, $year_month);
+
+            $url = [
+                'controller' => 'request_details',
+                'action' => isset($this->request->data['add_repeat']) ? 'add' : 'index',
+                $user['id'],
+                $year_month[0],
+            ];
+
+            $this->Session->setFlash('保存されました。', 'default', ['class' => 'alert alert-success']);
+            return $this->redirect($url);
+        }
+
+        $this->Session->setFlash('保存に失敗しました。', 'default', ['class' => 'alert alert-danger']);
     }
 
     public function admin_add($view_user_id = null, $year_month = null)
@@ -127,28 +125,25 @@ class RequestDetailsController extends AppController {
 
     public function edit($user_id, $year_month, $request_id)
     {
-        // 区間マスタ情報保管用
-        $this->getAutocompleteContents();
-
-        $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
-        $this->set(compact('user_id', 'transportations'));
+        $user = $this->Auth->user();
 
         $this->RequestDetail->id = $request_id;
-        if ($this->request->is('get')) {
-            $this->request->data = $this->RequestDetail->read();
-        // 変更を保存
-        } else {
+
+        if (!empty($this->request->data)) {
             if ($this->RequestDetail->save($this->request->data)) {
                 $this->Session->setFlash('変更を保存しました。', 'default', ['class' => 'alert alert-success']);
-                $this->redirect(array(
-                    'action' =>  'index',
-                    $user_id,
-                    $year_month
-                ));
+                return $this->redirect(['action' =>  'index', $user['id'], $year_month]);
             } else {
                 $this->Session->setFlash('変更に失敗しました。', 'default', ['class' => 'alert alert-warning']);
             }
         }
+
+        $this->request->data = $this->RequestDetail->read();
+
+         // 区間マスタ情報保管用
+         $this->getAutocompleteContents();
+         $transportations = $this->Transportation->find('list', array( 'fields' => 'transportation_name'));
+         $this->set(compact('user', 'transportations'));
     }
 
     public function admin_edit($view_user_id, $year_month, $request_id)
@@ -164,9 +159,9 @@ class RequestDetailsController extends AppController {
             if ($this->RequestDetail->save($this->request->data)) {
                 $this->Session->setFlash('変更を保存しました。', 'default', ['class' => 'alert alert-success']);
                 return $this->redirect(['action' =>  'index', $user['id'], $year_month]);
+            } else {
+                $this->Session->setFlash('変更に失敗しました。', 'default', ['class' => 'alert alert-warning']);
             }
-            $this->Session->setFlash('変更に失敗しました。', 'default', ['class' => 'alert alert-warning']);
-            return;
         }
 
         $this->request->data = $this->RequestDetail->read();
