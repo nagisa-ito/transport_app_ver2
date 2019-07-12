@@ -32,6 +32,24 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginAction' => array(),
+            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
+            'flash' => array(
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-danger',
+                )
+            ),
+            'authorize' => array('Controller') //認証
+        ),
+    );
+
     public function beforeFilter()
     {
         $this->Auth->allow('login', 'logout');
@@ -40,6 +58,17 @@ class AppController extends Controller {
         }
         AuthComponent::$sessionKey = 'Auth.User';
         parent::beforeFilter();
+
+        // ログインしているかの判定
+        // NOTE: loggedIn()はv2.4まで
+        if (!in_array($this->action, ['login', 'logout']) && !$this->Auth->user()) {
+            $this->Session->setFlash('ログアウトされました。', 'default', ['class' => 'alert alert-danger']);
+            return $this->redirect([
+                'controller' => 'users',
+                'action'     => 'login',
+                'admin'      => false,
+            ]);
+        }
     }
 
     private function _setAdminParameter()
@@ -64,24 +93,6 @@ class AppController extends Controller {
 
         AuthComponent::$sessionKey = 'Auth.Admin';
     }
-
-    public $components = array(
-        'Session',
-        'Auth' => array(
-            'loginAction' => array(),
-            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-            'flash' => array(
-                'element' => 'alert',
-                'key' => 'auth',
-                'params' => array(
-                    'plugin' => 'BoostCake',
-                    'class' => 'alert-error',
-                )
-            ),
-            'authorize' => array('Controller') //認証
-        ),
-    );
 
     //誰かが他の人の申請を編集したり削除したりするのを防ぐように、アプリケーションをセキュアにする。
     public function isAuthorized($user) {

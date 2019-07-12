@@ -96,7 +96,7 @@ class UsersController extends AppController
                 $this->Session->setFlash(
                     '登録に成功しました。',
                     'default',
-                    array('class' => 'alert alert-warning')
+                    array('class' => 'alert alert-success')
                 );
                 $this->redirect(array('action' => 'login'));
             } else {

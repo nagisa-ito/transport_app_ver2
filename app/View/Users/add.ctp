@@ -15,7 +15,6 @@
 
 <div class="content row">
     <div class="col-sm-6 offset-sm-3">
-        <div class="decor"></div>
         <div class="form_contents">
             <?php
                 echo $this->Form->create('User', array('class' => 'form_inline'));
