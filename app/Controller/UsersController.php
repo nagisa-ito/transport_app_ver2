@@ -15,9 +15,16 @@ class UsersController extends AppController
 
     public function login()
     {
+        $admin_url = [
+            'admin' => true,
+            'controller' => 'users',
+            'action'     => 'user_lists',
+        ];
+
         // 既にログインしている場合に自動的にページ遷移する
-        if ($this->Auth->loggedIn()) {
-            $this->redirect($this->Session->read('redirect_param'));
+        if ($this->Auth->user()) {
+            $url = $this->Auth->user('role') == 'admin' ? $admin_url : $this->Auth->redirect();
+            return $this->redirect($url);
         }
 
         if (empty($this->request->data)) {
@@ -26,15 +33,7 @@ class UsersController extends AppController
 
         // ログイン成功
         if ($this->Auth->login()) {
-            if ($this->Auth->user('role') == 'admin') {
-                $url = [
-                    'admin' => true,
-                    'controller' => 'users',
-                    'action'     => 'user_lists',
-                ];
-            } else {
-                $url = $this->Auth->redirect();
-            }
+            $url = $this->Auth->user('role') == 'admin' ? $admin_url : $this->Auth->redirect();
             return $this->redirect($url);
         }
 
