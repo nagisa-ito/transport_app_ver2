@@ -1,8 +1,19 @@
 <?php
 class RequestDetailsController extends AppController {
-    //helperという機能を使うための合言葉のようなもの
     public $helpers = array('Html', 'Form');
-    public $uses = array('RequestDetail', 'User', 'Department', 'ConfirmMonth', 'Section', 'Transportation');
+
+    public $uses = [
+        'RequestDetail',
+        'User',
+        'Department',
+        'ConfirmMonth',
+        'Section',
+        'Transportation'
+    ];
+
+    public $paginate = [
+        'limit' => 12,
+    ];
 
     public function beforeFilter()
     {
