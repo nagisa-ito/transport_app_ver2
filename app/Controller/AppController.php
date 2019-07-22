@@ -60,7 +60,12 @@ class AppController extends Controller {
         parent::beforeFilter();
 
         // ログインしているかの判定
-        if (!in_array($this->action, ['login', 'logout']) && !$this->Auth->user()) {
+        // 新規登録ページとログインログアウトページは判定を無視する
+        if ($this->name == 'Users' && in_array($this->action, ['login', 'logout', 'add'])) {
+            return;
+        }
+
+        if (!$this->Auth->user()) {
             $this->Session->setFlash('ログアウトされました。', 'default', ['class' => 'alert alert-danger']);
             return $this->redirect([
                 'controller' => 'users',
