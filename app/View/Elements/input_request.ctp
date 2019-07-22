@@ -13,11 +13,12 @@
 <div class="form-row">
     <?php
         echo $this->Form->input('trans_type', array(
-            'type' => 'select',
+            'type'    => 'select',
             'options' => Configure::read('trans_category'),
-            'label' => '分類',
-            'class' => 'form-control',
-            'div' => array(
+            'label'   => '分類',
+            'class'   => 'form-control',
+            'value'   => 2,
+            'div'     => array(
                 'class' => 'form-group col-4',
             ),
         ));
